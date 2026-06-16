@@ -247,7 +247,9 @@
 
   .reviews__card-text {
     align-self: stretch;
-    height: 174px;
+    /* 本文最大は約125px。author を一律1行分(約27px)上げて、
+       2行になる飼い主名がカード下辺に密着しないよう枠を147pxに。 */
+    height: 147px;
     color: var(--text-dark);
     font-size: var(--font-size-s);
     font-weight: 400;

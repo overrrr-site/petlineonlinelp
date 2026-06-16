@@ -210,7 +210,9 @@
     font-size: var(--font-size-s);
     font-weight: 700;
     letter-spacing: 0.75px;
-    line-height: 1.7;
+    /* 下線(offset 4px)が行間に食い込むため、他セクション本文(1.7)と
+       同等の見た目になるよう行間を補正 */
+    line-height: 2.0;
     text-align: center;
     text-decoration: underline;
     text-decoration-color: var(--underline-muted);

@@ -85,6 +85,7 @@
           </div>
         </div>
       </div>
+      <img class="allergen__pug" src="/mca-allergencut/img/allergen-pug.webp" alt="" aria-hidden="true" loading="lazy" />
     </div>
   </div>
 </section>
@@ -96,6 +97,17 @@
     height: 959px;
     background-color: var(--background-02);
     overflow: hidden;
+  }
+
+  /* 装飾：矢印の右に座るパグ（空きスペースを埋める） */
+  .allergen__pug {
+    position: absolute;
+    right: 18px;
+    top: 498px;
+    width: 112px;
+    height: auto;
+    z-index: 2;
+    pointer-events: none;
   }
 
   .allergen__inner {

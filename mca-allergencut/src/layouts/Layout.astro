@@ -80,6 +80,8 @@ const { title } = Astro.props;
     const target = document.getElementById(hash.slice(1));
     if (!target) return;
     e.preventDefault();
-    target.scrollIntoView({ behavior: 'smooth' });
+    // スナップ単位（セクション全体）へスクロールして、セクション上部が
+    // 見切れないようにする（id はセクション内のカードに付いているため）
+    (target.closest('.section') || target).scrollIntoView({ behavior: 'smooth' });
   });
 </script>
