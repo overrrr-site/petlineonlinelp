@@ -1,0 +1,253 @@
+---
+const FAQS = [
+  {
+    q: '「魚＆お米」と「魚＆えんどう豆たんぱく」、どちらを選べばよいですか？',
+    a: 'まずはアレルゲン配慮から始めたい方には「魚＆お米」を、お米や穀物に配慮したい方には「魚＆えんどう豆たんぱく」をおすすめします。',
+  },
+  {
+    q: 'アレルギーが心配です。原材料を教えてください。',
+    a: '鶏肉・小麦・牛肉・豚肉・乳製品・とうもろこし・大豆・鶏卵は、主原料として使用しておりません。詳細な原材料・成分は商品ページに記載しております。気になる食材がある場合は、事前にご確認ください。',
+  },
+  {
+    q: 'シニア犬や子犬にも与えられますか？',
+    a: '子いぬ用（離乳〜1歳）・成犬用（1歳から）・シニア用（11歳から）と、年齢別ラインをご用意しております。愛犬の年齢に合わせてお選びください。',
+  },
+  {
+    q: '保管方法と発送について教えてください。',
+    a: '高温多湿を避け、直射日光が当たらない涼しい場所で保管してください。500gの小分けパックなので、開封後も鮮度が保ちやすい設計です。ご注文は通常2営業日以内に発送いたします。',
+  },
+  {
+    q: '療法食から切り替えてもよいですか？',
+    a: '療法食からの切り替えは、必ずかかりつけの獣医師にご相談のうえで行ってください。',
+  },
+];
+---
+
+<div class="section" style="background:var(--background-02)">
+  <div class="screen-wrapper">
+    <div class="faq2 screen">
+      <div class="faq2__container">
+        <div class="faq2__header">
+          <div class="faq2__label">Q&amp;A</div>
+          <h2 class="faq2__title">よくある質問</h2>
+          <div class="faq2__subtitle">商品・保管・発送について</div>
+        </div>
+        <div class="faq2__content">
+          <div class="faq2__card">
+            <div class="faq2__items">
+              {FAQS.map((f) => (
+                <div class="faq2__item">
+                  <div class="faq2__item-summary">
+                    <span class="faq2__item-badge"><span class="faq2__item-badge-text">Q</span></span>
+                    <span class="faq2__item-question">{f.q}</span>
+                  </div>
+                  <div class="faq2__item-answer-wrap">
+                    <p class="faq2__item-answer">{f.a}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div class="faq2__footer">
+            <a href="https://www.petline.co.jp/privacy/" target="_blank" rel="noopener noreferrer"><span class="faq2__footer-link">プライバシーポリシー</span></a><span class="faq2__footer-spacer">&emsp;&emsp;</span><a href="https://www.petline.co.jp/regulation/" target="_blank" rel="noopener noreferrer"><span class="faq2__footer-link">利用規約</span></a><span class="faq2__footer-spacer">&emsp;&emsp;</span><a href="https://www.petlineonline.com/shop/pages/law.aspx" target="_blank" rel="noopener noreferrer"><span class="faq2__footer-link">特定商取引法に基づく表記</span></a><br /><span class="faq2__footer-copyright">&copy; 2026 ペットライン株式会社</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    height: 100dvh;
+    min-height: 100vh;
+    min-height: 100dvh;
+    overflow: hidden;
+    box-sizing: border-box;
+    scroll-snap-align: start;
+  }
+
+  .screen-wrapper {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .faq2 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 37px;
+    width: 440px !important;
+    height: 959px !important;
+    overflow: hidden !important;
+    background-color: var(--background-02);
+    will-change: transform;
+  }
+
+  .faq2__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    width: 400px;
+    margin-top: 56px;
+    margin-left: 20px;
+  }
+
+  .faq2__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+    width: fit-content;
+  }
+
+  .faq2__label {
+    align-self: stretch;
+    color: var(--green-vivid);
+    font-size: var(--font-size-s);
+    font-weight: 700;
+    letter-spacing: 0.70px;
+    text-align: center;
+  }
+
+  .faq2__title {
+    align-self: stretch;
+    color: var(--brown-title-text);
+    font-size: var(--font-size-title-m);
+    font-weight: 700;
+    letter-spacing: 1.50px;
+    text-align: center;
+    margin: 0;
+  }
+
+  .faq2__subtitle {
+    color: var(--amber-brown);
+    font-size: var(--font-size-xs);
+    font-weight: 500;
+    letter-spacing: 0;
+    text-align: center;
+  }
+
+  .faq2__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    width: 100%;
+  }
+
+  .faq2__card {
+    width: 400px;
+    max-height: 560px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px var(--shadow-soft);
+    padding: 20px 21px;
+    box-sizing: border-box;
+  }
+
+  .faq2__items {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .faq2__item {
+    border-top: 1px dashed var(--green-vivid);
+    padding: 14px 0;
+  }
+
+  .faq2__item:first-of-type {
+    border-top: none;
+    padding-top: 0;
+  }
+
+  .faq2__item:last-of-type {
+    padding-bottom: 0;
+  }
+
+  .faq2__item-summary {
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+  }
+
+  .faq2__item-badge {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 29px;
+    height: 29px;
+    background-color: var(--green-vivid);
+    border-radius: 14.5px;
+    box-sizing: border-box;
+  }
+
+  .faq2__item-badge-text {
+    color: var(--white);
+    font-size: var(--font-size-s);
+    font-weight: 900;
+    letter-spacing: 0.80px;
+    line-height: 1;
+  }
+
+  .faq2__item-question {
+    flex: 1;
+    color: var(--text-dark);
+    font-size: var(--font-size-l);
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 1.7;
+    padding-top: 3px;
+  }
+
+  .faq2__item-answer-wrap {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 8px;
+    padding-left: 40px;
+  }
+
+  .faq2__item-answer {
+    flex: 1;
+    margin: 0;
+    color: var(--text-dark);
+    font-size: var(--font-size-s);
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 1.7;
+    white-space: pre-line;
+  }
+
+  .faq2__footer {
+    color: var(--text-author);
+    font-size: var(--font-size-xs);
+    font-weight: 500;
+    letter-spacing: -0.10px;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  .faq2__footer-link {
+    letter-spacing: -0.01px;
+    text-decoration: underline;
+  }
+
+  .faq2__footer-spacer {
+    letter-spacing: -0.01px;
+  }
+
+  .faq2__footer-copyright {
+    letter-spacing: -0.01px;
+  }
+</style>

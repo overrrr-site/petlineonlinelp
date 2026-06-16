@@ -1,0 +1,316 @@
+---
+---
+
+<div class="section" style="background:var(--background-02)">
+  <div class="screen-wrapper">
+    <div class="reviews screen" data-carousel-section="voice">
+      <div class="reviews__bg-card reviews__bg-card--left"></div>
+      <div class="reviews__bg-card reviews__bg-card--right"></div>
+      <div class="reviews__slider">
+        <div class="reviews__slider-prev slider-btn slider-btn--prev" data-carousel="voice"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="18" fill="currentColor"/><path d="M20.5 12L15 17.5L20.5 23" stroke="var(--white)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="carousel-dots" data-carousel="voice"></div>
+        <div class="reviews__slider-next slider-btn slider-btn--next" data-carousel="voice"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="18" fill="currentColor"/><path d="M15.5 12L21 17.5L15.5 23" stroke="var(--white)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </div>
+      <div class="reviews__header">
+        <div class="reviews__label">VOICE</div>
+        <h1 class="reviews__title">多くの方に<br />ご好評いただいています</h1>
+        <div class="reviews__subtitle">ペットラインしあわせマルシェユーザーレビュー・アレルゲンカットシリーズ　2026年6月時点　n=3,267　（PR）</div>
+      </div>
+      <div class="reviews__card main_01">
+        <div class="reviews__stars">★★★★★</div>
+        <div class="reviews__card-body">
+          <div class="reviews__card-content">
+            <div class="reviews__card-heading">きれいに完食</div>
+            <div class="reviews__card-divider"></div>
+            <div class="reviews__card-text"><span>チキンのドッグフードから徐々に切り替えています。最初は食べてくれるか心配でしたが、小粒で食べやすい点もあり、</span><span class="reviews__card-highlight">きれいに完食してくれます。</span><span>お試しフードがなくなったら継続をしようかと考えています！</span></div>
+          </div>
+          <div class="reviews__card-author">ルイさん（魚＆お米／2026.6.7）</div>
+        </div>
+      </div>
+      <div class="reviews__card main_02">
+        <div class="reviews__stars">★★★★★</div>
+        <div class="reviews__card-body">
+          <div class="reviews__card-content">
+            <div class="reviews__card-heading">じっくり選べる</div>
+            <div class="reviews__card-divider"></div>
+            <div class="reviews__card-text"><span>お試し価格で色々試せるので、愛犬の状態を見ながら</span><span class="reviews__card-highlight">メインとするフードを決める事ができる</span><span>ので非常に良いと思います。</span></div>
+          </div>
+          <div class="reviews__card-author">sinさん（魚＆お米／2026.6.7）</div>
+        </div>
+      </div>
+      <div class="reviews__card main_03">
+        <div class="reviews__stars">★★★★★</div>
+        <div class="reviews__card-body">
+          <div class="reviews__card-content">
+            <div class="reviews__card-heading">小型犬にぴったり</div>
+            <div class="reviews__card-divider"></div>
+            <div class="reviews__card-text"><span>小粒で小型犬に良かった。魚の匂いがして、</span><span class="reviews__card-highlight">食いつきも良かった。</span></div>
+          </div>
+          <div class="reviews__card-author">シャルスさん（魚＆えんどう豆たんぱく／2026.4.27）</div>
+        </div>
+      </div>
+      <div class="reviews__card main_04">
+        <div class="reviews__stars">★★★★★</div>
+        <div class="reviews__card-body">
+          <div class="reviews__card-content">
+            <div class="reviews__card-heading">国内製造で選びました</div>
+            <div class="reviews__card-divider"></div>
+            <div class="reviews__card-text"><span class="reviews__card-highlight">国内製造なので選びました。</span><span>愛犬も喜んでたべてます。これからもつづけていきたいとおもいます。</span></div>
+          </div>
+          <div class="reviews__card-author">ココリコパパさん（魚＆えんどう豆たんぱく／2026.4.26）</div>
+        </div>
+      </div>
+      <div class="reviews__card main_05">
+        <div class="reviews__stars">★★★★★</div>
+        <div class="reviews__card-body">
+          <div class="reviews__card-content">
+            <div class="reviews__card-heading">お試しできて良かった</div>
+            <div class="reviews__card-divider"></div>
+            <div class="reviews__card-text"><span class="reviews__card-highlight">800円<span class="reviews__card-asterisk">※</span>でしっかり試せる</span><span>のが良いですね。</span><span class="reviews__card-note">※お試し価格のこと。通常価格は店頭でご確認ください</span></div>
+          </div>
+          <div class="reviews__card-author">ぶどうさん（魚＆えんどう豆たんぱく／2026.5.19）</div>
+        </div>
+      </div>
+      <img class="reviews__dog-image" src="/img/reviews-dog.webp" alt="" loading="lazy" />
+      <div class="reviews__disclaimer">※個人の感想です。効果には個体差があります。<br />※ご購入から約10日後のレビューになります。</div>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* ----------------------------------------
+     Section & Screen Base
+     ---------------------------------------- */
+
+  /* ----------------------------------------
+     Reviews Container
+     ---------------------------------------- */
+  .reviews {
+    position: relative;
+    width: 440px !important;
+    height: 959px !important;
+    overflow: hidden !important;
+    background-color: var(--background-02);
+    will-change: transform;
+  }
+
+  /* ----------------------------------------
+     Background Cards (decorative)
+     ---------------------------------------- */
+  .reviews__bg-card {
+    position: absolute;
+    top: 348px;
+    width: 326px;
+    height: 340px;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px var(--shadow-soft);
+  }
+
+  .reviews__bg-card--left {
+    left: calc(50% - 509px);
+  }
+
+  .reviews__bg-card--right {
+    left: calc(50% + 188px);
+  }
+
+  /* ----------------------------------------
+     Slider Controls
+     ---------------------------------------- */
+  .reviews__slider {
+    position: absolute;
+    top: 712px;
+    left: 57px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 326px;
+  }
+
+  .reviews__slider-prev,
+  .reviews__slider-next {
+    cursor: pointer;
+    transition: transform 0.15s ease;
+  }
+
+  .reviews__slider-prev:active,
+  .reviews__slider-next:active {
+    transform: scale(0.85);
+  }
+
+  /* ----------------------------------------
+     Header
+     ---------------------------------------- */
+  .reviews__header {
+    position: absolute;
+    top: 81px;
+    left: 23px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+    width: 394px;
+  }
+
+  .reviews__label {
+    align-self: stretch;
+    color: var(--green-vivid);
+    font-size: var(--font-size-s);
+    font-weight: 700;
+    letter-spacing: 0.70px;
+    text-align: center;
+  }
+
+  .reviews__title {
+    width: 397px;
+    margin-left: -20px;
+    margin-right: -20px;
+    color: var(--brown-title-text);
+    font-size: var(--font-size-title-l);
+    font-weight: 700;
+    letter-spacing: 1.70px;
+    text-align: center;
+  }
+
+  .reviews__subtitle {
+    align-self: stretch;
+    color: var(--text-dark);
+    font-size: var(--font-size-s);
+    font-weight: 500;
+    letter-spacing: -0.14px;
+    line-height: 21px;
+    text-align: center;
+  }
+
+  /* ----------------------------------------
+     Review Cards
+     ---------------------------------------- */
+  .reviews__card {
+    position: absolute;
+    top: 348px;
+    left: 57px;
+    z-index: 1;
+    width: 326px;
+    height: 340px;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px var(--shadow-soft);
+  }
+
+  .reviews__stars {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    color: var(--green-vivid);
+    font-size: var(--font-size-subheading);
+    letter-spacing: 2px;
+    line-height: 1;
+  }
+
+  .reviews__card-body {
+    position: absolute;
+    top: 54px;
+    left: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 276px;
+  }
+
+  /* ----------------------------------------
+     Card Content & Typography
+     ---------------------------------------- */
+  .reviews__card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .reviews__card-heading {
+    align-self: stretch;
+    color: var(--text-dark);
+    font-size: var(--font-size-product-title);
+    font-weight: 700;
+    letter-spacing: 1.20px;
+    line-height: 44px;
+  }
+
+  .reviews__card-divider {
+    align-self: stretch;
+    width: 100%;
+    height: 2px;
+    background-color: var(--orange);
+  }
+
+  .reviews__card-text {
+    align-self: stretch;
+    height: 174px;
+    color: var(--text-dark);
+    font-size: var(--font-size-s);
+    font-weight: 400;
+    letter-spacing: 0.16px;
+    line-height: 25px;
+  }
+
+  .reviews__card-text span {
+    font-weight: 500;
+    letter-spacing: 0.03px;
+  }
+
+  .reviews__card-highlight {
+    color: var(--orange) !important;
+    font-weight: 700 !important;
+  }
+
+  .reviews__card-text .reviews__card-asterisk {
+    font-size: var(--font-size-xs);
+    font-weight: 400;
+    vertical-align: sub;
+    line-height: 0;
+  }
+
+  .reviews__card-text .reviews__card-note {
+    display: block;
+    color: var(--text-dark);
+    font-size: var(--font-size-xs);
+    font-weight: 400;
+    letter-spacing: -0.12px;
+    line-height: 18px;
+    margin-top: 4px;
+  }
+
+  .reviews__card-author {
+    align-self: stretch;
+    color: var(--text-author);
+    font-size: var(--font-size-s);
+    font-weight: 500;
+    letter-spacing: -0.14px;
+    line-height: 27px;
+  }
+
+  /* ----------------------------------------
+     Dog Image & Disclaimer
+     ---------------------------------------- */
+  .reviews__dog-image {
+    position: absolute;
+    top: 269px;
+    left: calc(50% - 75px);
+    width: 150px;
+    height: 83px;
+    object-fit: cover;
+  }
+
+  .reviews__disclaimer {
+    position: absolute;
+    top: 758px;
+    left: calc(50% - 129px);
+    color: var(--text-dark);
+    font-size: var(--font-size-xs);
+    font-weight: 400;
+    letter-spacing: -0.12px;
+    line-height: 18px;
+  }
+</style>

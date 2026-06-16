@@ -1,0 +1,248 @@
+---
+const FAQS = [
+  // ご購入について
+  {
+    q: '1回限りのお試し購入で、自動継続はありますか？',
+    a: 'ございません。本商品はお試し価格でのお届け1回限りで、定期購入や継続課金は一切発生いたしません。',
+  },
+  {
+    q: '送料はかかりますか？',
+    a: '送料は当社が負担いたします。表示価格800円（税込）のみで、追加費用は一切かかりません。',
+  },
+  {
+    q: '愛犬に合わなかった場合は、どうすればよいですか？',
+    a: '体質には個体差があり、すべての愛犬に合うとは限りません。気になる様子が見られた場合は、無理に与え続けず、ご使用を中止してください。',
+  },
+  // 使い方
+  {
+    q: '突然フードを切り替えても大丈夫ですか？',
+    a: '急な切り替えは消化器官に負担がかかることがあります。今までのフードに少量ずつ混ぜながら、1週間〜10日ほど時間をかけて切り替えてください。',
+  },
+  {
+    q: '療法食から切り替えてもよいですか？',
+    a: '療法食からの切り替えは、必ずかかりつけの獣医師にご相談のうえで行ってください。',
+  },
+];
+---
+
+<div class="section" style="background:var(--background-02)">
+  <div class="screen-wrapper">
+    <div class="faq screen">
+      <div class="faq__container">
+        <div class="faq__header">
+          <div class="faq__label">Q&amp;A</div>
+          <h1 class="faq__title">よくある質問</h1>
+          <div class="faq__subtitle">ご購入・使い方について</div>
+        </div>
+        <div class="faq__content">
+          <div class="faq__card">
+            <div class="faq__items">
+              {FAQS.map((f) => (
+                <div class="faq__item">
+                  <div class="faq__item-question-wrap">
+                    <span class="faq__item-badge"><span class="faq__item-badge-text">Q</span></span>
+                    <p class="faq__item-question">{f.q}</p>
+                  </div>
+                  <div class="faq__item-answer-wrap">
+                    <p class="faq__item-answer">{f.a}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* ==========================================
+     Section & Screen base styles (scoped)
+     ========================================== */
+  .section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    height: 100dvh;
+    min-height: 100vh;
+    min-height: 100dvh;
+    overflow: hidden;
+    box-sizing: border-box;
+    scroll-snap-align: start;
+  }
+
+  .screen-wrapper {
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* ==========================================
+     FAQ section container
+     ========================================== */
+  .faq {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 37px;
+    width: 440px !important;
+    height: 959px !important;
+    overflow: hidden !important;
+    background-color: var(--background-02);
+    will-change: transform;
+  }
+
+  .faq__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    width: 400px;
+    margin-top: 51px;
+    margin-left: 20px;
+  }
+
+  /* ==========================================
+     Header (Q&A label + title)
+     ========================================== */
+  .faq__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+    width: fit-content;
+  }
+
+  .faq__label {
+    align-self: stretch;
+    color: var(--green-vivid);
+    font-size: var(--font-size-s);
+    font-weight: 700;
+    letter-spacing: 0.70px;
+    text-align: center;
+  }
+
+  .faq__title {
+    align-self: stretch;
+    color: var(--brown-title-text);
+    font-size: var(--font-size-title-xl);
+    font-weight: 700;
+    letter-spacing: 1.80px;
+    text-align: center;
+    margin: 0;
+  }
+
+  .faq__subtitle {
+    color: var(--amber-brown);
+    font-size: var(--font-size-s);
+    font-weight: 500;
+    letter-spacing: 0.1px;
+    text-align: center;
+  }
+
+  /* ==========================================
+     Content area & card
+     ========================================== */
+  .faq__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+  }
+
+  .faq__card {
+    width: 400px;
+    max-height: 620px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px var(--shadow-soft);
+    padding: 20px 21px;
+    box-sizing: border-box;
+  }
+
+  /* ==========================================
+     FAQ items list
+     ========================================== */
+  .faq__items {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .faq__item {
+    border-top: 1px dashed var(--green-vivid);
+    padding: 14px 0;
+  }
+
+  .faq__item:first-of-type {
+    border-top: none;
+    padding-top: 0;
+  }
+
+  .faq__item:last-of-type {
+    padding-bottom: 0;
+  }
+
+  /* Question row */
+  .faq__item-question-wrap {
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+  }
+
+  /* Q badge */
+  .faq__item-badge {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 29px;
+    height: 29px;
+    background-color: var(--green-vivid);
+    border-radius: 14.5px;
+    box-sizing: border-box;
+  }
+
+  .faq__item-badge-text {
+    color: var(--white);
+    font-size: var(--font-size-l);
+    font-weight: 900;
+    letter-spacing: 0.80px;
+    line-height: 1;
+  }
+
+  .faq__item-question {
+    flex: 1;
+    margin: 0;
+    color: var(--text-dark);
+    font-size: var(--font-size-s);
+    font-weight: 700;
+    letter-spacing: 0.07px;
+    line-height: 1.7;
+    padding-top: 3px;
+  }
+
+  /* Answer area */
+  .faq__item-answer-wrap {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 12px;
+    padding-left: 40px;
+  }
+
+  .faq__item-answer {
+    flex: 1;
+    margin: 0;
+    color: var(--text-dark);
+    font-size: var(--font-size-s);
+    font-weight: 500;
+    letter-spacing: 0.07px;
+    line-height: 1.7;
+  }
+</style>

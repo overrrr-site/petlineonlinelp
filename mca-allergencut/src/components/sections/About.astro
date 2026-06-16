@@ -1,0 +1,225 @@
+---
+---
+
+<div class="section" style="background:var(--background-02)">
+  <div class="screen-wrapper">
+    <div class="about screen">
+      <div class="about__inner">
+        <div class="about__intro">
+          <div class="about__label">ABOUT</div>
+          <h2 class="about__title">ペットラインについて</h2>
+          <img class="about__image" src="/img/2x.png" alt="ペットラインの工場または施設の写真" loading="lazy" />
+          <p class="about__desc">ペットラインは1967年（昭和42年）創設、日本初のドライキャットフードを開発・販売したペットフードのパイオニア。「愛情を品質に」をモットーに、自社の研究開発拠点と国内工場で国産フードをつくり続けています。</p>
+        </div>
+
+        <div class="about__features">
+          <div class="about__feature">
+            <div class="about__feature-icon about__feature-icon--develop" aria-hidden="true"></div>
+            <p class="about__feature-text about__feature-text--develop">1967年創設、日本で初めて<br />ドライキャットフードを開発</p>
+          </div>
+          <div class="about__feature">
+            <div class="about__feature-icon about__feature-icon--quality" aria-hidden="true"></div>
+            <p class="about__feature-text">「愛情を品質に」の<br />フードづくり</p>
+          </div>
+          <div class="about__feature">
+            <div class="about__feature-icon about__feature-icon--iso" aria-hidden="true"></div>
+            <p class="about__feature-text about__feature-text--iso"><span class="about__iso-label">ISO22000認証取得</span><span class="about__iso-mark">※</span></p>
+          </div>
+          <div class="about__feature">
+            <div class="about__feature-icon about__feature-icon--research" aria-hidden="true"></div>
+            <p class="about__feature-text">国内研究開発拠点での<br />ペットフード研究・開発</p>
+          </div>
+          <p class="about__note">※多治見工場、多治見本店</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* ========================================
+   * Base section & wrapper
+   * ======================================== */
+  .section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    height: 100dvh;
+    min-height: 100vh;
+    min-height: 100dvh;
+    overflow: hidden;
+    box-sizing: border-box;
+    scroll-snap-align: start;
+  }
+
+  .screen-wrapper {
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* ========================================
+   * Section root
+   * ======================================== */
+  .about {
+    position: relative;
+    width: 440px !important;
+    height: 959px !important;
+    background-color: var(--background-02);
+    overflow: hidden !important;
+    will-change: transform;
+  }
+
+  .about__inner {
+    position: relative;
+    top: 64px;
+    left: 17px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    width: 405px;
+  }
+
+  /* ========================================
+   * Intro: label + title + image + description
+   * ======================================== */
+  .about__intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .about__label {
+    align-self: stretch;
+    color: var(--green-vivid);
+    font-family: var(--font-family);
+    font-size: var(--font-size-s);
+    font-weight: 700;
+    letter-spacing: 1px;
+    line-height: 22px;
+    text-align: center;
+  }
+
+  .about__title {
+    width: fit-content;
+    color: var(--brown-title-text);
+    font-family: var(--font-family);
+    font-size: var(--font-size-title-m);
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    line-height: 1.35;
+    text-align: center;
+  }
+
+  .about__image {
+    width: 330px;
+    height: 162px;
+    object-fit: cover;
+  }
+
+  .about__desc {
+    width: 330px;
+    color: var(--text-dark);
+    font-family: var(--font-family);
+    font-size: var(--font-size-s);
+    font-weight: 500;
+    letter-spacing: 0.7px;
+    line-height: 1.7;
+    text-align: center;
+  }
+
+  /* ========================================
+   * Feature list
+   * ======================================== */
+  .about__features {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+    width: 330px;
+  }
+
+  .about__feature {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    padding: 10px 28px;
+    background-color: var(--white);
+    border: 1px solid var(--green-vivid);
+    border-radius: 5px;
+  }
+
+  .about__feature-icon {
+    flex: 0 0 auto;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+
+  .about__feature-icon--develop {
+    width: 30px;
+    height: 26px;
+    background-image: url(/img/vector-23.svg);
+  }
+
+  .about__feature-icon--quality {
+    width: 33px;
+    height: 30px;
+    background-image: url(/img/vector-24.svg);
+  }
+
+  .about__feature-icon--iso {
+    width: 31px;
+    height: 27px;
+    background-image: url(/img/vector-25.svg);
+  }
+
+  .about__feature-icon--research {
+    width: 32px;
+    height: 27px;
+    background-image: url(/img/vector-26.svg);
+  }
+
+  .about__feature-text {
+    width: 245px;
+    color: var(--text-dark);
+    font-family: var(--font-family);
+    font-size: var(--font-size-l);
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 23px;
+  }
+
+  .about__feature-text--develop {
+    letter-spacing: -0.2px;
+  }
+
+  .about__feature-text--iso {
+    letter-spacing: 0.9px;
+  }
+
+  .about__iso-label {
+    letter-spacing: 0.16px;
+  }
+
+  .about__iso-mark {
+    font-size: var(--font-size-xs);
+    letter-spacing: 0.05px;
+  }
+
+  .about__note {
+    width: fit-content;
+    color: var(--text-note);
+    font-family: var(--font-family);
+    font-size: var(--font-size-xs);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    line-height: 18px;
+    text-align: center;
+    white-space: nowrap;
+  }
+</style>

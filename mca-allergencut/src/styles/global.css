@@ -1,0 +1,182 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  overflow: hidden;
+  height: 100vh;
+  height: 100dvh;
+  font-family: var(--font-family);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+input,
+button,
+select,
+textarea {
+  border: none;
+  background: none;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.slider-btn {
+  color: var(--orange);
+}
+
+/* ==========================================
+   Section / screen layout (shared by every
+   section — full-screen scroll-snap stage that
+   holds the 440×959 design canvas)
+   ========================================== */
+.section {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  height: 100dvh;
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow: hidden;
+  box-sizing: border-box;
+  scroll-snap-align: start;
+}
+
+/* CSS-only viewport scaling — replaces the old JS applyScale().
+   Each section's inner .screen keeps its 440x959 design coords;
+   the wrapper reserves the post-scale box so layout doesn't collapse. */
+.screen {
+  transform: scale(var(--scale));
+  transform-origin: top left;
+}
+
+.screen-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: calc(var(--design-w) * var(--scale) * 1px);
+  height: calc(var(--design-h) * var(--scale) * 1px);
+}
+
+/* ==========================================
+   Carousel nav buttons — tokenized circle fill
+   ========================================== */
+.slider-btn svg circle {
+  fill: var(--orange);
+}
+
+.slider-btn svg path {
+  stroke: var(--white);
+}
+
+.caution .slider-btn svg circle {
+  fill: var(--green);
+}
+
+.caution .slider-btn {
+  color: var(--green);
+}
+
+/* ==========================================
+   Carousel dot / card CSS is in index.astro.
+   CTA button labels — keep on one line.
+   ========================================== */
+.fv__cta-button-text,
+.type__cta-button-text,
+.product__cta-button-text,
+.floating-cta__btn-text {
+  white-space: nowrap;
+}
+
+/* ==========================================
+   8px spacing normalization and fixed CTA safe area
+   ========================================== */
+body .lp-container > .section {
+  height: 100vh !important;
+  height: 100dvh !important;
+  min-height: 100vh !important;
+  min-height: 100dvh !important;
+  align-items: center !important;
+  overflow: hidden !important;
+  padding-bottom: 0 !important;
+  scroll-snap-stop: always;
+}
+
+body .lp-container :is(
+  .allergen__inner,
+  .why__inner,
+  .type__inner,
+  .about__inner
+) {
+  top: var(--section-top) !important;
+}
+
+body .lp-container .product__inner {
+  top: var(--section-top-compact) !important;
+}
+
+body .lp-container :is(.features__header, .faq__container, .faq2__container) {
+  margin-top: var(--section-top-compact) !important;
+}
+
+body .lp-container :is(.ingenuity__header, .reviews__header, .caution__header) {
+  top: var(--section-top) !important;
+}
+
+body .lp-container :is(
+  .allergen__intro,
+  .why__lead,
+  .type__heading,
+  .about__intro,
+  .faq__header,
+  .faq2__header,
+  .features__header,
+  .features__header-inner,
+  .ingenuity__header,
+  .reviews__header,
+  .caution__header-inner
+) {
+  gap: var(--heading-gap) !important;
+}
+
+body .lp-container :is(
+  .allergen__compare,
+  .about__inner,
+  .footercta__body,
+  .faq__content,
+  .faq2__content
+) {
+  gap: var(--body-gap) !important;
+}
+
+body .lp-container :is(.features__card--01, .features__card--02, .features__card--03) {
+  margin-top: var(--card-gap) !important;
+}
+
+body .lp-container :is(.faq__container, .faq2__container) {
+  gap: var(--space-4) !important;
+}

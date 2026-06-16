@@ -1,0 +1,385 @@
+---
+---
+
+<div class="section" style="background:var(--background-02)" aria-label="ファーストビュー">
+  <div class="screen-wrapper">
+    <div class="fv screen">
+      <div class="fv__hero">
+        <img class="fv__hero-image" src="/img/kv-photo.png" alt="メディコートアドバンス アレルゲンカットのパッケージと犬のビジュアル" />
+        <div class="fv__card">
+          <div class="fv__card-bg" aria-hidden="true"></div>
+          <img class="fv__card-package" src="/img/u0311-3-2.png" alt="商品パッケージ" />
+          <p class="fv__card-title">メディコートアドバンス<br/>アレルゲンカット</p>
+          <img class="fv__card-line" src="/img/line-15.svg" alt="" aria-hidden="true" />
+        </div>
+      </div>
+
+      <div class="fv__catch-bg--1" aria-hidden="true"></div>
+      <p class="fv__catch-line--1">まずは、</p>
+      <div class="fv__catch-bg--2" aria-hidden="true"></div>
+      <h1 class="fv__catch-line--2">たんぱく源から見直す。</h1>
+
+      <p class="fv__rank">メディコートシリーズ 売上No.1</p>
+      <p class="fv__rank-note">※自社調べ：2024年度販売実績</p>
+      <p class="fv__lead">主なたんぱく源を「魚とお米」「魚とえんどう豆たんぱく」<br/>に限定。毎日のごはんとして合うかどうかを、<br/>2kg以上でしっかり確認できます。</p>
+
+      <a class="fv__cta" href="#footer-cta" data-lp="allergencut" data-cta="fv" aria-label="今すぐ試す">
+        <div class="fv__cta-badge">
+          <div class="fv__cta-badge-text">お一人様1回限りの限定価格</div>
+          <img class="fv__cta-badge-line" src="/img/vector-4-1.svg" alt="" aria-hidden="true" />
+        </div>
+
+        <img class="fv__cta-price-img" src="/img/fv-price.png" alt="2kg / 2.5kg が 800円" />
+
+        <div class="fv__cta-button">
+          <div class="fv__cta-button-bg" aria-hidden="true"></div>
+          <img class="fv__cta-button-arrow" src="/img/vector-1-5.svg" alt="" aria-hidden="true" />
+          <div class="fv__cta-button-text">今すぐ試す</div>
+        </div>
+      </a>
+
+      <p class="fv__swipe-text">swipe</p>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Section & wrapper (grainfree clean shell) */
+  .section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    height: 100dvh;
+    min-height: 100vh;
+    min-height: 100dvh;
+    overflow: hidden;
+    scroll-snap-align: start;
+  }
+
+  .screen-wrapper {
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Main screen */
+  .fv {
+    position: relative;
+    width: 440px !important;
+    height: 959px !important;
+    background-color: var(--background-02);
+    overflow: hidden !important;
+    will-change: transform;
+  }
+
+  /* Hero */
+  .fv__hero {
+    position: absolute;
+    top: 41px;
+    left: 30px;
+    width: 381px;
+    height: 524px;
+  }
+
+  .fv__hero-image {
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    width: 383px;
+    height: 526px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  /* Product card */
+  .fv__card {
+    position: absolute;
+    top: -25px;
+    left: 239px;
+    width: 164px;
+    height: 202px;
+  }
+
+  .fv__card-bg {
+    position: absolute;
+    top: 0;
+    left: 7px;
+    width: 150px;
+    height: 202px;
+    background-color: var(--background-02);
+    border-radius: 10px;
+    border: 1px solid var(--green-vivid);
+    box-shadow: 0px 4px 4px var(--shadow-strong);
+  }
+
+  .fv__card-package {
+    position: absolute;
+    top: 63px;
+    left: 45px;
+    width: 74px;
+    height: 131px;
+    object-fit: contain;
+  }
+
+  .fv__card-title {
+    position: absolute;
+    top: 13px;
+    left: 0;
+    width: 164px;
+    height: 38px;
+    color: var(--green-vivid);
+    font-size: var(--font-size-xs);
+    text-align: center;
+    letter-spacing: 0.5px;
+    line-height: 15px;
+    font-family: var(--font-family);
+    font-weight: 700;
+  }
+
+  .fv__card-line {
+    position: absolute;
+    top: 56px;
+    left: 28px;
+    width: 108px;
+    height: 1px;
+    object-fit: cover;
+  }
+
+  /* Catch copy */
+  .fv__catch-bg--1 {
+    position: absolute;
+    top: 410px;
+    left: 29px;
+    width: 140px;
+    height: 46px;
+    background-color: var(--white);
+  }
+
+  .fv__catch-line--1 {
+    position: absolute;
+    top: 410px;
+    left: 44px;
+    width: 351px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    font-family: var(--font-family);
+    font-weight: 700;
+    color: var(--green-vivid);
+    font-size: var(--font-size-title-m);
+    letter-spacing: 0;
+    line-height: normal;
+  }
+
+  .fv__catch-bg--2 {
+    position: absolute;
+    top: 462px;
+    left: 29px;
+    width: 343px;
+    height: 46px;
+    background-color: var(--white);
+  }
+
+  .fv__catch-line--2 {
+    position: absolute;
+    top: 462px;
+    left: 44px;
+    width: 338px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    font-family: var(--font-family);
+    font-weight: 700;
+    color: var(--green-vivid);
+    font-size: var(--font-size-title-m);
+    letter-spacing: 0;
+    line-height: normal;
+  }
+
+  /* Rank band & notes */
+  .fv__rank {
+    position: absolute;
+    top: 514px;
+    left: 26px;
+    width: 385px;
+    font-weight: 700;
+    color: var(--white);
+    font-size: var(--font-size-product-title);
+    letter-spacing: 0.5px;
+    line-height: 20.8px;
+    font-family: var(--font-family);
+    text-align: center;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.55), 0 0 2px rgba(0, 0, 0, 0.4);
+  }
+
+  .fv__rank-note {
+    position: absolute;
+    top: 537px;
+    left: 26px;
+    width: 371px;
+    font-weight: 500;
+    color: var(--white);
+    font-size: var(--font-size-xs);
+    letter-spacing: 0.5px;
+    line-height: 20.8px;
+    font-family: var(--font-family);
+    text-align: right;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  }
+
+  .fv__lead {
+    position: absolute;
+    top: 578px;
+    left: 30px;
+    width: 380px;
+    font-weight: 500;
+    color: var(--text-dark);
+    font-size: var(--font-size-s);
+    letter-spacing: 0;
+    line-height: 19px;
+    white-space: nowrap;
+    font-family: var(--font-family);
+    text-align: center;
+  }
+
+  /* CTA block */
+  .fv__cta {
+    position: absolute;
+    top: 649px;
+    left: calc(50% - 168px);
+    display: block;
+    width: 335px;
+    height: 154px;
+  }
+
+  .fv__cta-badge {
+    position: absolute;
+    width: 61.72%;
+    height: 21.01%;
+    top: 0;
+    left: 19.38%;
+  }
+
+  .fv__cta-badge-text {
+    position: absolute;
+    width: 96.13%;
+    height: 74.22%;
+    top: 0;
+    left: 0;
+    transform: rotate(-0.1deg);
+    font-family: var(--font-family);
+    font-weight: 700;
+    color: var(--orange);
+    font-size: var(--font-size-m);
+    letter-spacing: 0.62px;
+    line-height: 23.1px;
+    white-space: nowrap;
+  }
+
+  .fv__cta-badge-line {
+    position: absolute;
+    width: 150%;
+    height: 26.29%;
+    top: 73.71%;
+    left: -7%;
+  }
+
+  /* Price graphic — single image "2kg / 2.5kg が 800円" */
+  .fv__cta-price-img {
+    position: absolute;
+    width: 335px;
+    height: auto;
+    top: 36px;
+    left: 0;
+  }
+
+  /* CTA button (grainfree glow/shine) */
+  .fv__cta-button {
+    position: absolute;
+    width: 247px;
+    height: 56px;
+    top: 97px;
+    left: 45px;
+  }
+
+  .fv__cta-button-bg {
+    position: absolute;
+    width: 99.19%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--orange);
+    border-radius: 999px;
+    box-shadow: 0px 4px 4px var(--shadow-strong);
+    overflow: hidden;
+    animation: cta-glow 2s ease-in-out infinite;
+  }
+
+  .fv__cta-button-bg::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent 0%, rgba(var(--white-rgb), 0.25) 50%, transparent 100%);
+    animation: cta-shine 3s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  .fv__cta-button-arrow {
+    position: absolute;
+    width: 7.5%;
+    height: 34%;
+    top: 33%;
+    left: 71.5%;
+    object-fit: contain;
+  }
+
+  .fv__cta-button-text {
+    position: absolute;
+    width: 46.15%;
+    height: 56.21%;
+    top: 17.57%;
+    left: 22.67%;
+    font-family: var(--font-family);
+    font-weight: 900;
+    color: var(--white);
+    font-size: var(--font-size-cta);
+    letter-spacing: 1.09px;
+    line-height: normal;
+  }
+
+  /* Swipe indicator (grainfree clean: text only, bounce, no vertical line) */
+  .fv__swipe-text {
+    position: absolute;
+    top: 825px;
+    left: calc(50% - 20px);
+    font-family: var(--font-family);
+    font-weight: 500;
+    color: var(--amber-brown);
+    font-size: var(--font-size-xs);
+    letter-spacing: 1.2px;
+    line-height: 1;
+    animation: swipe-bounce 1.6s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  /* Animations (grainfree clean shell) */
+  @keyframes swipe-bounce {
+    0%, 100% { transform: translateY(0); opacity: 0.7; }
+    50%      { transform: translateY(4px); opacity: 1; }
+  }
+
+  @keyframes cta-glow {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(var(--orange-rgb), 0.4); }
+    50%      { box-shadow: 0 0 12px 4px rgba(var(--orange-rgb), 0.25); }
+  }
+
+  @keyframes cta-shine {
+    0%   { left: -100%; }
+    20%  { left: 100%; }
+    100% { left: 100%; }
+  }
+</style>
