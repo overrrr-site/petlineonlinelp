@@ -1,0 +1,10 @@
+{
+  "name": "petlineonlinelp",
+  "private": true,
+  "version": "0.0.0",
+  "description": "ペットライン LP 統合リポジトリ（1 Vercel プロジェクトでサブパス配信）",
+  "scripts": {
+    "build": "cd mca-allergencut && npm install && npm run build && cd .. && node scripts/assemble.mjs",
+    "preview": "npx serve dist -l 4330"
+  }
+}
