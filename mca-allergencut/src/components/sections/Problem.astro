@@ -99,17 +99,17 @@
     overflow: hidden;
   }
 
-  /* 装飾：パグをコンテンツ下端(709px)とフローティングCTAバー上端の間の
-     余白に上下中央配置。バーは幅基準 --scale-w でスケールしセクション(--scale)
-     とは座標系が異なるため、バーの占有高 = 90px*(--scale-w/--scale) を計算し、
-     中央配置の bottom = (125 - パグ高/2)px + 45px*(--scale-w/--scale) で全VPに追従。
-     パグ実寸 105×127.4px（高さ=幅×364/300）→ 定数 61.3px。
-     固定px だと幅広・縦短ほどバーに見切れるため calc 化 */
+  /* 装飾：大きめのパグがフローティングCTAバーの裏から顔だけ覗く演出。
+     バーは幅基準 --scale-w、セクションは --scale でスケールし座標系が異なるため、
+     バー占有高 = 90px*(--scale-w/--scale)。顔の出し量(peek)を全VPで一定にするよう
+     bottom = (peek - パグ高)px + 90px*(--scale-w/--scale)。
+     パグ実寸 180×218.4px（高さ=幅×364/300）、peek=115px → 定数 -103.4px。
+     胴体はバー裏(z-index で背面)に隠れ、.allergen の overflow:hidden で下はみ出しもクリップ */
   .allergen__pug {
     position: absolute;
-    left: calc(50% - 52.5px);
-    bottom: calc(61.3px + 45px * var(--scale-w) / var(--scale));
-    width: 105px;
+    left: calc(50% - 90px);
+    bottom: calc(-103.4px + 90px * var(--scale-w) / var(--scale));
+    width: 180px;
     height: auto;
     z-index: 2;
     pointer-events: none;
