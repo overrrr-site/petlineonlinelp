@@ -99,14 +99,17 @@
     overflow: hidden;
   }
 
-  /* 装飾：パグはコンテンツ下端とフローティングCTAバー上端の間の余白に
-     上下中央配置。バー(高さ約90px)分を除いた領域の中央＝下から約101px
-     （パグ実寸 115×139.5px・上下クリアランス約10pxずつ）。バーに見切れない */
+  /* 装飾：パグをコンテンツ下端(709px)とフローティングCTAバー上端の間の
+     余白に上下中央配置。バーは幅基準 --scale-w でスケールしセクション(--scale)
+     とは座標系が異なるため、バーの占有高 = 90px*(--scale-w/--scale) を計算し、
+     中央配置の bottom = (125 - パグ高/2)px + 45px*(--scale-w/--scale) で全VPに追従。
+     パグ実寸 105×127.4px（高さ=幅×364/300）→ 定数 61.3px。
+     固定px だと幅広・縦短ほどバーに見切れるため calc 化 */
   .allergen__pug {
     position: absolute;
-    left: calc(50% - 57px);
-    bottom: 101px;
-    width: 115px;
+    left: calc(50% - 52.5px);
+    bottom: calc(61.3px + 45px * var(--scale-w) / var(--scale));
+    width: 105px;
     height: auto;
     z-index: 2;
     pointer-events: none;
