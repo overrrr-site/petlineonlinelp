@@ -99,11 +99,13 @@
     overflow: hidden;
   }
 
-  /* 装飾：セクション最下部中央に座るパグ（フッター上の空きスペース） */
+  /* 装飾：セクション最下部中央に座るパグ（フローティングCTAバー上の空きスペース）
+     98→82px に少し下げ、CTAバー手前に軽く沈める。顔は見せつつ上下余白の
+     バランスは保つ（下げ過ぎると胴体がバーに隠れる） */
   .allergen__pug {
     position: absolute;
     left: calc(50% - 57px);
-    bottom: 98px;
+    bottom: 82px;
     width: 115px;
     height: auto;
     z-index: 2;

@@ -35,12 +35,12 @@
                         </p>
                         <div class="footercta__tags">
                           <div class="footercta__tags-group">
-                            <div class="footercta__tag"><div class="footercta__tag-text">子犬</div></div>
+                            <a class="footercta__tag" href="https://www.petlineonline.com/shop/g/gU0120/" aria-label="魚＆お米 子犬用 を見る"><div class="footercta__tag-text">子犬</div></a>
                             <div class="footercta__tag"><div class="footercta__tag-text">1歳~低脂肪</div></div>
                           </div>
-                          <div class="footercta__tag footercta__tag--solo"><div class="footercta__tag-text">11歳から</div></div>
+                          <a class="footercta__tag footercta__tag--solo" href="https://www.petlineonline.com/shop/g/gU0130/" aria-label="魚＆お米 11歳から を見る"><div class="footercta__tag-text">11歳から</div></a>
                         </div>
-                        <a class="footercta__button" href="#" aria-label="魚＆お米 1歳から で試す">
+                        <a class="footercta__button" href="https://www.petlineonline.com/shop/g/gU0124/" aria-label="魚＆お米 1歳から で試す">
                           <div class="footercta__button-inner"><div class="footercta__button-text">1歳からで試す</div></div>
                         </a>
                       </div>
@@ -56,8 +56,8 @@
                     <div class="footercta__thumb-wrap"><img class="footercta__thumb" src="/mca-allergencut/img/u0311-3.png" alt="魚＆えんどう豆たんぱく パッケージ" /></div>
                     <div class="footercta__product-info">
                       <h3 class="footercta__cname footercta__cname--pea">魚&amp;えんどう豆<br/>たんぱく<span class="footercta__cname-sub">&nbsp;2kg</span></h3>
-                      <div class="footercta__tags-group footercta__tags-group--solo"><div class="footercta__tag"><div class="footercta__tag-text">11歳から</div></div></div>
-                      <a class="footercta__button" href="#" aria-label="魚＆えんどう豆たんぱく 1歳から で試す">
+                      <div class="footercta__tags-group footercta__tags-group--solo"><a class="footercta__tag" href="https://www.petlineonline.com/shop/g/gU0137/" aria-label="魚＆えんどう豆たんぱく 11歳から を見る"><div class="footercta__tag-text">11歳から</div></a></div>
+                      <a class="footercta__button" href="https://www.petlineonline.com/shop/g/gU0135/" aria-label="魚＆えんどう豆たんぱく 1歳から で試す">
                         <div class="footercta__button-inner"><div class="footercta__button-text">1歳からで試す</div></div>
                       </a>
                     </div>
@@ -345,6 +345,21 @@
     padding: 2.99px 13.15px 3.59px;
     border-radius: 59.79px;
     border: 1.2px solid var(--amber-brown);
+    text-decoration: none;
+  }
+
+  /* 年齢別ラベルのうちリンク化したもの（子犬／11歳から）はタップで商品ページへ */
+  a.footercta__tag {
+    transition: background-color 0.15s ease;
+  }
+
+  a.footercta__tag:hover {
+    background-color: var(--background-tan);
+  }
+
+  a.footercta__tag:focus-visible {
+    outline: 2px solid var(--orange);
+    outline-offset: 2px;
   }
 
   .footercta__tag--solo {
