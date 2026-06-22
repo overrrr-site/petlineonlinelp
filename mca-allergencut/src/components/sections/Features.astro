@@ -25,8 +25,8 @@
       <div class="features__card features__card--02">
         <div class="features__card-image-wrap features__card-image-wrap--02">
           <img class="features__card-image features__card-image--02" src="/mca-allergencut/img/rectangle-16-2.png" alt="皮膚・被毛の健康維持" loading="lazy" />
-          <span class="features__card-image-note">※画像はイメージです</span>
         </div>
+        <span class="features__card-image-note">画像はイメージです</span>
         <div class="features__card-content features__card-content--02">
           <div class="features__card-heading">皮膚・被毛の<br />健康維持に貢献</div>
           <div class="features__card-text">DHA・EPAを豊富に含む魚とフィッシュオイル、亜鉛アミノ酸複合体を配合。健康で美しい皮膚や被毛に貢献します。</div>
@@ -197,18 +197,17 @@
     border-radius: 5px;
   }
 
-  /* 「※画像はイメージです」キャプション（魚画像の右下） */
+  /* 「画像はイメージです」キャプション（魚画像の枠外・直下） */
   .features__card-image-note {
     position: absolute;
-    right: 2px;
-    bottom: 2px;
-    padding: 1px 4px;
-    background-color: var(--caption-scrim);
-    border-radius: 3px;
-    color: var(--white);
-    font-size: var(--font-size-xs);
+    top: 85%;
+    left: 0;
+    width: 34.23%;
+    color: var(--text-author);
+    font-size: var(--font-size-xxs);
     letter-spacing: 0.2px;
     line-height: 1.2;
+    text-align: center;
     white-space: nowrap;
   }
 
