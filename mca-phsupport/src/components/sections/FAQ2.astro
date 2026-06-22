@@ -1,0 +1,192 @@
+---
+const FAQS = [
+  {
+    q: '「1歳から」と「11歳から」、どちらを選べばよいですか？',
+    a: '愛犬の年齢に合わせてお選びください。成犬には「1歳から」、11歳以上のシニア犬には「11歳から」をおすすめします。',
+  },
+  {
+    q: '原材料・成分を教えていただけますか？',
+    a: '詳細な原材料・成分表は商品ページに記載しております。気になる食材がある場合は、事前にご確認ください。',
+  },
+  {
+    q: '原材料も国産ですか？',
+    a: '自社の国内工場で国産フードをつくり続けています。詳細な原材料の産地については商品ページの原材料・成分表をご確認ください。',
+  },
+  {
+    q: '保管方法と発送について教えてください。',
+    a: '高温多湿を避け、直射日光が当たらない涼しい場所で保管してください。500gの小分けパックなので、開封後もおいしさや風味が保ちやすい設計です。ご注文は通常2営業日以内に発送いたします。',
+  },
+];
+---
+
+<div class="section" style="background:var(--background-02)">
+  <div class="screen-wrapper">
+    <div class="faq2 screen">
+      <div class="faq2__container">
+        <div class="faq2__header">
+          <div class="faq2__label">Q&amp;A</div>
+          <h2 class="faq2__title">よくある質問</h2>
+          <div class="faq2__subtitle">商品・保管・発送について</div>
+        </div>
+        <div class="faq2__content">
+          <div class="faq2__card">
+            <div class="faq2__items">
+              {FAQS.map((f) => (
+                <div class="faq2__item">
+                  <div class="faq2__item-summary">
+                    <span class="faq2__item-badge"><span class="faq2__item-badge-text">Q</span></span>
+                    <span class="faq2__item-question">{f.q}</span>
+                  </div>
+                  <div class="faq2__item-answer-wrap">
+                    <p class="faq2__item-answer">{f.a}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div class="faq2__footer">
+            <a href="https://www.petline.co.jp/privacy/" target="_blank" rel="noopener noreferrer"><span class="faq2__footer-link">プライバシーポリシー</span></a><span class="faq2__footer-spacer">&emsp;&emsp;</span><a href="https://www.petline.co.jp/regulation/" target="_blank" rel="noopener noreferrer"><span class="faq2__footer-link">利用規約</span></a><span class="faq2__footer-spacer">&emsp;&emsp;</span><a href="https://www.petlineonline.com/shop/pages/law.aspx" target="_blank" rel="noopener noreferrer"><span class="faq2__footer-link">特定商取引法に基づく表記<br/></span></a><span class="faq2__footer-copyright">&copy; 2026 ペットライン株式会社</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .faq2 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 440px !important;
+    height: 959px !important;
+    overflow: hidden !important;
+    background-color: var(--background-02);
+    will-change: transform;
+  }
+
+  .faq2__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    width: 400px;
+    margin-top: 56px;
+    margin-left: 20px;
+  }
+
+  .faq2__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+  }
+
+  .faq2__label {
+    color: var(--orange);
+    font-size: var(--font-size-s);
+    font-weight: 700;
+    letter-spacing: 0.7px;
+    text-align: center;
+  }
+
+  .faq2__title {
+    color: var(--brown-amber);
+    font-size: var(--font-size-title-xl);
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    margin: 0;
+  }
+
+  .faq2__subtitle {
+    color: var(--amber-brown);
+    font-size: var(--font-size-s);
+    font-weight: 500;
+  }
+
+  .faq2__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    width: 100%;
+  }
+
+  .faq2__card {
+    width: 400px;
+    max-height: 560px;
+    overflow-y: auto;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px var(--shadow-soft);
+    padding: 20px 21px;
+  }
+
+  .faq2__items {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .faq2__item {
+    border-top: 1px dashed var(--teal-vivid);
+    padding: 14px 0;
+  }
+
+  .faq2__item:first-of-type { border-top: none; padding-top: 0; }
+
+  .faq2__item-summary {
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+  }
+
+  .faq2__item-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 29px;
+    height: 29px;
+    background-color: var(--teal-vivid);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .faq2__item-badge-text {
+    color: var(--white);
+    font-size: var(--font-size-s);
+    font-weight: 900;
+  }
+
+  .faq2__item-question {
+    flex: 1;
+    color: var(--text-dark);
+    font-size: var(--font-size-l);
+    font-weight: 700;
+    line-height: 1.7;
+    padding-top: 3px;
+  }
+
+  .faq2__item-answer-wrap {
+    margin-top: 8px;
+    padding-left: 40px;
+  }
+
+  .faq2__item-answer {
+    margin: 0;
+    color: var(--text-dark);
+    font-size: var(--font-size-s);
+    font-weight: 500;
+    line-height: 1.7;
+  }
+
+  .faq2__footer {
+    color: var(--text-author);
+    font-size: var(--font-size-xs);
+    font-weight: 500;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  .faq2__footer-link { text-decoration: underline; }
+</style>

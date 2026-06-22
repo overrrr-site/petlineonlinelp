@@ -1,0 +1,322 @@
+---
+---
+
+<div class="section" style="background:var(--background-02)" aria-label="3つの特徴">
+  <div class="screen-wrapper">
+    <div class="features screen">
+      <div class="features__frame">
+        <header class="features__title">
+          <p class="features__label">REASON</p>
+          <h2 class="features__title-jp">3つの特徴</h2>
+        </header>
+
+        <!-- 01 -->
+        <section class="feat" aria-labelledby="reason-01-title">
+          <div class="feat__row">
+            <div class="feat__illus feat__illus--dog">
+              <img class="feat__img" src="/mca-phsupport/img/feat-dog.png" alt="犬のイラスト" loading="lazy" />
+              <span class="feat__badge">01</span>
+            </div>
+            <div class="feat__body">
+              <h3 class="feat__h" id="reason-01-title">ストルバイト結石に配慮<br /><span class="feat__h-sub">（マグネシウム由来）</span></h3>
+              <p class="feat__text">ミネラルバランスと栄養成分を調整し、下部尿路の健康維持・ストルバイト結石に配慮した設計です。</p>
+            </div>
+          </div>
+
+          <div class="feat__phbox">
+            <div class="feat__ph-col">
+              <h4 class="feat__sub">(1)尿pHを意識した設計</h4>
+              <p class="feat__sub-text">ミネラル・アミノ酸を調整し、尿を弱酸性に保つ設計です。</p>
+              <table class="feat__tbl">
+                <tbody>
+                  <tr><th>1〜11歳</th><td>尿pH 6.0〜6.3</td></tr>
+                  <tr><th>11歳〜</th><td>尿pH 6.2〜6.5</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="feat__ph-col">
+              <h4 class="feat__sub">(2)マグネシウム含有量を調整</h4>
+              <p class="feat__sub-text">含有量を厳密に調整し、尿pHをコントロール。</p>
+              <p class="feat__mg-label">マグネシウム 標準値</p>
+              <table class="feat__tbl">
+                <tbody>
+                  <tr><th>1歳から</th><td>0.095%</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <hr class="feat__divider" />
+
+        <!-- 02 -->
+        <section class="feat" aria-labelledby="reason-02-title">
+          <div class="feat__row">
+            <div class="feat__illus">
+              <img class="feat__img" src="/mca-phsupport/img/feat-fish.png" alt="魚のイラスト" loading="lazy" />
+              <span class="feat__badge">02</span>
+            </div>
+            <div class="feat__body">
+              <h3 class="feat__h" id="reason-02-title">下部尿路の健康維持に、<br />DHA・EPA配合</h3>
+              <p class="feat__text">魚とフィッシュオイル由来のDHA・EPAを豊富に配合しました。</p>
+            </div>
+          </div>
+
+          <table class="feat__tbl feat__tbl--wide">
+            <tbody>
+              <tr><th>1〜11歳</th><td>2400mg/kg</td></tr>
+              <tr><th>11歳〜</th><td>2200mg/kg</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <hr class="feat__divider" />
+
+        <!-- 03 -->
+        <section class="feat" aria-labelledby="reason-03-title">
+          <div class="feat__row">
+            <div class="feat__illus">
+              <img class="feat__img" src="/mca-phsupport/img/feat-zn.png" alt="亜鉛アミノ酸のイラスト" loading="lazy" />
+              <span class="feat__badge">03</span>
+            </div>
+            <div class="feat__body">
+              <h3 class="feat__h" id="reason-03-title">皮膚・被毛の健康維持</h3>
+              <p class="feat__text">DHA・EPA、亜鉛アミノ酸複合体を配合し、健康で美しい皮膚や毛づやに貢献。</p>
+            </div>
+          </div>
+          <p class="feat__note">※ 本商品は治療・予防を目的とした商品ではありません。</p>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .features {
+    position: relative;
+    width: 440px;
+    height: 959px;
+    background-color: var(--background-02);
+    overflow: hidden;
+  }
+
+  .features__frame {
+    position: absolute;
+    top: 64px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 405px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+
+  /* Header */
+  .features__title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .features__label {
+    color: var(--orange);
+    font-size: var(--font-size-s);
+    font-weight: 700;
+    letter-spacing: 0.7px;
+  }
+
+  .features__title-jp {
+    color: var(--brown-amber);
+    font-size: var(--font-size-title-xl);
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    margin: 0;
+  }
+
+  /* Feature block */
+  .feat {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .feat__row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .feat__illus {
+    position: relative;
+    width: 118px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .feat__img {
+    width: 108px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+  }
+
+  /* 01：番号バッジを左上の角外に寄せ、犬の顔との被りを避ける */
+  .feat__illus--dog .feat__badge {
+    top: -15px;
+    left: -12px;
+  }
+
+  .feat__badge {
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--brown-amber);
+    color: var(--white);
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 0.6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .feat__body {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .feat__h {
+    color: var(--brown-amber);
+    font-size: var(--font-size-subheading);
+    font-weight: 700;
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  .feat__h-sub {
+    font-size: var(--font-size-xs);
+    font-weight: 500;
+  }
+
+  .feat__text {
+    color: var(--text-dark);
+    font-size: var(--font-size-s);
+    font-weight: 500;
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  /* 01: cream box with two columns */
+  .feat__phbox {
+    display: flex;
+    gap: 10px;
+    background-color: var(--bubble-fill);
+    border-radius: 8px;
+    padding: 12px;
+  }
+
+  .feat__ph-col {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .feat__sub {
+    color: var(--brown-amber);
+    font-size: var(--font-size-cell);
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    line-height: 1.5;
+    margin: 0;
+    padding-bottom: 3px;
+    border-bottom: 1px solid var(--brown-amber);
+  }
+
+  .feat__sub-text {
+    color: var(--text-dark);
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: -0.4px;
+    margin: 0;
+  }
+
+  .feat__mg-label {
+    color: var(--brown-amber);
+    font-size: 10px;
+    font-weight: 500;
+    margin: 2px 0 0;
+  }
+
+  /* Tables */
+  .feat__tbl {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 4px;
+  }
+
+  .feat__tbl th,
+  .feat__tbl td {
+    border: 1px solid var(--brown-amber);
+    font-size: 10px;
+    font-weight: 700;
+    text-align: center;
+    padding: 4px 2px;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+
+  .feat__tbl th {
+    background-color: var(--brown-amber);
+    color: var(--white);
+    width: 44%;
+  }
+
+  .feat__tbl td {
+    background-color: var(--white);
+    color: var(--brown-amber);
+  }
+
+  .feat__tbl--wide {
+    margin-top: 0;
+  }
+
+  .feat__tbl--wide th {
+    width: 44%;
+    padding: 6px 2px;
+  }
+
+  .feat__tbl--wide td {
+    padding: 6px 2px;
+  }
+
+  /* Divider */
+  .feat__divider {
+    border: none;
+    border-top: 1.5px dashed var(--brown-amber);
+    width: 100%;
+    margin: 2px 0;
+    opacity: 0.85;
+  }
+
+  .feat__note {
+    color: var(--text-note);
+    font-size: var(--font-size-xs);
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.4px;
+    margin: 0;
+  }
+</style>

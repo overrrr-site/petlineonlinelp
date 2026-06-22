@@ -1,0 +1,222 @@
+---
+---
+
+<div class="section" style="background:var(--background-03)">
+  <div class="screen-wrapper">
+    <div class="caution screen" data-carousel-section="honesty">
+      <div class="caution__bg-card caution__bg-card--left"></div>
+      <div class="caution__bg-card caution__bg-card--right"></div>
+      <div class="caution__slider">
+        <button class="slider-btn slider-btn--prev" data-carousel="honesty" aria-label="前へ">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="18" fill="currentColor"/><path d="M20.5 12L15 17.5L20.5 23" stroke="var(--white)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="carousel-dots" data-carousel="honesty"></div>
+        <button class="slider-btn slider-btn--next" data-carousel="honesty" aria-label="次へ">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="18" fill="currentColor"/><path d="M15.5 12L21 17.5L15.5 23" stroke="var(--white)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+      <div class="caution__card main_01">
+        <img class="caution__card-icon" src="/mca-phsupport/img/caution-vet.png" alt="" loading="lazy" />
+        <div class="caution__card-heading">本商品は<br />療法食ではありません</div>
+        <div class="caution__card-text">治療中・通院中の愛犬には、<br />必ずかかりつけの獣医師に<br />ご相談のうえご使用ください。</div>
+      </div>
+      <div class="caution__card main_02">
+        <img class="caution__card-icon" src="/mca-phsupport/img/caution-icon-bowl.svg" alt="" loading="lazy" />
+        <div class="caution__card-heading">合わないと感じたら、<br />無理に続けないで。</div>
+        <div class="caution__card-text">愛犬の様子をよく観察しながら、<br />判断してください。<br />食いつきや体調の変化など、気になる<br />ことがあれば中止してください。</div>
+      </div>
+      <div class="caution__card main_03">
+        <img class="caution__card-icon" src="/mca-phsupport/img/caution-icon-yen.svg" alt="" loading="lazy" />
+        <div class="caution__card-heading">まずは、お試し価格で。</div>
+        <div class="caution__card-text">だから私たちは、2.5kgの通常パックを<br />お試し価格でご用意しました。<br />愛犬の反応を見てから、<br />続けるかどうかを決めてください。</div>
+      </div>
+      <div class="caution__header">
+        <div class="caution__header-inner">
+          <div class="caution__label">HONESTY</div>
+          <h2 class="caution__title">わんちゃんに合わない場合は、<br/>ご使用をお控えください</h2>
+        </div>
+        <div class="caution__subtitle">
+          <div class="caution__subtitle-text">だからこそ、私たちからのお願いです。<br/>すべての子に合うわけではありません。<br/>治療中・通院中の場合は獣医師にご相談を。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* ========================================
+   * Base section & wrapper
+   * ======================================== */
+
+  /* ========================================
+   * Section root
+   * ======================================== */
+  .caution {
+    position: relative;
+    width: 440px !important;
+    height: 959px !important;
+    overflow: hidden !important;
+    background-color: var(--background-03);
+    will-change: transform;
+  }
+
+  /* ========================================
+   * Background cards (left & right decorative)
+   * ======================================== */
+  .caution__bg-card {
+    position: absolute;
+    top: 355px;
+    width: 326px;
+    height: 326px;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px var(--shadow-soft);
+  }
+
+  .caution__bg-card--left {
+    left: calc(50% - 509px);
+  }
+
+  .caution__bg-card--right {
+    left: calc(50% + 188px);
+  }
+
+  /* ========================================
+   * Slider controls
+   * ======================================== */
+  .caution__slider {
+    position: absolute;
+    top: 708px;
+    left: 57px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 326px;
+  }
+
+  /* ========================================
+   * Cards (carousel items)
+   * ======================================== */
+  .caution__card {
+    position: absolute;
+    top: 355px;
+    left: 57px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    width: 326px;
+    height: 326px;
+    padding: 0 18px;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px var(--shadow-soft);
+  }
+
+  .caution__card-icon {
+    width: 72px;
+    height: 72px;
+  }
+
+  /* main_01: 犬の横長写真。1:1正方形に潰さず本来比率で表示 */
+  .main_01 {
+    gap: 16px;
+  }
+
+  .main_01 .caution__card-icon {
+    width: 290px;
+    height: auto;
+    aspect-ratio: 496 / 210;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .caution__card-heading {
+    color: var(--text-dark);
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    line-height: 1.35;
+    text-align: center;
+  }
+
+  .caution__card-text {
+    width: 290px;
+    color: var(--text-dark);
+    font-size: var(--font-size-s);
+    font-weight: 500;
+    letter-spacing: 0.45px;
+    line-height: 1.7;
+    text-align: center;
+  }
+
+  /* ========================================
+   * Header (label + title + subtitle)
+   * ======================================== */
+  .caution__header {
+    position: absolute;
+    top: 101px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    width: 401px;
+  }
+
+  .caution__header-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+    width: 100%;
+  }
+
+  .caution__label {
+    align-self: stretch;
+    color: var(--orange);
+    font-size: var(--font-size-s);
+    font-weight: 700;
+    letter-spacing: 0.70px;
+    text-align: center;
+  }
+
+  .caution__title {
+    align-self: stretch;
+    color: var(--brown-amber);
+    font-size: var(--font-size-title-s);
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 1.35;
+    text-align: center;
+  }
+
+  .caution__subtitle {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 30px;
+    width: 340px;
+    height: auto;
+    padding: 0 3px;
+  }
+
+  .caution__subtitle-text {
+    width: 340px;
+    color: var(--brown-title-text);
+    font-size: var(--font-size-s);
+    font-weight: 700;
+    letter-spacing: 0.75px;
+    /* 下線(offset 4px)が行間に食い込むため、他セクション本文(1.7)と
+       同等の見た目になるよう行間を補正 */
+    line-height: 2.0;
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-color: var(--underline-muted);
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 4px;
+  }
+</style>

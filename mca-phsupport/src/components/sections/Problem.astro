@@ -1,0 +1,253 @@
+---
+---
+
+<section class="section" aria-labelledby="daily-care-title">
+  <div class="screen-wrapper">
+    <div class="dailycare screen">
+      <div class="dailycare__frame">
+        <header class="dailycare__title">
+          <p class="dailycare__label">DAILY CARE</p>
+          <h2 class="dailycare__title-jp" id="daily-care-title">下部尿路の健康は、<br/>毎日の積み重ねから。</h2>
+          <p class="dailycare__desc">愛犬の下部尿路の健康維持には、食事・水分・運動・トイレ環境など、毎日のケアの積み重ねが大切です。</p>
+        </header>
+
+        <div class="dailycare__group">
+          <div class="dailycare__grid">
+            <article class="dc-view dc-view--food" aria-labelledby="care-food-title">
+              <div class="dc-rect" aria-hidden="true"></div>
+              <img class="dc-img dc-img--food" src="/mca-phsupport/img/care2-food.png" alt="ドッグフードのイメージ" />
+              <h3 class="dc-title" id="care-food-title">食事</h3>
+              <p class="dc-desc">ミネラルバランスに配慮した<br/>毎日のごはん</p>
+            </article>
+
+            <article class="dc-view dc-view--water" aria-labelledby="care-water-title">
+              <div class="dc-rect" aria-hidden="true"></div>
+              <img class="dc-img dc-img--water" src="/mca-phsupport/img/care2-water.png" alt="水の入ったグラスのイメージ" />
+              <h3 class="dc-title" id="care-water-title">水分</h3>
+              <p class="dc-desc">十分な水分摂取を<br/>促す環境</p>
+            </article>
+
+            <article class="dc-view dc-view--exercise" aria-labelledby="care-exercise-title">
+              <div class="dc-rect" aria-hidden="true"></div>
+              <img class="dc-img dc-img--photo" src="/mca-phsupport/img/care2-exercise.png" alt="運動する犬のイメージ" />
+              <h3 class="dc-title" id="care-exercise-title">運動</h3>
+              <p class="dc-desc">適度な運動で<br/>排尿リズムを整える</p>
+            </article>
+
+            <article class="dc-view dc-view--toilet" aria-labelledby="care-toilet-title">
+              <div class="dc-rect" aria-hidden="true"></div>
+              <img class="dc-img dc-img--photo" src="/mca-phsupport/img/care2-toilet.png" alt="犬用トイレ環境のイメージ" />
+              <h3 class="dc-title" id="care-toilet-title">トイレ環境</h3>
+              <p class="dc-desc">我慢させない<br/>清潔な環境</p>
+            </article>
+          </div>
+        </div>
+      </div>
+
+      <div class="dailycare__bubble">
+        <img class="dailycare__bubble-bg" src="/mca-phsupport/img/bubble-3.svg" alt="" aria-hidden="true" />
+        <p class="dailycare__bubble-text">毎日のごはんから、<br/>健康維持に配慮する選択を。</p>
+      </div>
+
+      <img class="dailycare__dog" src="/mca-phsupport/img/care2-pug.png" alt="" aria-hidden="true" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<style>
+  .dailycare {
+    position: relative;
+    width: 440px;
+    height: 959px;
+    background-color: var(--background-02);
+    overflow: hidden;
+  }
+
+  /* 見出し＋カード群（縦並び） */
+  .dailycare__frame {
+    position: absolute;
+    top: 44px;
+    left: 17px;
+    width: 405px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .dailycare__title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .dailycare__label {
+    color: var(--orange);
+    font-size: var(--font-size-s);
+    font-weight: 700;
+    letter-spacing: 0.7px;
+  }
+
+  .dailycare__title-jp {
+    color: var(--brown-amber);
+    font-size: var(--font-size-title-l);
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    line-height: 1.35;
+    margin: 0;
+  }
+
+  .dailycare__desc {
+    width: 385px;
+    color: var(--text-dark);
+    font-size: var(--font-size-s);
+    font-weight: 500;
+    line-height: 1.7;
+    letter-spacing: -0.2px;
+  }
+
+  /* 白い角丸コンテナ */
+  .dailycare__group {
+    position: relative;
+    width: 393px;
+    height: 430px;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.05);
+  }
+
+  .dailycare__grid {
+    position: absolute;
+    top: 18px;
+    left: 21px;
+    width: 352px;
+    height: 394px;
+  }
+
+  /* 各ケア項目（173×187） */
+  .dc-view {
+    position: absolute;
+    width: 173px;
+    height: 187px;
+  }
+
+  .dc-view--food { top: 0; left: 0; }
+  .dc-view--water { top: 0; left: 183px; }
+  .dc-view--exercise { top: 207px; left: 0; }
+  .dc-view--toilet { top: 207px; left: 183px; }
+
+  .dc-rect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 169px;
+    height: 187px;
+    border-radius: 10px;
+    border: 1px dashed var(--teal);
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.05);
+  }
+
+  .dc-img {
+    position: absolute;
+  }
+
+  .dc-img--food {
+    top: 11px;
+    left: 29px;
+    width: 111px;
+    height: 101px;
+    object-fit: contain;
+  }
+
+  .dc-img--water {
+    top: 6px;
+    left: 50px;
+    width: 69px;
+    height: 112px;
+    object-fit: contain;
+  }
+
+  .dc-img--photo {
+    top: 13px;
+    left: 14px;
+    width: 142px;
+    height: 101px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .dc-title {
+    position: absolute;
+    top: 120px;
+    left: 1px;
+    width: 169px;
+    color: var(--teal);
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 20.8px;
+    margin: 0;
+  }
+
+  .dc-desc {
+    position: absolute;
+    top: 145px;
+    left: 1px;
+    width: 169px;
+    color: var(--text-dark);
+    font-size: 11px;
+    font-weight: 500;
+    text-align: center;
+    line-height: 16.5px;
+    margin: 0;
+  }
+
+  /* 吹き出し（クリーム雲のみ・輪郭線は削除）＋クロージング文を中央配置 */
+  .dailycare__bubble {
+    position: absolute;
+    top: 722px;
+    left: 38px;
+    width: 226px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .dailycare__bubble-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 216px;
+    height: auto;
+    pointer-events: none;
+  }
+
+  .dailycare__bubble-text {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    color: var(--brown-amber);
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 17px;
+    letter-spacing: -0.5px;
+    text-align: center;
+  }
+
+  /* パグ（バー裏から覗く小さめサイズ・参照準拠 95×115） */
+  .dailycare__dog {
+    position: absolute;
+    top: 726px;
+    left: 286px;
+    width: 95px;
+    height: 115px;
+    object-fit: cover;
+    z-index: 2;
+    pointer-events: none;
+  }
+</style>

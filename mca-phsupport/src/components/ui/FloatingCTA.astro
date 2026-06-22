@@ -1,0 +1,160 @@
+---
+---
+
+<a class="floating-cta" href="https://www.petlineonline.com/shop/r/r102013/" id="floating-cta" aria-label="今すぐ試す">
+  <div class="floating-cta__bg"></div>
+  <div class="floating-cta__inner">
+    <img class="floating-cta__product" src="/mca-phsupport/img/u0311-2.png" alt="メディコートアドバンス 尿石ケア パッケージ" />
+
+    <div class="floating-cta__price-block">
+      <div class="floating-cta__head">
+        <span class="floating-cta__weight">2.5kg</span>
+        <span class="floating-cta__badge">お一人様1回限り</span>
+      </div>
+      <img class="floating-cta__price" src="/mca-phsupport/img/footer-price-800.png" alt="800円(税込)" />
+    </div>
+
+    <div class="floating-cta__action">
+      <p class="floating-cta__note">送料当社負担/自動継続なし</p>
+      <span class="floating-cta__btn">
+        <span class="floating-cta__btn-text">今すぐ試す</span>
+        <svg class="floating-cta__btn-arrow" width="8" height="14" viewBox="0 0 8 14" fill="none" aria-hidden="true">
+          <path d="M1 1L6.5 7L1 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </span>
+    </div>
+  </div>
+</a>
+
+<style>
+  .floating-cta {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    width: 440px;
+    transform: translate(-50%, 0) scale(var(--scale-w));
+    transform-origin: 50% 100%;
+    z-index: 1000;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .floating-cta__bg {
+    position: absolute;
+    inset: 0;
+    background-color: var(--floating-cta-bg);
+    box-shadow: 0 -2px 8px var(--shadow-floating);
+  }
+
+  .floating-cta__inner {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    height: 90px;
+    padding: 10px 16px 0 14px;
+  }
+
+  .floating-cta__product {
+    flex-shrink: 0;
+    align-self: flex-end;
+    width: 66px;
+    height: 118px;
+    margin-bottom: 2px;
+    margin-right: 12px;
+    object-fit: contain;
+  }
+
+  .floating-cta__price-block {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    flex-shrink: 0;
+  }
+
+  .floating-cta__head {
+    display: flex;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .floating-cta__weight {
+    display: inline-flex;
+    align-items: center;
+    color: var(--orange);
+    font-size: var(--font-size-subheading);
+    font-weight: 900;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  .floating-cta__badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 7px;
+    border: 1px solid var(--orange);
+    border-radius: 3px;
+    color: var(--orange);
+    font-size: var(--font-size-xxs);
+    font-weight: 700;
+    line-height: 1.25;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .floating-cta__price {
+    width: auto;
+    height: 40px;
+    margin-top: 10px;
+    object-fit: contain;
+    align-self: flex-start;
+  }
+
+  .floating-cta__action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+
+  .floating-cta__note {
+    color: var(--text-dark);
+    font-size: var(--font-size-xxs);
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .floating-cta__btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: calc(46px / var(--scale-w));
+    padding: 0 22px;
+    overflow: hidden;
+    background-color: var(--orange);
+    border-radius: 999px;
+    animation: cta-glow 2s ease-in-out infinite;
+  }
+
+  .floating-cta__btn-text {
+    color: var(--white);
+    font-size: calc(17px / var(--scale-w));
+    font-weight: 900;
+    white-space: nowrap;
+  }
+
+  .floating-cta__btn-arrow {
+    color: var(--white);
+  }
+
+  @keyframes cta-glow {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(var(--orange-rgb), 0.4); }
+    50% { box-shadow: 0 0 12px 4px rgba(var(--orange-rgb), 0.25); }
+  }
+</style>

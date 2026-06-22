@@ -1,0 +1,105 @@
+:root {
+  /* Brand colors — phsupport (teal) */
+  --orange: #f05000;
+  --teal: #2090a0;
+  --teal-vivid: #1a7a88;
+  --green: var(--teal);
+  --green-vivid: var(--teal-vivid);
+  --cerise: #d32981;
+  --lochmara: #0076bc;
+
+  /* Text colors */
+  --brown-title-text: #3d6b75;
+  --brown-amber: #b36a0b; /* DAILY CARE 見出し・吹き出しのアンバーブラウン */
+  --bubble-fill: #fff8e5; /* 吹き出し内側のクリーム色 */
+  --amber-brown: #1a6b78;
+  --text-dark: #222222;
+  --eerie-black: #191919;
+  --stack: #8b8b8b;
+  --underline-muted: #6a9aa3;
+
+  /* Neutral colors */
+  --white: #ffffff;
+  --white-rgb: 255, 255, 255;
+  --black: #000000;
+
+  /* Grayscale / UI accents */
+  --gray-line: #d9d9d9;
+  --text-note: #565656;
+  --text-author: #666666;
+  --shadow-soft: rgba(0, 0, 0, 0.05);
+  --shadow-strong: rgba(0, 0, 0, 0.25);
+  --shadow-floating: rgba(0, 0, 0, 0.1);
+  --caption-scrim: rgba(0, 0, 0, 0.45);
+
+  /* Brand orange as RGB channels — for rgba() glows */
+  --orange-rgb: 240, 80, 0;
+  --teal-rgb: 32, 144, 160;
+
+  /* Background colors */
+  --background-01: #e8f4f8;
+  --background-02: #cfecf0; /* メイン背景色 */
+  --background-03: #d8eef5;
+  --surface-pale: #f0f8fc; /* カード等の淡い面色（旧 background-02） */
+  --background-tan: #2090a0;
+  --floating-cta-bg: #fff4bf; /* フッターメニューのクリーム色 */
+  --table-head-bg: #7ec8d8;
+  --table-trial-bg: #2090a0;
+  --banner-highlight: #ffe100;
+
+  /* Typography */
+  --font-family: "Zen Maru Gothic", sans-serif;
+  --font-size-age-tag-compact: 7.2px;
+  --font-size-age-tag: 7.8px;
+  --font-size-xxxs: 10px;
+  --font-size-xxs: 10.9px;
+  --font-size-xs: 12.3px;
+  --font-size-cell: 13px;
+  --font-size-s: 14px;
+  --font-size-m: 15px;
+  --font-size-l: 16px;
+  --font-size-subheading: 18px;
+  --font-size-display-unit: 19.2px;
+  --font-size-cta: 21.8px;
+  --font-size-xl: 22px;
+  --font-size-product-title: 24px;
+  --font-size-product-brand: 25px;
+  --font-size-heading-line: 26px;
+  --font-size-title-xs: 27px;
+  --font-size-title-s: 28px;
+  --font-size-title-m: 30px;
+  --font-size-display-number: 32px;
+  --font-size-title-l: 34px;
+  --font-size-price-unit: 33.3px;
+  --font-size-title-xl: 36px;
+
+  /* Spacing: 8px baseline */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 40px;
+  --space-6: 48px;
+  --space-7: 56px;
+  --space-8: 64px;
+  --space-12: 96px;
+  --section-top: var(--space-8);
+  --section-top-compact: var(--space-7);
+  --heading-gap: var(--space-2);
+  --body-gap: var(--space-3);
+  --card-gap: var(--space-3);
+  --fixed-cta-safe-area: var(--space-12);
+
+  /* Layout — design canvas reference (unitless for calc math) */
+  --design-w: 440;
+  --design-h: 959;
+  --footer-height: 96px;
+
+  --scale: min(
+    1,
+    calc(100vw / (var(--design-w) * 1px)),
+    calc(100svh / (var(--design-h) * 1px))
+  );
+
+  --scale-w: min(1, calc(100vw / (var(--design-w) * 1px)));
+}

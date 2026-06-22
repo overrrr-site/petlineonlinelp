@@ -1,0 +1,338 @@
+---
+---
+
+<section class="section" style="background:var(--background-tan)" aria-labelledby="footer-cta-title">
+  <div class="screen-wrapper">
+    <div class="cta-section screen">
+      <div class="cta-section__hero">
+        <div class="cta-section__hero-bg"></div>
+        <img class="cta-section__hero-image" src="/mca-phsupport/img/cta-hero-dog.webp" alt="" loading="lazy" />
+      </div>
+
+      <div class="cta-section__price-area">
+        <div class="cta-section__price-header">
+          <div class="cta-section__price-deco cta-section__price-deco--left">
+            <img src="/mca-phsupport/img/cta-deco-line-l1.svg" alt="" loading="lazy" />
+            <img src="/mca-phsupport/img/cta-deco-line-l2.svg" alt="" loading="lazy" />
+          </div>
+          <div class="cta-section__price-label" id="footer-cta-title">お一人様1回限りの限定価格</div>
+          <div class="cta-section__price-deco cta-section__price-deco--right">
+            <img src="/mca-phsupport/img/cta-deco-line-r1.svg" alt="" loading="lazy" />
+            <img src="/mca-phsupport/img/cta-deco-line-r2.svg" alt="" loading="lazy" />
+          </div>
+        </div>
+        <div class="cta-section__price-value" style="background-image: url('/mca-phsupport/img/cta-price-bg.svg'); background-size: 100% 100%;"></div>
+      </div>
+
+      <div class="cta-section__products">
+        <a href="https://www.petlineonline.com/shop/g/gU0311/" data-lp="phsupport" data-cta="cta-adult" id="footer-cta" class="cta-section__product-card">
+          <img class="cta-section__product-image" src="/mca-phsupport/img/u0311-1.png" alt="1歳から（成犬用）2.5kg" loading="lazy" />
+          <div class="cta-section__product-badge cta-section__product-badge--adult"><span class="cta-section__product-badge-text">1歳から</span></div>
+          <div class="cta-section__product-button cta-section__product-button--adult">
+            <span class="cta-section__product-button-text">今すぐ試す</span>
+            <img src="/mca-phsupport/img/cta-button-arrow.svg" alt="" class="cta-section__product-button-arrow" loading="lazy" />
+          </div>
+        </a>
+        <a href="https://www.petlineonline.com/shop/g/gU0315/" data-lp="phsupport" data-cta="cta-senior" class="cta-section__product-card">
+          <img class="cta-section__product-image" src="/mca-phsupport/img/u0311-2.png" alt="11歳から（シニア用）2.5kg" loading="lazy" />
+          <div class="cta-section__product-badge cta-section__product-badge--senior"><span class="cta-section__product-badge-text">11歳から</span></div>
+          <div class="cta-section__product-button cta-section__product-button--senior">
+            <span class="cta-section__product-button-text">今すぐ試す</span>
+            <img src="/mca-phsupport/img/cta-button-arrow.svg" alt="" class="cta-section__product-button-arrow" loading="lazy" />
+          </div>
+        </a>
+      </div>
+
+      <div class="cta-section__info">
+        <div class="cta-section__info-inner">
+          <img class="cta-section__info-icon" src="/mca-phsupport/img/cta-info-icon.svg" alt="" loading="lazy" />
+          <div class="cta-section__info-text">送料当社負担<br />お届けは1回のみ（自動継続なし）</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta-section {
+    position: relative;
+    width: 440px;
+    height: 959px;
+    background-color: var(--background-tan);
+    overflow: hidden;
+  }
+
+  /* Hero (dog peek + white card) */
+  .cta-section__hero {
+    position: absolute;
+    top: -63px;
+    left: 21px;
+    width: 398px;
+    height: 864px;
+  }
+
+  .cta-section__hero-bg {
+    position: absolute;
+    top: 343px;
+    left: 0;
+    width: 398px;
+    height: 521px;
+    background-color: var(--white);
+    border-radius: 0;
+    box-shadow: 0 4px 4px var(--shadow-strong);
+  }
+
+  .cta-section__hero-image {
+    position: absolute;
+    top: 0;
+    left: calc(50% - 199px);
+    width: 398px;
+    height: 398px;
+    object-fit: cover;
+    z-index: 1;
+  }
+
+  /* Price area */
+  .cta-section__price-area {
+    position: absolute;
+    top: 233px;
+    left: calc(50% - 148px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 296px;
+    z-index: 2;
+  }
+
+  .cta-section__price-header {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .cta-section__price-deco {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    flex-shrink: 0;
+  }
+
+  .cta-section__price-deco--left {
+    transform: rotate(180deg);
+  }
+
+  .cta-section__price-deco img {
+    display: block;
+  }
+
+  .cta-section__price-deco img:first-child {
+    width: 18px;
+    height: 32px;
+  }
+
+  .cta-section__price-deco img:last-child {
+    width: 11px;
+    height: 14px;
+  }
+
+  .cta-section__price-label {
+    color: var(--orange);
+    font-family: var(--font-family);
+    font-size: 16.1px;
+    font-weight: 700;
+    letter-spacing: 0.32px;
+  }
+
+  .cta-section__price-value {
+    width: 296px;
+    height: 80px;
+    background-repeat: no-repeat;
+    background-position: center;
+    animation: price-pulse 2s ease-in-out infinite;
+  }
+
+  /* Products (2 packages side by side) */
+  .cta-section__products {
+    position: absolute;
+    top: 386px;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    width: 100%;
+    padding: 0 36px;
+    box-sizing: border-box;
+    z-index: 2;
+  }
+
+  .cta-section__product-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 171px;
+    text-decoration: none;
+  }
+
+  .cta-section__product-image {
+    width: 127px;
+    height: 228px;
+    object-fit: contain;
+  }
+
+  /* Age paw badges */
+  .cta-section__product-badge {
+    position: absolute;
+    width: 66px;
+    height: 66px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cta-section__product-badge--adult {
+    top: 170px;
+    left: 0;
+    background-image: url(/mca-phsupport/img/age-paw-teal.png);
+  }
+
+  .cta-section__product-badge--senior {
+    top: 170px;
+    right: 0;
+    background-image: url(/mca-phsupport/img/age-paw-pink.png);
+  }
+
+  .cta-section__product-badge-text {
+    font-family: var(--font-family);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: -0.4px;
+  }
+
+  .cta-section__product-badge--adult .cta-section__product-badge-text {
+    color: var(--teal);
+    margin-top: 8px;
+    margin-left: 8px;
+  }
+
+  .cta-section__product-badge--senior .cta-section__product-badge-text {
+    color: var(--cerise);
+    margin-top: 8px;
+    margin-left: 2px;
+  }
+
+  /* Buttons */
+  .cta-section__product-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 171px;
+    height: calc(44px / var(--scale));
+    margin-top: 36px;
+    overflow: hidden;
+    border-radius: 49px;
+    box-shadow: 0 4px 4px var(--shadow-strong);
+  }
+
+  .cta-section__product-button--adult {
+    background-color: var(--teal);
+    animation: cta-glow-adult 2s ease-in-out infinite;
+  }
+
+  .cta-section__product-button--senior {
+    background-color: var(--cerise);
+    animation: cta-glow-senior 2s ease-in-out infinite;
+  }
+
+  .cta-section__product-button--adult::after,
+  .cta-section__product-button--senior::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent 0%, rgba(var(--white-rgb), 0.25) 50%, transparent 100%);
+    animation: cta-shine 3s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  .cta-section__product-button-text {
+    color: var(--white);
+    font-family: var(--font-family);
+    font-size: calc(var(--font-size-l) / var(--scale));
+    font-weight: 900;
+    letter-spacing: 0.5px;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .cta-section__product-button-arrow {
+    width: 6px;
+    height: 11px;
+  }
+
+  /* Info (shipping checkmarks) */
+  .cta-section__info {
+    position: absolute;
+    top: 724px;
+    left: calc(50% - 161px);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    width: 322px;
+    z-index: 2;
+  }
+
+  .cta-section__info-inner {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .cta-section__info-icon {
+    width: 21.38px;
+    flex-shrink: 0;
+  }
+
+  .cta-section__info-text {
+    color: var(--text-dark);
+    font-family: var(--font-family);
+    font-size: var(--font-size-subheading);
+    font-weight: 700;
+    letter-spacing: 0.1px;
+    line-height: 1.5;
+    white-space: nowrap;
+  }
+
+  @keyframes cta-glow-adult {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(var(--teal-rgb), 0.4); }
+    50% { box-shadow: 0 0 12px 4px rgba(var(--teal-rgb), 0.25); }
+  }
+
+  @keyframes cta-glow-senior {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(211, 41, 129, 0.4); }
+    50% { box-shadow: 0 0 12px 4px rgba(211, 41, 129, 0.25); }
+  }
+
+  @keyframes cta-shine {
+    0% { left: -100%; }
+    20% { left: 100%; }
+    100% { left: 100%; }
+  }
+
+  @keyframes price-pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+  }
+</style>

@@ -1,0 +1,223 @@
+---
+const REVIEWS = [
+  {
+    heading: '小型犬でも食べやすい',
+    text: ['小型犬でも食べやすい粒の大きさで', 'よく食べてくれました'],
+    author: 'no nameさん（1歳から／2026.6.2）',
+  },
+  {
+    heading: 'お試しで購入できて助かる',
+    text: ['尿ケアのフードを探していてお試しに安く購入できました。', 'よく食べるのので今後も購入しようと思います。', 'お試しで購入できるのはとても助かります。'],
+    author: 'こむぎんさん（1歳から／2026.5.11）',
+  },
+  {
+    heading: '食いつきが良い',
+    text: ['食いつきが良く、', 'まだ食べたいって顔してる'],
+    author: 'るかママさん（11歳から／2026.4.19）',
+  },
+  {
+    heading: '安心して購入',
+    text: ['食べるか食べないか心配でしたが', 'とても食いつきが良くて安心しました！', 'また購入します！'],
+    author: 'じゅんさん（11歳から／2026.4.11）',
+  },
+];
+---
+
+<div class="section" style="background:var(--background-02)">
+  <div class="screen-wrapper">
+    <div class="reviews screen" data-carousel-section="voice">
+      <div class="reviews__bg-card reviews__bg-card--left"></div>
+      <div class="reviews__bg-card reviews__bg-card--right"></div>
+      <div class="reviews__slider">
+        <div class="reviews__slider-prev slider-btn slider-btn--prev" data-carousel="voice"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="18" fill="currentColor"/><path d="M20.5 12L15 17.5L20.5 23" stroke="var(--white)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="carousel-dots" data-carousel="voice"></div>
+        <div class="reviews__slider-next slider-btn slider-btn--next" data-carousel="voice"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="18" fill="currentColor"/><path d="M15.5 12L21 17.5L15.5 23" stroke="var(--white)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </div>
+      <div class="reviews__header">
+        <div class="reviews__label">REVIEW</div>
+        <h2 class="reviews__title">飼い主さんの声</h2>
+        <div class="reviews__subtitle">ペットラインしあわせマルシェより（PR）<br/>尿石ケアシリーズ　2026年6月時点、n=838</div>
+      </div>
+      {REVIEWS.map((review, i) => (
+        <div class={`reviews__card main_0${i + 1}`}>
+          <div class="reviews__stars">★★★★★</div>
+          <div class="reviews__card-body">
+            <div class="reviews__card-content">
+              <div class="reviews__card-heading">{review.heading}</div>
+              <div class="reviews__card-divider"></div>
+              <div class="reviews__card-text">
+                {review.text.map((part, j) => (
+                  <span class={j === 0 ? 'reviews__card-highlight' : ''}>{part}</span>
+                ))}
+              </div>
+            </div>
+            <div class="reviews__card-author">{review.author}</div>
+          </div>
+        </div>
+      ))}
+      <img class="reviews__dog-image" src="/mca-phsupport/img/reviews-dog.webp" alt="" loading="lazy" />
+      <div class="reviews__disclaimer">※個人の感想です。効果には個体差があります。<br />※ご購入から約10日後のレビューになります。</div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .reviews {
+    position: relative;
+    width: 440px !important;
+    height: 959px !important;
+    overflow: hidden !important;
+    background-color: var(--background-02);
+    will-change: transform;
+  }
+
+  .reviews__bg-card {
+    position: absolute;
+    top: 348px;
+    width: 326px;
+    height: 340px;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px var(--shadow-soft);
+  }
+
+  .reviews__bg-card--left { left: calc(50% - 509px); }
+  .reviews__bg-card--right { left: calc(50% + 188px); }
+
+  .reviews__slider {
+    position: absolute;
+    top: 712px;
+    left: 57px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 326px;
+  }
+
+  .reviews__header {
+    position: absolute;
+    top: 81px;
+    left: 23px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+    width: 394px;
+  }
+
+  .reviews__label {
+    color: var(--orange);
+    font-size: var(--font-size-s);
+    font-weight: 700;
+    letter-spacing: 0.7px;
+    text-align: center;
+  }
+
+  .reviews__title {
+    color: var(--brown-amber);
+    font-size: var(--font-size-title-l);
+    font-weight: 700;
+    letter-spacing: 1.7px;
+    text-align: center;
+    margin: 0;
+  }
+
+  .reviews__subtitle {
+    color: var(--text-dark);
+    font-size: var(--font-size-s);
+    font-weight: 500;
+    letter-spacing: -0.14px;
+    line-height: 1.7;
+    text-align: center;
+  }
+
+  .reviews__card {
+    position: absolute;
+    top: 348px;
+    left: 57px;
+    z-index: 1;
+    width: 326px;
+    height: 340px;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px var(--shadow-soft);
+  }
+
+  .reviews__stars {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    color: var(--teal-vivid);
+    font-size: var(--font-size-subheading);
+    letter-spacing: 2px;
+    line-height: 1;
+  }
+
+  .reviews__card-body {
+    position: absolute;
+    top: 54px;
+    left: 25px;
+    display: flex;
+    flex-direction: column;
+    width: 276px;
+  }
+
+  .reviews__card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .reviews__card-heading {
+    color: var(--text-dark);
+    font-size: var(--font-size-product-title);
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    line-height: 1.3;
+  }
+
+  .reviews__card-divider {
+    width: 100%;
+    height: 2px;
+    background-color: var(--orange);
+  }
+
+  .reviews__card-text {
+    height: 147px;
+    color: var(--text-dark);
+    font-size: var(--font-size-s);
+    font-weight: 400;
+    line-height: 1.7;
+  }
+
+  .reviews__card-highlight {
+    color: var(--orange) !important;
+    font-weight: 700 !important;
+  }
+
+  .reviews__card-author {
+    color: var(--text-author);
+    font-size: var(--font-size-s);
+    font-weight: 500;
+    line-height: 27px;
+  }
+
+  .reviews__dog-image {
+    position: absolute;
+    top: 269px;
+    left: calc(50% - 75px);
+    width: 150px;
+    height: 83px;
+    object-fit: cover;
+  }
+
+  .reviews__disclaimer {
+    position: absolute;
+    top: 758px;
+    left: calc(50% - 129px);
+    color: var(--text-dark);
+    font-size: var(--font-size-xs);
+    line-height: 18px;
+  }
+</style>

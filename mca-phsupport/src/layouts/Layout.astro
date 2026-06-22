@@ -1,0 +1,87 @@
+---
+import '../styles/global.css';
+import '../styles/variables.css';
+import FloatingCTA from '../components/ui/FloatingCTA.astro';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/mca-phsupport/favicon.png" />
+    <link rel="icon" type="image/x-icon" href="/mca-phsupport/favicon.ico" />
+    <link rel="apple-touch-icon" href="/mca-phsupport/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet" />
+    <title>{title}</title>
+    <!-- Google Tag Manager -->
+    <script is:inline>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MRXPL4B');</script>
+    <!-- End Google Tag Manager -->
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MRXPL4B"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="lp-wrapper">
+      <main class="lp-container">
+        <slot />
+      </main>
+      <FloatingCTA />
+    </div>
+  </body>
+</html>
+
+<style>
+  .lp-wrapper {
+    max-width: 440px;
+    margin: 0 auto;
+    position: relative;
+    background-color: var(--background-02);
+  }
+
+  .lp-container {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+    height: 100dvh;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .lp-container::-webkit-scrollbar {
+    display: none;
+  }
+</style>
+
+<script>
+  /* Scaling is handled by CSS (.screen / .screen-wrapper + --scale in
+     variables.css). No JS needed for layout sizing. */
+
+  /* CTA smooth-scroll → in-page CTA section */
+  document.addEventListener('click', (e) => {
+    const link = (e.target as HTMLElement).closest('a[href="#footer-cta"], a[href="#cta"]');
+    if (!link) return;
+    const hash = (link as HTMLAnchorElement).getAttribute('href')!;
+    const target = document.getElementById(hash.slice(1));
+    if (!target) return;
+    e.preventDefault();
+    // スナップ単位（セクション全体）へスクロールして、セクション上部が
+    // 見切れないようにする（id はセクション内のカードに付いているため）
+    (target.closest('.section') || target).scrollIntoView({ behavior: 'smooth' });
+  });
+</script>

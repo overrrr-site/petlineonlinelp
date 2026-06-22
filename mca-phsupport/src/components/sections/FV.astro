@@ -1,0 +1,281 @@
+---
+---
+
+<div class="section" style="background:var(--background-02)" aria-label="ファーストビュー">
+  <div class="screen-wrapper">
+    <div class="fv screen">
+      <div class="fv__hero">
+        <img class="fv__hero-image" src="/mca-phsupport/img/kv-photo.png" alt="メディコートアドバンス 尿石ケアのパッケージと犬のビジュアル" />
+        <div class="fv__card">
+          <div class="fv__card-bg" aria-hidden="true"></div>
+          <img class="fv__card-package" src="/mca-phsupport/img/u0311-2.png" alt="商品パッケージ" />
+          <p class="fv__card-title">メディコートアドバンス<br/>尿石ケア pHサポート</p>
+          <img class="fv__card-line" src="/mca-phsupport/img/line-15.svg" alt="" aria-hidden="true" />
+        </div>
+      </div>
+
+      <div class="fv__badge" aria-label="ストルバイト結石（マグネシウム由来の結石）に配慮">
+        <span class="fv__badge-main">ストルバイト結石</span>
+        <span class="fv__badge-sub">（マグネシウム由来の結石）</span>
+        <span class="fv__badge-suffix">に配慮</span>
+      </div>
+
+      <div class="fv__catch-bg--1" aria-hidden="true"></div>
+      <p class="fv__catch-line--1">下部尿路の健康維持は、</p>
+      <div class="fv__catch-bg--2" aria-hidden="true"></div>
+      <h1 class="fv__catch-line--2">毎日のごはん選びから。</h1>
+
+      <p class="fv__lead">尿pHとミネラルバランスを調整した国産フード。<br/>1歳から／11歳から、年齢に合わせて選べます。</p>
+      <p class="fv__micro">送料当社負担 / お届けは1回のみ。自動継続なし。</p>
+
+      <a class="fv__cta" href="#footer-cta" data-lp="phsupport" data-cta="fv" aria-label="お一人様1回限りの限定価格 しっかり800円 2.5kg 今すぐ試す">
+        <img class="fv__cta-image" src="/mca-phsupport/img/CTA.svg" alt="お一人様1回限りの限定価格 しっかり800円(2.5kg) 今すぐ試す" />
+      </a>
+
+      <p class="fv__swipe-text">swipe</p>
+    </div>
+  </div>
+</div>
+
+<style>
+  .section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    height: 100dvh;
+    min-height: 100vh;
+    min-height: 100dvh;
+    overflow: hidden;
+    scroll-snap-align: start;
+  }
+
+  .screen-wrapper {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .fv {
+    position: relative;
+    width: 440px !important;
+    height: 959px !important;
+    background-color: var(--background-02);
+    overflow: hidden !important;
+    will-change: transform;
+  }
+
+  .fv__hero {
+    position: absolute;
+    top: 41px;
+    left: 30px;
+    width: 381px;
+    height: 524px;
+  }
+
+  .fv__hero-image {
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    width: 383px;
+    height: 526px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  .fv__card {
+    position: absolute;
+    top: -25px;
+    left: 239px;
+    width: 164px;
+    height: 202px;
+  }
+
+  .fv__card-bg {
+    position: absolute;
+    top: 0;
+    left: 7px;
+    width: 150px;
+    height: 202px;
+    background-color: var(--bubble-fill);
+    border-radius: 10px;
+    border: 1px solid var(--brown-amber);
+    box-shadow: 0px 4px 4px var(--shadow-strong);
+  }
+
+  .fv__card-package {
+    position: absolute;
+    top: 63px;
+    left: 45px;
+    width: 74px;
+    height: 131px;
+    object-fit: contain;
+  }
+
+  .fv__card-title {
+    position: absolute;
+    top: 13px;
+    left: 0;
+    width: 164px;
+    height: 38px;
+    color: var(--brown-amber);
+    font-size: var(--font-size-xs);
+    text-align: center;
+    letter-spacing: 0.5px;
+    line-height: 15px;
+    font-family: var(--font-family);
+    font-weight: 700;
+  }
+
+  .fv__card-line {
+    position: absolute;
+    top: 56px;
+    left: 28px;
+    width: 108px;
+    height: 1px;
+    object-fit: cover;
+  }
+
+  .fv__badge {
+    position: absolute;
+    top: 360px;
+    left: 29px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 14px;
+    background-color: var(--brown-amber);
+    border-radius: 4px;
+    max-width: 382px;
+  }
+
+  .fv__badge-main,
+  .fv__badge-suffix {
+    color: var(--white);
+    font-size: var(--font-size-s);
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .fv__badge-sub {
+    color: var(--white);
+    font-size: var(--font-size-xs);
+    font-weight: 400;
+    white-space: nowrap;
+  }
+
+  .fv__catch-bg--1 {
+    position: absolute;
+    top: 402px;
+    left: 29px;
+    width: 343px;
+    height: 46px;
+    background-color: var(--white);
+  }
+
+  .fv__catch-line--1 {
+    position: absolute;
+    top: 402px;
+    left: 44px;
+    width: 351px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    font-family: var(--font-family);
+    font-weight: 700;
+    color: var(--brown-amber);
+    font-size: var(--font-size-title-m);
+    letter-spacing: 0;
+    line-height: normal;
+  }
+
+  .fv__catch-bg--2 {
+    position: absolute;
+    top: 452px;
+    left: 29px;
+    width: 343px;
+    height: 46px;
+    background-color: var(--white);
+  }
+
+  .fv__catch-line--2 {
+    position: absolute;
+    top: 452px;
+    left: 44px;
+    width: 338px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    font-family: var(--font-family);
+    font-weight: 700;
+    color: var(--brown-amber);
+    font-size: var(--font-size-title-m);
+    letter-spacing: 0;
+    line-height: normal;
+  }
+
+  /* リード文：MV内に白文字＋影で重ねる（座布団なし） */
+  .fv__lead {
+    position: absolute;
+    top: 512px;
+    left: 30px;
+    width: 380px;
+    font-weight: 700;
+    color: var(--white);
+    font-size: var(--font-size-s);
+    letter-spacing: 0;
+    line-height: 1.7;
+    font-family: var(--font-family);
+    text-align: center;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9), 0 1px 3px rgba(0, 0, 0, 0.85), 0 0 6px rgba(0, 0, 0, 0.7);
+  }
+
+  .fv__cta {
+    position: absolute;
+    top: 590px;
+    left: 0;
+    display: block;
+    width: 440px;
+    line-height: 0;
+  }
+
+  /* 補足（送料/お届け）：CTAボタンの下に配置 */
+  .fv__micro {
+    position: absolute;
+    top: 758px;
+    left: 58px;
+    width: 323px;
+    font-weight: 700;
+    color: var(--text-note);
+    font-size: var(--font-size-xxxs);
+    letter-spacing: 0;
+    line-height: 1.25;
+    text-align: center;
+    font-family: var(--font-family);
+  }
+
+  .fv__cta-image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .fv__swipe-text {
+    position: absolute;
+    top: 800px;
+    left: calc(50% - 20px);
+    font-family: var(--font-family);
+    font-weight: 500;
+    color: var(--amber-brown);
+    font-size: var(--font-size-xs);
+    letter-spacing: 1.2px;
+    line-height: 1;
+    animation: swipe-bounce 1.6s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  @keyframes swipe-bounce {
+    0%, 100% { transform: translateY(0); opacity: 0.7; }
+    50%      { transform: translateY(4px); opacity: 1; }
+  }
+</style>

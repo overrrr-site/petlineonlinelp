@@ -1,0 +1,182 @@
+---
+const FAQS = [
+  {
+    q: '突然フードを切り替えても大丈夫ですか？',
+    a: '急な切り替えは消化器官に負担がかかることがあります。今までのフードに少量ずつ混ぜながら、1週間〜10日ほど時間をかけて切り替えてください。',
+  },
+  {
+    q: '治療中・通院中でも使えますか？',
+    a: '治療中・通院中の場合は、必ずかかりつけの獣医師にご相談のうえご使用ください。',
+  },
+  {
+    q: '1回限りのお試し購入で自動継続はありますか？',
+    a: 'ございません。本商品はお試し価格でのお届け1回限りで、定期購入や継続課金は一切発生いたしません。',
+  },
+  {
+    q: '送料はかかりますか？',
+    a: '送料は当社が負担いたします。表示価格800円（税込）のみで、追加費用は一切かかりません。',
+  },
+];
+---
+
+<div class="section" style="background:var(--background-02)">
+  <div class="screen-wrapper">
+    <div class="faq screen">
+      <div class="faq__container">
+        <div class="faq__header">
+          <div class="faq__label">Q&amp;A</div>
+          <h2 class="faq__title">よくある質問</h2>
+          <div class="faq__subtitle">ご購入・使い方について</div>
+        </div>
+        <div class="faq__content">
+          <div class="faq__card">
+            <div class="faq__items">
+              {FAQS.map((f) => (
+                <div class="faq__item">
+                  <div class="faq__item-question-wrap">
+                    <span class="faq__item-badge"><span class="faq__item-badge-text">Q</span></span>
+                    <p class="faq__item-question">{f.q}</p>
+                  </div>
+                  <div class="faq__item-answer-wrap">
+                    <p class="faq__item-answer">{f.a}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .faq {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 37px;
+    width: 440px !important;
+    height: 959px !important;
+    overflow: hidden !important;
+    background-color: var(--background-02);
+    will-change: transform;
+  }
+
+  .faq__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    width: 400px;
+    margin-top: 51px;
+    margin-left: 20px;
+    transform: translateY(-10px);
+  }
+
+  .faq__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+  }
+
+  .faq__label {
+    color: var(--orange);
+    font-size: var(--font-size-s);
+    font-weight: 700;
+    letter-spacing: 0.7px;
+    text-align: center;
+  }
+
+  .faq__title {
+    color: var(--brown-amber);
+    font-size: var(--font-size-title-xl);
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    margin: 0;
+  }
+
+  .faq__subtitle {
+    color: var(--amber-brown);
+    font-size: var(--font-size-s);
+    font-weight: 500;
+  }
+
+  .faq__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+  }
+
+  .faq__card {
+    width: 400px;
+    max-height: 620px;
+    overflow-y: auto;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px var(--shadow-soft);
+    padding: 20px 21px;
+  }
+
+  .faq__items {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .faq__item {
+    border-top: 1px dashed var(--teal-vivid);
+    padding: 14px 0;
+  }
+
+  .faq__item:first-of-type { border-top: none; padding-top: 0; }
+
+  .faq__item-question-wrap {
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+  }
+
+  .faq__item-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 29px;
+    height: 29px;
+    background-color: var(--teal-vivid);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .faq__item-badge-text {
+    color: var(--white);
+    font-size: var(--font-size-l);
+    font-weight: 900;
+  }
+
+  .faq__item-question {
+    flex: 1;
+    margin: 0;
+    color: var(--text-dark);
+    font-size: var(--font-size-l);
+    font-weight: 700;
+    line-height: 1.7;
+    padding-top: 3px;
+  }
+
+  .faq__item-answer-wrap {
+    margin-top: 12px;
+    padding-left: 40px;
+  }
+
+  .faq__item-answer {
+    margin: 0;
+    color: var(--text-dark);
+    font-size: var(--font-size-s);
+    font-weight: 500;
+    line-height: 1.7;
+  }
+</style>
