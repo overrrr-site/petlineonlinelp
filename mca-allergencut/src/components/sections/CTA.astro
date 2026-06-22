@@ -238,8 +238,9 @@
     height: 190px;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: center;
-    padding: 12px;
+    /* 「迷ったらこちら」バッジと商品名が重ならないよう中身を下寄せ */
+    justify-content: flex-start;
+    padding: 18px 12px 0;
     gap: 10px;
     position: relative;
     background-color: var(--white);
@@ -311,28 +312,42 @@
     line-height: 21px;
   }
 
-  /* Age links — equal-weight orange pill buttons（どれもタップで商品ページへ） */
+  /* Age links — full-width stacked pill buttons（横広・タップしやすさ優先／どれも商品ページへ） */
   .footercta__ages {
     display: flex;
-    align-items: center;
+    flex-direction: column;
     gap: 6px;
     align-self: stretch;
     width: 100%;
   }
 
   .footercta__age {
-    flex: 1 1 0;
-    min-width: 0;
+    position: relative;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 36px;
-    padding: 0 6px;
+    padding: 0 12px;
+    overflow: hidden;
     background-color: var(--orange);
     border-radius: 999px;
     box-shadow: 0px 3px 4px var(--shadow-strong);
     text-decoration: none;
     transition: opacity 0.15s ease;
+  }
+
+  /* キラッと流れる光沢（FV／中段CTAと同じ演出） */
+  .footercta__age::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent 0%, rgba(var(--white-rgb), 0.35) 50%, transparent 100%);
+    animation: cta-shine 3s ease-in-out infinite;
+    pointer-events: none;
   }
 
   .footercta__age:hover {
@@ -348,9 +363,9 @@
     font-family: var(--font-family);
     font-weight: 700;
     color: var(--white);
-    font-size: var(--font-size-xs);
+    font-size: var(--font-size-s);
     text-align: center;
-    letter-spacing: 0;
+    letter-spacing: 0.5px;
     line-height: 1.2;
     white-space: nowrap;
   }
@@ -469,5 +484,23 @@
     left: calc(50% - 94px);
     width: 188px;
     height: 98px;
+  }
+
+  @keyframes cta-shine {
+    0% {
+      left: -100%;
+    }
+    20% {
+      left: 100%;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .footercta__age::after {
+      animation: none;
+    }
   }
 </style>
