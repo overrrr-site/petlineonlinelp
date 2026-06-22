@@ -23,13 +23,13 @@ const FAQS = [
 ];
 ---
 
-<div class="section" style="background:var(--background-02)">
+<section class="section" style="background:var(--background-02)" aria-labelledby="faq-product-title">
   <div class="screen-wrapper">
     <div class="faq2 screen">
       <div class="faq2__container">
         <div class="faq2__header">
           <div class="faq2__label">Q&amp;A</div>
-          <h2 class="faq2__title">よくあるご質問</h2>
+          <h2 class="faq2__title" id="faq-product-title">よくあるご質問</h2>
           <div class="faq2__subtitle">商品・保管・発送について</div>
         </div>
         <div class="faq2__content">
@@ -55,28 +55,9 @@ const FAQS = [
       </div>
     </div>
   </div>
-</div>
+</section>
 
 <style>
-  .section {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    height: 100dvh;
-    min-height: 100vh;
-    min-height: 100dvh;
-    overflow: hidden;
-    box-sizing: border-box;
-    scroll-snap-align: start;
-  }
-
-  .screen-wrapper {
-    position: relative;
-    overflow: hidden;
-  }
-
   .faq2 {
     position: relative;
     display: flex;
