@@ -1,81 +1,118 @@
 ---
+interface ReviewSegment {
+  text: string;
+  suffix?: string;
+  marker?: string;
+  variant?: 'highlight' | 'note';
+}
+
+interface Review {
+  heading: string;
+  segments: readonly ReviewSegment[];
+  author: string;
+}
+
+const REVIEWS: readonly Review[] = [
+  {
+    heading: 'きれいに完食',
+    segments: [
+      { text: 'チキンのドッグフードから徐々に切り替えています。最初は食べてくれるか心配でしたが、小粒で食べやすい点もあり、' },
+      { text: 'きれいに完食してくれます。', variant: 'highlight' },
+      { text: 'お試しフードがなくなったら継続をしようかと考えています！' },
+    ],
+    author: 'ルイさん（魚＆お米／2026.6.7）',
+  },
+  {
+    heading: 'じっくり選べる',
+    segments: [
+      { text: 'お試し価格で色々試せるので、愛犬の状態を見ながら' },
+      { text: 'メインとするフードを決める事ができる', variant: 'highlight' },
+      { text: 'ので非常に良いと思います。' },
+    ],
+    author: 'sinさん（魚＆お米／2026.6.7）',
+  },
+  {
+    heading: '小型犬にぴったり',
+    segments: [
+      { text: '小粒で小型犬に良かった。魚の匂いがして、' },
+      { text: '食いつきも良かった。', variant: 'highlight' },
+    ],
+    author: 'シャルスさん（魚＆えんどう豆たんぱく／2026.4.27）',
+  },
+  {
+    heading: '国内製造で選びました',
+    segments: [
+      { text: '国内製造なので選びました。', variant: 'highlight' },
+      { text: '愛犬も喜んでたべてます。これからもつづけていきたいとおもいます。' },
+    ],
+    author: 'ココリコパパさん（魚＆えんどう豆たんぱく／2026.4.26）',
+  },
+  {
+    heading: 'お試しできて良かった',
+    segments: [
+      { text: '800円', marker: '※', suffix: 'でしっかり試せる', variant: 'highlight' },
+      { text: 'のが良いですね。' },
+      { text: '※お試し価格のこと。通常価格は店頭でご確認ください', variant: 'note' },
+    ],
+    author: 'ぶどうさん（魚＆えんどう豆たんぱく／2026.5.19）',
+  },
+];
 ---
 
-<div class="section" style="background:var(--background-02)">
+<section class="section" style="background:var(--background-02)" aria-labelledby="reviews-title">
   <div class="screen-wrapper">
-    <div class="reviews screen" data-carousel-section="voice">
+    <div
+      class="reviews screen"
+      id="voice-carousel"
+      data-carousel-section="voice"
+      role="group"
+      aria-roledescription="カルーセル"
+      aria-labelledby="reviews-title"
+    >
       <div class="reviews__bg-card reviews__bg-card--left"></div>
       <div class="reviews__bg-card reviews__bg-card--right"></div>
       <div class="reviews__slider">
-        <div class="reviews__slider-prev slider-btn slider-btn--prev" data-carousel="voice"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="18" fill="currentColor"/><path d="M20.5 12L15 17.5L20.5 23" stroke="var(--white)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <div class="carousel-dots" data-carousel="voice"></div>
-        <div class="reviews__slider-next slider-btn slider-btn--next" data-carousel="voice"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="18" fill="currentColor"/><path d="M15.5 12L21 17.5L15.5 23" stroke="var(--white)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <button type="button" class="reviews__slider-prev slider-btn slider-btn--prev" data-carousel="voice" aria-label="前へ" aria-controls="voice-carousel"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="18" fill="currentColor"/><path d="M20.5 12L15 17.5L20.5 23" stroke="var(--white)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="carousel-dots" data-carousel="voice" role="group" aria-label="スライド選択"></div>
+        <button type="button" class="reviews__slider-next slider-btn slider-btn--next" data-carousel="voice" aria-label="次へ" aria-controls="voice-carousel"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="18" fill="currentColor"/><path d="M15.5 12L21 17.5L15.5 23" stroke="var(--white)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
       </div>
       <div class="reviews__header">
         <div class="reviews__label">VOICE</div>
-        <h1 class="reviews__title">多くの方に<br />ご好評いただいています</h1>
+        <h2 class="reviews__title" id="reviews-title">多くの方に<br />ご好評いただいています</h2>
         <div class="reviews__subtitle">ペットラインしあわせマルシェユーザーレビュー・アレルゲンカットシリーズ　2026年6月時点　n=3,267　（PR）</div>
       </div>
-      <div class="reviews__card main_01">
-        <div class="reviews__stars">★★★★★</div>
-        <div class="reviews__card-body">
-          <div class="reviews__card-content">
-            <div class="reviews__card-heading">きれいに完食</div>
-            <div class="reviews__card-divider"></div>
-            <div class="reviews__card-text"><span>チキンのドッグフードから徐々に切り替えています。最初は食べてくれるか心配でしたが、小粒で食べやすい点もあり、</span><span class="reviews__card-highlight">きれいに完食してくれます。</span><span>お試しフードがなくなったら継続をしようかと考えています！</span></div>
+      {REVIEWS.map((review, index) => (
+        <div
+          class:list={['reviews__card', `main_${String(index + 1).padStart(2, '0')}`]}
+          data-carousel-slide
+          role="group"
+          aria-roledescription="スライド"
+          aria-label={`${index + 1} / ${REVIEWS.length}`}
+          aria-hidden={index === 0 ? 'false' : 'true'}
+        >
+          <div class="reviews__stars">★★★★★</div>
+          <div class="reviews__card-body">
+            <div class="reviews__card-content">
+              <div class="reviews__card-heading">{review.heading}</div>
+              <div class="reviews__card-divider"></div>
+              <div class="reviews__card-text">
+                {review.segments.map((segment) => (
+                  <span class:list={{
+                    'reviews__card-highlight': segment.variant === 'highlight',
+                    'reviews__card-note': segment.variant === 'note',
+                  }}>{segment.text}{segment.marker && <span class="reviews__card-asterisk">{segment.marker}</span>}{segment.suffix}</span>
+                ))}
+              </div>
+            </div>
+            <div class="reviews__card-author">{review.author}</div>
           </div>
-          <div class="reviews__card-author">ルイさん（魚＆お米／2026.6.7）</div>
         </div>
-      </div>
-      <div class="reviews__card main_02">
-        <div class="reviews__stars">★★★★★</div>
-        <div class="reviews__card-body">
-          <div class="reviews__card-content">
-            <div class="reviews__card-heading">じっくり選べる</div>
-            <div class="reviews__card-divider"></div>
-            <div class="reviews__card-text"><span>お試し価格で色々試せるので、愛犬の状態を見ながら</span><span class="reviews__card-highlight">メインとするフードを決める事ができる</span><span>ので非常に良いと思います。</span></div>
-          </div>
-          <div class="reviews__card-author">sinさん（魚＆お米／2026.6.7）</div>
-        </div>
-      </div>
-      <div class="reviews__card main_03">
-        <div class="reviews__stars">★★★★★</div>
-        <div class="reviews__card-body">
-          <div class="reviews__card-content">
-            <div class="reviews__card-heading">小型犬にぴったり</div>
-            <div class="reviews__card-divider"></div>
-            <div class="reviews__card-text"><span>小粒で小型犬に良かった。魚の匂いがして、</span><span class="reviews__card-highlight">食いつきも良かった。</span></div>
-          </div>
-          <div class="reviews__card-author">シャルスさん（魚＆えんどう豆たんぱく／2026.4.27）</div>
-        </div>
-      </div>
-      <div class="reviews__card main_04">
-        <div class="reviews__stars">★★★★★</div>
-        <div class="reviews__card-body">
-          <div class="reviews__card-content">
-            <div class="reviews__card-heading">国内製造で選びました</div>
-            <div class="reviews__card-divider"></div>
-            <div class="reviews__card-text"><span class="reviews__card-highlight">国内製造なので選びました。</span><span>愛犬も喜んでたべてます。これからもつづけていきたいとおもいます。</span></div>
-          </div>
-          <div class="reviews__card-author">ココリコパパさん（魚＆えんどう豆たんぱく／2026.4.26）</div>
-        </div>
-      </div>
-      <div class="reviews__card main_05">
-        <div class="reviews__stars">★★★★★</div>
-        <div class="reviews__card-body">
-          <div class="reviews__card-content">
-            <div class="reviews__card-heading">お試しできて良かった</div>
-            <div class="reviews__card-divider"></div>
-            <div class="reviews__card-text"><span class="reviews__card-highlight">800円<span class="reviews__card-asterisk">※</span>でしっかり試せる</span><span>のが良いですね。</span><span class="reviews__card-note">※お試し価格のこと。通常価格は店頭でご確認ください</span></div>
-          </div>
-          <div class="reviews__card-author">ぶどうさん（魚＆えんどう豆たんぱく／2026.5.19）</div>
-        </div>
-      </div>
+      ))}
       <img class="reviews__dog-image" src="/mca-allergencut/img/reviews-dog.webp" alt="" loading="lazy" />
       <div class="reviews__disclaimer">※個人の感想です。効果には個体差があります。<br />※ご購入から約10日後のレビューになります。</div>
     </div>
   </div>
-</div>
+</section>
 
 <style>
   /* ----------------------------------------

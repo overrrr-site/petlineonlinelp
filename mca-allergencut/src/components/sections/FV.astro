@@ -1,7 +1,7 @@
 ---
 ---
 
-<div class="section" style="background:var(--background-02)" aria-label="ファーストビュー">
+<section class="section" style="background:var(--background-02)" aria-label="ファーストビュー">
   <div class="screen-wrapper">
     <div class="fv screen">
       <div class="fv__hero">
@@ -41,28 +41,9 @@
       <p class="fv__swipe-text">swipe</p>
     </div>
   </div>
-</div>
+</section>
 
 <style>
-  /* Section & wrapper (grainfree clean shell) */
-  .section {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    height: 100dvh;
-    min-height: 100vh;
-    min-height: 100dvh;
-    overflow: hidden;
-    scroll-snap-align: start;
-  }
-
-  .screen-wrapper {
-    position: relative;
-    overflow: hidden;
-  }
-
   /* Main screen */
   .fv {
     position: relative;
@@ -372,14 +353,4 @@
     50%      { transform: translateY(4px); opacity: 1; }
   }
 
-  @keyframes cta-glow {
-    0%, 100% { box-shadow: 0 0 0 0 rgba(var(--orange-rgb), 0.4); }
-    50%      { box-shadow: 0 0 12px 4px rgba(var(--orange-rgb), 0.25); }
-  }
-
-  @keyframes cta-shine {
-    0%   { left: -100%; }
-    20%  { left: 100%; }
-    100% { left: 100%; }
-  }
 </style>

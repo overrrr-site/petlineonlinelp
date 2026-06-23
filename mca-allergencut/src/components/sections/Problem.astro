@@ -1,4 +1,19 @@
 ---
+interface AllergenItem {
+  label: string;
+  positionClass: string;
+  wide?: boolean;
+}
+
+const COMMON_ALLERGENS = [
+  { label: '鶏肉', positionClass: 'allergen__cell--r0c0' },
+  { label: '乳製品', positionClass: 'allergen__cell--r1c0', wide: true },
+  { label: '小麦', positionClass: 'allergen__cell--r0c1' },
+  { label: '牛肉', positionClass: 'allergen__cell--r0c2' },
+  { label: '大豆', positionClass: 'allergen__cell--r1c2' },
+  { label: '豚肉', positionClass: 'allergen__cell--r0c3' },
+  { label: '鶏卵', positionClass: 'allergen__cell--r1c3' },
+] satisfies readonly AllergenItem[];
 ---
 
 <section class="section" aria-labelledby="allergen-title">
@@ -26,34 +41,12 @@
               <div class="allergen__panel-tag" aria-hidden="true"></div>
               <div class="allergen__panel-tag-text">一般的なフード</div>
               <div class="allergen__grid">
-                <div class="allergen__cell allergen__cell--r0c0">
-                  <div class="allergen__cell-text">鶏肉</div>
-                  <div class="allergen__cell-box" aria-hidden="true"></div>
-                </div>
-                <div class="allergen__cell allergen__cell--r1c0">
-                  <div class="allergen__cell-text allergen__cell-text--wide">乳製品</div>
-                  <div class="allergen__cell-box" aria-hidden="true"></div>
-                </div>
-                <div class="allergen__cell allergen__cell--r0c1">
-                  <div class="allergen__cell-text">小麦</div>
-                  <div class="allergen__cell-box" aria-hidden="true"></div>
-                </div>
-                <div class="allergen__cell allergen__cell--r0c2">
-                  <div class="allergen__cell-text">牛肉</div>
-                  <div class="allergen__cell-box" aria-hidden="true"></div>
-                </div>
-                <div class="allergen__cell allergen__cell--r1c2">
-                  <div class="allergen__cell-text">大豆</div>
-                  <div class="allergen__cell-box" aria-hidden="true"></div>
-                </div>
-                <div class="allergen__cell allergen__cell--r0c3">
-                  <div class="allergen__cell-text">豚肉</div>
-                  <div class="allergen__cell-box" aria-hidden="true"></div>
-                </div>
-                <div class="allergen__cell allergen__cell--r1c3">
-                  <div class="allergen__cell-text">鶏卵</div>
-                  <div class="allergen__cell-box" aria-hidden="true"></div>
-                </div>
+                {COMMON_ALLERGENS.map((item) => (
+                  <div class:list={['allergen__cell', item.positionClass]}>
+                    <div class:list={['allergen__cell-text', { 'allergen__cell-text--wide': item.wide }]}>{item.label}</div>
+                    <div class="allergen__cell-box" aria-hidden="true"></div>
+                  </div>
+                ))}
               </div>
             </div>
 
