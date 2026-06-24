@@ -1,4 +1,10 @@
 ---
+interface Review {
+  heading: string;
+  text: readonly string[];
+  author: string;
+}
+
 const REVIEWS = [
   {
     heading: '小型犬でも食べやすい',
@@ -20,26 +26,40 @@ const REVIEWS = [
     text: ['食べるか食べないか心配でしたが', 'とても食いつきが良くて安心しました！', 'また購入します！'],
     author: 'じゅんさん（11歳から／2026.4.11）',
   },
-];
+] satisfies readonly Review[];
 ---
 
-<div class="section" style="background:var(--background-02)">
+<section class="section" style="background:var(--background-02)" aria-labelledby="reviews-title">
   <div class="screen-wrapper">
-    <div class="reviews screen" data-carousel-section="voice">
+    <div
+      class="reviews screen"
+      id="voice-carousel"
+      data-carousel-section="voice"
+      role="group"
+      aria-roledescription="カルーセル"
+      aria-labelledby="reviews-title"
+    >
       <div class="reviews__bg-card reviews__bg-card--left"></div>
       <div class="reviews__bg-card reviews__bg-card--right"></div>
       <div class="reviews__slider">
-        <div class="reviews__slider-prev slider-btn slider-btn--prev" data-carousel="voice"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="18" fill="currentColor"/><path d="M20.5 12L15 17.5L20.5 23" stroke="var(--white)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <div class="carousel-dots" data-carousel="voice"></div>
-        <div class="reviews__slider-next slider-btn slider-btn--next" data-carousel="voice"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="18" fill="currentColor"/><path d="M15.5 12L21 17.5L15.5 23" stroke="var(--white)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <button type="button" class="reviews__slider-prev slider-btn slider-btn--prev" data-carousel="voice" aria-label="前へ" aria-controls="voice-carousel"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="18" fill="currentColor"/><path d="M20.5 12L15 17.5L20.5 23" stroke="var(--white)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="carousel-dots" data-carousel="voice" role="group" aria-label="スライド選択"></div>
+        <button type="button" class="reviews__slider-next slider-btn slider-btn--next" data-carousel="voice" aria-label="次へ" aria-controls="voice-carousel"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="18" fill="currentColor"/><path d="M15.5 12L21 17.5L15.5 23" stroke="var(--white)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
       </div>
       <div class="reviews__header">
         <div class="reviews__label">REVIEW</div>
-        <h2 class="reviews__title">飼い主さんの声</h2>
+        <h2 class="reviews__title" id="reviews-title">飼い主さんの声</h2>
         <div class="reviews__subtitle">ペットラインしあわせマルシェより（PR）<br/>尿石ケアシリーズ　2026年6月時点、n=838</div>
       </div>
-      {REVIEWS.map((review, i) => (
-        <div class={`reviews__card main_0${i + 1}`}>
+      {REVIEWS.map((review, index) => (
+        <div
+          class:list={['reviews__card', `main_${String(index + 1).padStart(2, '0')}`]}
+          data-carousel-slide
+          role="group"
+          aria-roledescription="スライド"
+          aria-label={`${index + 1} / ${REVIEWS.length}`}
+          aria-hidden={index === 0 ? 'false' : 'true'}
+        >
           <div class="reviews__stars">★★★★★</div>
           <div class="reviews__card-body">
             <div class="reviews__card-content">
@@ -59,7 +79,7 @@ const REVIEWS = [
       <div class="reviews__disclaimer">※個人の感想です。効果には個体差があります。<br />※ご購入から約10日後のレビューになります。</div>
     </div>
   </div>
-</div>
+</section>
 
 <style>
   .reviews {

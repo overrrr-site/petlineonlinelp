@@ -1,13 +1,13 @@
 ---
 ---
 
-<div class="section" style="background:var(--background-02)">
+<section class="section" style="background:var(--background-02)" aria-labelledby="about-title">
   <div class="screen-wrapper">
     <div class="about screen">
       <div class="about__inner">
         <div class="about__intro">
           <div class="about__label">ABOUT</div>
-          <h2 class="about__title">ペットラインについて</h2>
+          <h2 class="about__title" id="about-title">ペットラインについて</h2>
           <img class="about__image" src="/mca-phsupport/img/2x.webp" alt="ペットラインの工場または施設の写真" loading="lazy" />
           <p class="about__desc">ペットラインは1967年（昭和42年）創設、日本初のドライキャットフードを開発・販売したペットフードのパイオニア。「愛情を品質に」をモットーに、自社の研究開発拠点と国内工場で国産フードをつくり続けています。</p>
         </div>
@@ -34,31 +34,9 @@
       </div>
     </div>
   </div>
-</div>
+</section>
 
 <style>
-  /* ========================================
-   * Base section & wrapper
-   * ======================================== */
-  .section {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    height: 100dvh;
-    min-height: 100vh;
-    min-height: 100dvh;
-    overflow: hidden;
-    box-sizing: border-box;
-    scroll-snap-align: start;
-  }
-
-  .screen-wrapper {
-    position: relative;
-    overflow: hidden;
-  }
-
   /* ========================================
    * Section root
    * ======================================== */

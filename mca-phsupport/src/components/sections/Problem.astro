@@ -1,4 +1,52 @@
 ---
+interface CareItem {
+  viewClass: string;
+  image: string;
+  imageAlt: string;
+  imageClass: string;
+  titleId: string;
+  title: string;
+  description: readonly string[];
+}
+
+const CARE_ITEMS = [
+  {
+    viewClass: 'dc-view--food',
+    image: '/mca-phsupport/img/care2-food.webp',
+    imageAlt: 'ドッグフードのイメージ',
+    imageClass: 'dc-img--food',
+    titleId: 'care-food-title',
+    title: '食事',
+    description: ['ミネラルバランスに配慮した', '毎日のごはん'],
+  },
+  {
+    viewClass: 'dc-view--water',
+    image: '/mca-phsupport/img/care2-water.webp',
+    imageAlt: '水の入ったグラスのイメージ',
+    imageClass: 'dc-img--water',
+    titleId: 'care-water-title',
+    title: '水分',
+    description: ['十分な水分摂取を', '促す環境'],
+  },
+  {
+    viewClass: 'dc-view--exercise',
+    image: '/mca-phsupport/img/care2-exercise.webp',
+    imageAlt: '運動する犬のイメージ',
+    imageClass: 'dc-img--photo',
+    titleId: 'care-exercise-title',
+    title: '運動',
+    description: ['適度な運動で', '排尿リズムを整える'],
+  },
+  {
+    viewClass: 'dc-view--toilet',
+    image: '/mca-phsupport/img/care2-toilet.webp',
+    imageAlt: '犬用トイレ環境のイメージ',
+    imageClass: 'dc-img--photo',
+    titleId: 'care-toilet-title',
+    title: 'トイレ環境',
+    description: ['我慢させない', '清潔な環境'],
+  },
+] satisfies readonly CareItem[];
 ---
 
 <section class="section" aria-labelledby="daily-care-title">
@@ -13,33 +61,18 @@
 
         <div class="dailycare__group">
           <div class="dailycare__grid">
-            <article class="dc-view dc-view--food" aria-labelledby="care-food-title">
-              <div class="dc-rect" aria-hidden="true"></div>
-              <img class="dc-img dc-img--food" src="/mca-phsupport/img/care2-food.webp" alt="ドッグフードのイメージ" />
-              <h3 class="dc-title" id="care-food-title">食事</h3>
-              <p class="dc-desc">ミネラルバランスに配慮した<br/>毎日のごはん</p>
-            </article>
-
-            <article class="dc-view dc-view--water" aria-labelledby="care-water-title">
-              <div class="dc-rect" aria-hidden="true"></div>
-              <img class="dc-img dc-img--water" src="/mca-phsupport/img/care2-water.webp" alt="水の入ったグラスのイメージ" />
-              <h3 class="dc-title" id="care-water-title">水分</h3>
-              <p class="dc-desc">十分な水分摂取を<br/>促す環境</p>
-            </article>
-
-            <article class="dc-view dc-view--exercise" aria-labelledby="care-exercise-title">
-              <div class="dc-rect" aria-hidden="true"></div>
-              <img class="dc-img dc-img--photo" src="/mca-phsupport/img/care2-exercise.webp" alt="運動する犬のイメージ" />
-              <h3 class="dc-title" id="care-exercise-title">運動</h3>
-              <p class="dc-desc">適度な運動で<br/>排尿リズムを整える</p>
-            </article>
-
-            <article class="dc-view dc-view--toilet" aria-labelledby="care-toilet-title">
-              <div class="dc-rect" aria-hidden="true"></div>
-              <img class="dc-img dc-img--photo" src="/mca-phsupport/img/care2-toilet.webp" alt="犬用トイレ環境のイメージ" />
-              <h3 class="dc-title" id="care-toilet-title">トイレ環境</h3>
-              <p class="dc-desc">我慢させない<br/>清潔な環境</p>
-            </article>
+            {CARE_ITEMS.map((item) => (
+              <article class:list={['dc-view', item.viewClass]} aria-labelledby={item.titleId}>
+                <div class="dc-rect" aria-hidden="true"></div>
+                <img class:list={['dc-img', item.imageClass]} src={item.image} alt={item.imageAlt} />
+                <h3 class="dc-title" id={item.titleId}>{item.title}</h3>
+                <p class="dc-desc">
+                  {item.description.map((line, index) => (
+                    <Fragment>{line}{index < item.description.length - 1 && <br />}</Fragment>
+                  ))}
+                </p>
+              </article>
+            ))}
           </div>
         </div>
       </div>

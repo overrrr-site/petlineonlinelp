@@ -1,32 +1,19 @@
-/* ============================================================
-   Reusable touch-enabled carousel for LP sections.
-
-   Usage (from a page <script>):
-     import { initCarousels } from '../scripts/carousel';
-     initCarousels({ feature: 3, voice: 4, honesty: 3 });
-
-   The config maps each `data-carousel-section` name to its slide
-   count. Markup expectations per section:
-     - <div data-carousel-section="<name>"> wrapping the cards
-     - cards with classes main_01, main_02, … main_0N
-     - prev/next controls: .slider-btn--prev / .slider-btn--next
-       (or .reviews__slider-prev / .reviews__slider-next) carrying
-       data-carousel="<name>"
-     - <div class="carousel-dots" data-carousel="<name>"> for dots
-   Horizontal pixel deltas are divided by the global --screen-scale
-   so drag distance tracks the finger in the scaled design space.
-   ============================================================ */
-
 interface CarouselState {
   current: number;
-  total: number;
   dragging: boolean;
   startX: number;
   startY: number;
   startTime: number;
-  currentTranslateX: number;
   directionLocked: null | 'horizontal' | 'vertical';
   scale: number;
+  section: HTMLElement;
+  slides: HTMLElement[];
+}
+
+declare global {
+  interface Window {
+    __mcaPhsupportCarouselCleanup__?: () => void;
+  }
 }
 
 const SWIPE_THRESHOLD = 60;
@@ -37,269 +24,292 @@ const CARD_WIDTH = 326;
 const CARD_GAP = 16;
 const OFFSCREEN_OFFSET = CARD_WIDTH + CARD_GAP;
 
-export function initCarousels(config: Record<string, number>): void {
-  const carousels: Record<string, CarouselState> = {};
-  for (const [name, total] of Object.entries(config)) {
-    carousels[name] = {
+function getScale(section: HTMLElement): number {
+  const matrix = getComputedStyle(section).transform;
+  if (!matrix || matrix === 'none') return 1;
+
+  const match = matrix.match(/matrix\(([^,]+),/);
+  const value = match ? Number.parseFloat(match[1]) : Number.NaN;
+  return Number.isFinite(value) && value > 0 ? value : 1;
+}
+
+function getSlide(state: CarouselState, index: number): HTMLElement | undefined {
+  return state.slides[index];
+}
+
+function updateDots(state: CarouselState, index: number): void {
+  const dots = state.section.querySelectorAll<HTMLButtonElement>('.carousel-dots .dot');
+
+  dots.forEach((dot, dotIndex) => {
+    const isActive = dotIndex === index;
+    dot.classList.toggle('active', isActive);
+
+    if (isActive) {
+      dot.setAttribute('aria-current', 'true');
+    } else {
+      dot.removeAttribute('aria-current');
+    }
+  });
+}
+
+function showSlide(state: CarouselState, requestedIndex: number): void {
+  const total = state.slides.length;
+  if (total === 0) return;
+
+  const index = ((requestedIndex % total) + total) % total;
+  const previousIndex = (index - 1 + total) % total;
+  const nextIndex = (index + 1) % total;
+  state.current = index;
+
+  state.slides.forEach((slide, slideIndex) => {
+    slide.style.transform = '';
+    slide.style.opacity = '';
+    slide.classList.remove('carousel-active', 'carousel-adjacent', 'carousel-dragging');
+
+    const isActive = slideIndex === index;
+    slide.setAttribute('aria-hidden', String(!isActive));
+
+    if (isActive) {
+      slide.classList.add('carousel-active');
+      slide.style.transform = 'translateX(0)';
+    } else if (slideIndex === previousIndex) {
+      slide.classList.add('carousel-adjacent');
+      slide.style.transform = `translateX(-${OFFSCREEN_OFFSET}px)`;
+    } else if (slideIndex === nextIndex) {
+      slide.classList.add('carousel-adjacent');
+      slide.style.transform = `translateX(${OFFSCREEN_OFFSET}px)`;
+    } else {
+      slide.style.transform = `translateX(${OFFSCREEN_OFFSET}px)`;
+    }
+  });
+
+  updateDots(state, index);
+}
+
+function createDots(name: string, state: CarouselState): void {
+  const container = state.section.querySelector<HTMLElement>(
+    `.carousel-dots[data-carousel="${name}"]`,
+  );
+  if (!container) return;
+
+  const fragment = document.createDocumentFragment();
+
+  state.slides.forEach((_, index) => {
+    const dot = document.createElement('button');
+    dot.type = 'button';
+    dot.className = 'dot';
+    dot.dataset.index = String(index);
+    dot.dataset.carousel = name;
+    dot.setAttribute('aria-label', `スライド ${index + 1} / ${state.slides.length}へ移動`);
+
+    if (state.section.id) {
+      dot.setAttribute('aria-controls', state.section.id);
+    }
+
+    fragment.appendChild(dot);
+  });
+
+  container.replaceChildren(fragment);
+}
+
+function setupCarousels(): () => void {
+  const states = new Map<string, CarouselState>();
+  const cleanupCallbacks: Array<() => void> = [];
+
+  document.querySelectorAll<HTMLElement>('[data-carousel-section]').forEach((section) => {
+    const name = section.dataset.carouselSection;
+    const slides = Array.from(section.querySelectorAll<HTMLElement>('[data-carousel-slide]'));
+    if (!name || slides.length === 0) return;
+
+    const state: CarouselState = {
       current: 0,
-      total,
       dragging: false,
       startX: 0,
       startY: 0,
       startTime: 0,
-      currentTranslateX: 0,
       directionLocked: null,
       scale: 1,
+      section,
+      slides,
     };
-  }
 
-  /* ---------- scale helper ---------- */
-  function getScale(): number {
-    const v = parseFloat(
-      getComputedStyle(document.documentElement).getPropertyValue('--screen-scale')
-    );
-    return v > 0 ? v : 1;
-  }
+    states.set(name, state);
+    createDots(name, state);
+    showSlide(state, 0);
 
-  /* ---------- card helpers ---------- */
-  function getCards(name: string): HTMLElement[] {
-    const section = document.querySelector(`[data-carousel-section="${name}"]`);
-    if (!section) return [];
-    return Array.from(section.querySelectorAll<HTMLElement>('[class*="main_0"]'));
-  }
+    const handleTouchStart = (event: TouchEvent): void => {
+      const touch = event.touches[0];
+      if (!touch) return;
 
-  function getCardByIndex(name: string, index: number): HTMLElement | null {
-    const section = document.querySelector(`[data-carousel-section="${name}"]`);
-    if (!section) return null;
-    return section.querySelector<HTMLElement>(`.main_0${index + 1}`);
-  }
+      state.dragging = true;
+      state.startX = touch.clientX;
+      state.startY = touch.clientY;
+      state.startTime = Date.now();
+      state.directionLocked = null;
+      state.scale = getScale(section);
 
-  /* ---------- dot helpers ---------- */
-  function updateDots(name: string, index: number) {
-    const dotsContainer = document.querySelector(
-      `.carousel-dots[data-carousel="${name}"]`
-    );
-    if (!dotsContainer) return;
-    dotsContainer.querySelectorAll('.dot').forEach((dot, i) => {
-      dot.classList.toggle('active', i === index);
-    });
-  }
+      const total = state.slides.length;
+      getSlide(state, state.current)?.classList.add('carousel-dragging');
+      getSlide(state, (state.current - 1 + total) % total)?.classList.add('carousel-dragging');
+      getSlide(state, (state.current + 1) % total)?.classList.add('carousel-dragging');
+    };
 
-  function createDots() {
-    Object.keys(carousels).forEach((name) => {
-      const dotsContainer = document.querySelector(
-        `.carousel-dots[data-carousel="${name}"]`
-      );
-      if (!dotsContainer) return;
+    const handleTouchMove = (event: TouchEvent): void => {
+      if (!state.dragging) return;
 
-      const total = carousels[name].total;
-      for (let i = 0; i < total; i++) {
-        const dot = document.createElement('span');
-        dot.className = 'dot' + (i === 0 ? ' active' : '');
-        dot.dataset.index = String(i);
-        dot.dataset.carousel = name;
-        dot.setAttribute('aria-label', `スライド ${i + 1}`);
+      const touch = event.touches[0];
+      if (!touch) return;
 
-        dot.addEventListener('click', function (this: HTMLElement) {
-          const n = this.dataset.carousel!;
-          const idx = parseInt(this.dataset.index!, 10);
-          showSlide(n, idx);
-        });
+      const rawDiffX = touch.clientX - state.startX;
+      const rawDiffY = touch.clientY - state.startY;
 
-        dotsContainer.appendChild(dot);
+      if (
+        state.directionLocked === null
+        && (Math.abs(rawDiffX) > DIRECTION_LOCK_DISTANCE
+          || Math.abs(rawDiffY) > DIRECTION_LOCK_DISTANCE)
+      ) {
+        const angle = Math.abs((Math.atan2(rawDiffY, rawDiffX) * 180) / Math.PI);
+
+        if (angle < DIRECTION_LOCK_ANGLE || angle > 180 - DIRECTION_LOCK_ANGLE) {
+          state.directionLocked = 'horizontal';
+        } else {
+          state.directionLocked = 'vertical';
+          state.dragging = false;
+          state.slides.forEach((slide) => slide.classList.remove('carousel-dragging'));
+          return;
+        }
       }
-    });
-  }
 
-  /* ---------- slide navigation (class + translateX based) ---------- */
-  function showSlide(name: string, index: number) {
-    const carousel = carousels[name];
-    if (!carousel) return;
+      if (state.directionLocked !== 'horizontal') return;
+      event.preventDefault();
 
-    // Wrap around at boundaries (infinite loop)
-    index = ((index % carousel.total) + carousel.total) % carousel.total;
-    carousel.current = index;
-
-    const total = carousel.total;
-    const prevIndex = (index - 1 + total) % total;
-    const nextIndex = (index + 1) % total;
-
-    const cards = getCards(name);
-    cards.forEach((card, i) => {
-      // Reset inline styles from drag
-      card.style.transform = '';
-      card.style.opacity = '';
-
-      // Remove all state classes
-      card.classList.remove('carousel-active', 'carousel-adjacent', 'carousel-dragging');
-
-      if (i === index) {
-        card.classList.add('carousel-active');
-        card.style.transform = 'translateX(0)';
-      } else if (i === prevIndex) {
-        card.classList.add('carousel-adjacent');
-        card.style.transform = `translateX(-${OFFSCREEN_OFFSET}px)`;
-      } else if (i === nextIndex) {
-        card.classList.add('carousel-adjacent');
-        card.style.transform = `translateX(${OFFSCREEN_OFFSET}px)`;
-      } else {
-        card.style.transform = `translateX(${OFFSCREEN_OFFSET}px)`;
+      const designDiffX = rawDiffX / state.scale;
+      const activeSlide = getSlide(state, state.current);
+      if (activeSlide) {
+        activeSlide.style.transform = `translateX(${designDiffX}px)`;
       }
+
+      const total = state.slides.length;
+      const progress = Math.min(1, Math.abs(designDiffX) / SWIPE_THRESHOLD);
+
+      if (designDiffX < 0) {
+        const nextSlide = getSlide(state, (state.current + 1) % total);
+        if (nextSlide) {
+          nextSlide.classList.add('carousel-adjacent');
+          nextSlide.style.opacity = String(Math.max(0.3, progress));
+          nextSlide.style.transform = `translateX(${OFFSCREEN_OFFSET + designDiffX}px)`;
+        }
+      } else if (designDiffX > 0) {
+        const previousSlide = getSlide(state, (state.current - 1 + total) % total);
+        if (previousSlide) {
+          previousSlide.classList.add('carousel-adjacent');
+          previousSlide.style.opacity = String(Math.max(0.3, progress));
+          previousSlide.style.transform = `translateX(${-OFFSCREEN_OFFSET + designDiffX}px)`;
+        }
+      }
+    };
+
+    const handleTouchEnd = (event: TouchEvent): void => {
+      if (!state.dragging && state.directionLocked !== 'horizontal') return;
+
+      state.dragging = false;
+      state.slides.forEach((slide) => slide.classList.remove('carousel-dragging'));
+
+      const touch = event.changedTouches[0];
+      if (!touch) {
+        showSlide(state, state.current);
+        state.directionLocked = null;
+        return;
+      }
+
+      const designDiffX = (touch.clientX - state.startX) / state.scale;
+      const elapsed = Date.now() - state.startTime;
+      const velocity = elapsed > 0 ? Math.abs(designDiffX) / elapsed : 0;
+      let nextIndex = state.current;
+
+      if (Math.abs(designDiffX) > SWIPE_THRESHOLD || velocity > VELOCITY_THRESHOLD) {
+        if (designDiffX < 0) nextIndex += 1;
+        if (designDiffX > 0) nextIndex -= 1;
+      }
+
+      showSlide(state, nextIndex);
+      state.directionLocked = null;
+    };
+
+    section.addEventListener('touchstart', handleTouchStart, { passive: true });
+    section.addEventListener('touchmove', handleTouchMove, { passive: false });
+    section.addEventListener('touchend', handleTouchEnd, { passive: true });
+
+    cleanupCallbacks.push(() => {
+      section.removeEventListener('touchstart', handleTouchStart);
+      section.removeEventListener('touchmove', handleTouchMove);
+      section.removeEventListener('touchend', handleTouchEnd);
     });
-
-    updateDots(name, index);
-  }
-
-  /* ---------- button click handling (prev/next) ---------- */
-  document.addEventListener('click', (e) => {
-    const btn = (e.target as HTMLElement).closest(
-      '.slider-btn, .reviews__slider-prev, .reviews__slider-next'
-    );
-    if (!btn) return;
-
-    const name = (btn as HTMLElement).dataset.carousel;
-    if (!name || !carousels[name]) return;
-
-    const isPrev = btn.classList.contains('slider-btn--prev')
-      || btn.classList.contains('reviews__slider-prev');
-    const direction = isPrev ? -1 : 1;
-
-    showSlide(name, carousels[name].current + direction);
   });
 
-  /* ---------- touch drag support (real-time tracking) ---------- */
-  function initDrag() {
-    Object.keys(carousels).forEach((name) => {
-      const container = document.querySelector(
-        `[data-carousel-section="${name}"]`
-      ) as HTMLElement;
-      if (!container) return;
+  const handleClick = (event: MouseEvent): void => {
+    const target = event.target instanceof Element ? event.target : null;
+    if (!target) return;
 
-      /* ---------- touchstart ---------- */
-      container.addEventListener('touchstart', ((e: TouchEvent) => {
-        const state = carousels[name];
-        state.dragging = true;
-        state.startX = e.touches[0].clientX;
-        state.startY = e.touches[0].clientY;
-        state.startTime = Date.now();
-        state.currentTranslateX = 0;
-        state.directionLocked = null;
-        state.scale = getScale();
+    const dot = target.closest<HTMLElement>('.carousel-dots .dot[data-carousel]');
+    if (dot) {
+      const name = dot.dataset.carousel;
+      const index = Number.parseInt(dot.dataset.index ?? '', 10);
+      const state = name ? states.get(name) : undefined;
 
-        // Disable transition on current + adjacent cards for instant tracking
-        const total = state.total;
-        const activeCard = getCardByIndex(name, state.current);
-        if (activeCard) activeCard.classList.add('carousel-dragging');
-        const prevCard = getCardByIndex(name, (state.current - 1 + total) % total);
-        if (prevCard) prevCard.classList.add('carousel-dragging');
-        const nextCard = getCardByIndex(name, (state.current + 1) % total);
-        if (nextCard) nextCard.classList.add('carousel-dragging');
-      }) as EventListener, { passive: true });
+      if (state && Number.isInteger(index)) {
+        showSlide(state, index);
+      }
+      return;
+    }
 
-      /* ---------- touchmove ---------- */
-      container.addEventListener('touchmove', ((e: TouchEvent) => {
-        const state = carousels[name];
-        if (!state.dragging) return;
+    const control = target.closest<HTMLElement>('.slider-btn[data-carousel]');
+    if (!control) return;
 
-        const currentX = e.touches[0].clientX;
-        const currentY = e.touches[0].clientY;
-        const rawDiffX = currentX - state.startX;
-        const rawDiffY = currentY - state.startY;
+    const name = control.dataset.carousel;
+    const state = name ? states.get(name) : undefined;
+    if (!state) return;
 
-        // Direction lock: decide once
-        if (state.directionLocked === null
-            && (Math.abs(rawDiffX) > DIRECTION_LOCK_DISTANCE || Math.abs(rawDiffY) > DIRECTION_LOCK_DISTANCE)) {
-          const angle = Math.abs(Math.atan2(rawDiffY, rawDiffX) * 180 / Math.PI);
-          if (angle < DIRECTION_LOCK_ANGLE || angle > (180 - DIRECTION_LOCK_ANGLE)) {
-            state.directionLocked = 'horizontal';
-          } else {
-            state.directionLocked = 'vertical';
-            state.dragging = false;
-            getCards(name).forEach(c => c.classList.remove('carousel-dragging'));
-            return;
-          }
-        }
+    const isPrevious = control.classList.contains('slider-btn--prev');
+    showSlide(state, state.current + (isPrevious ? -1 : 1));
+  };
 
-        if (state.directionLocked !== 'horizontal') return;
+  const handleKeydown = (event: KeyboardEvent): void => {
+    if (event.key !== 'Enter' && event.key !== ' ') return;
 
-        // Prevent vertical scroll while dragging horizontally
-        e.preventDefault();
+    const target = event.target instanceof Element ? event.target : null;
+    const dot = target?.closest<HTMLElement>('.carousel-dots .dot[data-carousel]');
+    if (!dot) return;
 
-        // Convert screen px to design-space px
-        const designDiffX = rawDiffX / state.scale;
+    const name = dot.dataset.carousel;
+    const index = Number.parseInt(dot.dataset.index ?? '', 10);
+    const state = name ? states.get(name) : undefined;
+    if (!state || !Number.isInteger(index)) return;
 
-        state.currentTranslateX = designDiffX;
+    event.preventDefault();
+    showSlide(state, index);
+  };
 
-        // Move active card with finger
-        const activeCard = getCardByIndex(name, state.current);
-        if (activeCard) {
-          activeCard.style.transform = `translateX(${designDiffX}px)`;
-        }
+  document.addEventListener('click', handleClick);
+  document.addEventListener('keydown', handleKeydown);
+  cleanupCallbacks.push(() => document.removeEventListener('click', handleClick));
+  cleanupCallbacks.push(() => document.removeEventListener('keydown', handleKeydown));
 
-        // Move adjacent card into view (peek effect) — wraps around
-        const total = state.total;
-        if (designDiffX < 0) {
-          // Swiping left → show next (wraps)
-          const nextCard = getCardByIndex(name, (state.current + 1) % total);
-          if (nextCard) {
-            nextCard.classList.add('carousel-adjacent');
-            const progress = Math.min(1, Math.abs(designDiffX) / SWIPE_THRESHOLD);
-            nextCard.style.opacity = String(Math.max(0.3, progress));
-            nextCard.style.transform = `translateX(${OFFSCREEN_OFFSET + designDiffX}px)`;
-          }
-        } else if (designDiffX > 0) {
-          // Swiping right → show prev (wraps)
-          const prevCard = getCardByIndex(name, (state.current - 1 + total) % total);
-          if (prevCard) {
-            prevCard.classList.add('carousel-adjacent');
-            const progress = Math.min(1, Math.abs(designDiffX) / SWIPE_THRESHOLD);
-            prevCard.style.opacity = String(Math.max(0.3, progress));
-            prevCard.style.transform = `translateX(${-OFFSCREEN_OFFSET + designDiffX}px)`;
-          }
-        }
-      }) as EventListener, { passive: false });
+  return () => cleanupCallbacks.forEach((cleanup) => cleanup());
+}
 
-      /* ---------- touchend ---------- */
-      container.addEventListener('touchend', ((e: TouchEvent) => {
-        const state = carousels[name];
-        if (!state.dragging && state.directionLocked !== 'horizontal') return;
-        state.dragging = false;
+export function initCarousels(): void {
+  window.__mcaPhsupportCarouselCleanup__?.();
 
-        // Re-enable transitions for snap animation
-        getCards(name).forEach(c => c.classList.remove('carousel-dragging'));
-
-        const endX = e.changedTouches[0].clientX;
-        const rawDiffX = endX - state.startX;
-        const designDiffX = rawDiffX / state.scale;
-        const elapsed = Date.now() - state.startTime;
-        const velocity = elapsed > 0 ? Math.abs(designDiffX) / elapsed : 0;
-
-        let newIndex = state.current;
-
-        if (Math.abs(designDiffX) > SWIPE_THRESHOLD || velocity > VELOCITY_THRESHOLD) {
-          if (designDiffX < 0) {
-            newIndex = state.current + 1; // wraps via showSlide
-          } else if (designDiffX > 0) {
-            newIndex = state.current - 1; // wraps via showSlide
-          }
-        }
-
-        // Snap to new index (or bounce back) with CSS transition
-        showSlide(name, newIndex);
-        state.directionLocked = null;
-      }) as EventListener, { passive: true });
-    });
-  }
-
-  /* ---------- initialization ---------- */
-  function start() {
-    createDots();
-    Object.keys(carousels).forEach((name) => showSlide(name, 0));
-    initDrag();
-  }
+  const start = (): void => {
+    window.__mcaPhsupportCarouselCleanup__ = setupCarousels();
+  };
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', start);
+    document.addEventListener('DOMContentLoaded', start, { once: true });
+    window.__mcaPhsupportCarouselCleanup__ = () => {
+      document.removeEventListener('DOMContentLoaded', start);
+    };
   } else {
     start();
   }

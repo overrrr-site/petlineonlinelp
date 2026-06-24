@@ -1,39 +1,76 @@
 ---
+interface CautionSlide {
+  icon: string;
+  heading: readonly string[];
+  body: readonly string[];
+}
+
+const CAUTION_SLIDES = [
+  {
+    icon: '/mca-phsupport/img/caution-vet.webp',
+    heading: ['本商品は', '療法食ではありません'],
+    body: ['治療中・通院中の愛犬には、', '必ずかかりつけの獣医師に', 'ご相談のうえご使用ください。'],
+  },
+  {
+    icon: '/mca-phsupport/img/caution-icon-bowl.svg',
+    heading: ['合わないと感じたら、', '無理に続けないで。'],
+    body: ['愛犬の様子をよく観察しながら、', '判断してください。', '食いつきや体調の変化など、気になる', 'ことがあれば中止してください。'],
+  },
+  {
+    icon: '/mca-phsupport/img/caution-icon-yen.svg',
+    heading: ['まずは、お試し価格で。'],
+    body: ['だから私たちは、2.5kgの通常パックを', 'お試し価格でご用意しました。', '愛犬の反応を見てから、', '続けるかどうかを決めてください。'],
+  },
+] satisfies readonly CautionSlide[];
 ---
 
-<div class="section" style="background:var(--background-03)">
+<section class="section" style="background:var(--background-03)" aria-labelledby="caution-title">
   <div class="screen-wrapper">
-    <div class="caution screen" data-carousel-section="honesty">
+    <div
+      class="caution screen"
+      id="honesty-carousel"
+      data-carousel-section="honesty"
+      role="group"
+      aria-roledescription="カルーセル"
+      aria-labelledby="caution-title"
+    >
       <div class="caution__bg-card caution__bg-card--left"></div>
       <div class="caution__bg-card caution__bg-card--right"></div>
       <div class="caution__slider">
-        <button class="slider-btn slider-btn--prev" data-carousel="honesty" aria-label="前へ">
+        <button type="button" class="slider-btn slider-btn--prev" data-carousel="honesty" aria-label="前へ" aria-controls="honesty-carousel">
           <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="18" fill="currentColor"/><path d="M20.5 12L15 17.5L20.5 23" stroke="var(--white)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
-        <div class="carousel-dots" data-carousel="honesty"></div>
-        <button class="slider-btn slider-btn--next" data-carousel="honesty" aria-label="次へ">
+        <div class="carousel-dots" data-carousel="honesty" role="group" aria-label="スライド選択"></div>
+        <button type="button" class="slider-btn slider-btn--next" data-carousel="honesty" aria-label="次へ" aria-controls="honesty-carousel">
           <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="18" fill="currentColor"/><path d="M15.5 12L21 17.5L15.5 23" stroke="var(--white)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
       </div>
-      <div class="caution__card main_01">
-        <img class="caution__card-icon" src="/mca-phsupport/img/caution-vet.webp" alt="" loading="lazy" />
-        <div class="caution__card-heading">本商品は<br />療法食ではありません</div>
-        <div class="caution__card-text">治療中・通院中の愛犬には、<br />必ずかかりつけの獣医師に<br />ご相談のうえご使用ください。</div>
-      </div>
-      <div class="caution__card main_02">
-        <img class="caution__card-icon" src="/mca-phsupport/img/caution-icon-bowl.svg" alt="" loading="lazy" />
-        <div class="caution__card-heading">合わないと感じたら、<br />無理に続けないで。</div>
-        <div class="caution__card-text">愛犬の様子をよく観察しながら、<br />判断してください。<br />食いつきや体調の変化など、気になる<br />ことがあれば中止してください。</div>
-      </div>
-      <div class="caution__card main_03">
-        <img class="caution__card-icon" src="/mca-phsupport/img/caution-icon-yen.svg" alt="" loading="lazy" />
-        <div class="caution__card-heading">まずは、お試し価格で。</div>
-        <div class="caution__card-text">だから私たちは、2.5kgの通常パックを<br />お試し価格でご用意しました。<br />愛犬の反応を見てから、<br />続けるかどうかを決めてください。</div>
-      </div>
+      {CAUTION_SLIDES.map((slide, index) => (
+        <div
+          class:list={['caution__card', `main_${String(index + 1).padStart(2, '0')}`]}
+          data-carousel-slide
+          role="group"
+          aria-roledescription="スライド"
+          aria-label={`${index + 1} / ${CAUTION_SLIDES.length}`}
+          aria-hidden={index === 0 ? 'false' : 'true'}
+        >
+          <img class="caution__card-icon" src={slide.icon} alt="" loading="lazy" />
+          <div class="caution__card-heading">
+            {slide.heading.map((line, lineIndex) => (
+              <Fragment>{line}{lineIndex < slide.heading.length - 1 && <br />}</Fragment>
+            ))}
+          </div>
+          <div class="caution__card-text">
+            {slide.body.map((line, lineIndex) => (
+              <Fragment>{line}{lineIndex < slide.body.length - 1 && <br />}</Fragment>
+            ))}
+          </div>
+        </div>
+      ))}
       <div class="caution__header">
         <div class="caution__header-inner">
           <div class="caution__label">HONESTY</div>
-          <h2 class="caution__title">わんちゃんに合わない場合は、<br/>ご使用をお控えください</h2>
+          <h2 class="caution__title" id="caution-title">わんちゃんに合わない場合は、<br/>ご使用をお控えください</h2>
         </div>
         <div class="caution__subtitle">
           <div class="caution__subtitle-text">だからこそ、私たちからのお願いです。<br/>すべての子に合うわけではありません。<br/>治療中・通院中の場合は獣医師にご相談を。</div>
@@ -41,7 +78,7 @@
       </div>
     </div>
   </div>
-</div>
+</section>
 
 <style>
   /* ========================================

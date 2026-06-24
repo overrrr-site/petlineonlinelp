@@ -1,7 +1,7 @@
 ---
 ---
 
-<section class="section" style="background:var(--background-tan)" aria-label="商品紹介">
+<section class="section" style="background:var(--background-tan)" aria-labelledby="product-title">
   <div class="screen-wrapper">
     <div class="product screen">
       <div class="product__inner">
@@ -11,7 +11,7 @@
         <div class="product__age product__age--right"><span class="product__age-text">11歳から</span></div>
         <img class="product__package product__package--left" src="/mca-phsupport/img/u0311-1.webp" alt="1歳から 2.5kg パッケージ" />
         <img class="product__package product__package--right" src="/mca-phsupport/img/u0311-2.webp" alt="11歳から 2.5kg パッケージ" />
-        <p class="product__brand">メディコートアドバンス<br />尿石ケア pHサポート</p>
+        <h2 class="product__brand" id="product-title">メディコートアドバンス<br />尿石ケア pHサポート</h2>
         <div class="product__underline" aria-hidden="true"></div>
         <img class="product__gf-icon" src="/mca-phsupport/img/gf-c-f-2.webp" alt="ドライフードの粒" />
 
@@ -346,17 +346,6 @@
     top: 33%;
     left: 71.5%;
     object-fit: contain;
-  }
-
-  @keyframes cta-glow {
-    0%, 100% { box-shadow: 0 0 0 0 rgba(var(--orange-rgb), 0.4); }
-    50%      { box-shadow: 0 0 12px 4px rgba(var(--orange-rgb), 0.25); }
-  }
-
-  @keyframes cta-shine {
-    0%   { left: -100%; }
-    20%  { left: 100%; }
-    100% { left: 100%; }
   }
 
   .product__cta-button-text {

@@ -1,7 +1,7 @@
 ---
 ---
 
-<div class="section" style="background:var(--background-02)" aria-label="ファーストビュー">
+<section class="section" style="background:var(--background-02)" aria-labelledby="fv-title">
   <div class="screen-wrapper">
     <div class="fv screen">
       <div class="fv__hero">
@@ -23,7 +23,7 @@
       <div class="fv__catch-bg--1" aria-hidden="true"></div>
       <p class="fv__catch-line--1">下部尿路の健康維持は、</p>
       <div class="fv__catch-bg--2" aria-hidden="true"></div>
-      <h1 class="fv__catch-line--2">毎日のごはん選びから。</h1>
+      <h1 class="fv__catch-line--2" id="fv-title">毎日のごはん選びから。</h1>
 
       <p class="fv__lead">尿pHとミネラルバランスを調整した国産フード。<br/>1歳から／11歳から、年齢に合わせて選べます。</p>
       <p class="fv__micro">送料当社負担 / お届けは1回のみ。自動継続なし。</p>
@@ -35,27 +35,9 @@
       <p class="fv__swipe-text">swipe</p>
     </div>
   </div>
-</div>
+</section>
 
 <style>
-  .section {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    height: 100dvh;
-    min-height: 100vh;
-    min-height: 100dvh;
-    overflow: hidden;
-    scroll-snap-align: start;
-  }
-
-  .screen-wrapper {
-    position: relative;
-    overflow: hidden;
-  }
-
   .fv {
     position: relative;
     width: 440px !important;
