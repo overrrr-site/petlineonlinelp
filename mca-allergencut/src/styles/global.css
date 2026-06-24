@@ -143,6 +143,7 @@ button {
 
 [data-carousel-section] [data-carousel-slide] {
   display: flex !important;
+  flex-shrink: 0;
   opacity: 0;
   pointer-events: none;
   transition:

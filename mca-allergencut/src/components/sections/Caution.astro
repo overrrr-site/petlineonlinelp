@@ -54,7 +54,7 @@ const CAUTION_SLIDES = [
           aria-label={`${index + 1} / ${CAUTION_SLIDES.length}`}
           aria-hidden={index === 0 ? 'false' : 'true'}
         >
-          <img class="caution__card-icon" src={slide.icon} alt="" loading="lazy" />
+          <img class="caution__card-icon" src={slide.icon} alt="" aria-hidden="true" loading="lazy" />
           <div class="caution__card-heading">
             {slide.heading.map((line, lineIndex) => (
               <Fragment>{line}{lineIndex < slide.heading.length - 1 && <br />}</Fragment>
