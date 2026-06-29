@@ -36,7 +36,7 @@
             </div>
             <div class="feat__ph-col">
               <h4 class="feat__sub">(2)マグネシウム含有量を調整</h4>
-              <p class="feat__sub-text">含有量を厳密に調整。</p>
+              <p class="feat__sub-text">マグネシウム含有量を厳密に調整。</p>
               <p class="feat__mg-label">マグネシウム 標準値</p>
               <table class="feat__tbl">
                 <tbody>
@@ -257,7 +257,14 @@
     color: var(--brown-amber);
     font-size: 10px;
     font-weight: 500;
-    margin: 2px 0 0;
+    /* ラベル＋表を列の下端へ寄せ、左列の表と下面を揃える。
+       余った空きが本文との間の余白になる。 */
+    margin: auto 0 0;
+  }
+
+  /* 左列(1)の表も下端アンカーし、両列の表の下面を確実に揃える */
+  .feat__phbox > .feat__ph-col:first-child > .feat__tbl {
+    margin-top: auto;
   }
 
   /* Tables */
