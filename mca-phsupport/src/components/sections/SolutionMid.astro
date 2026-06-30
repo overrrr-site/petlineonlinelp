@@ -52,19 +52,8 @@
             </div>
           </article>
 
-          <a class="type__cta" href="#footer-cta" aria-label="今すぐ試す">
-            <div class="type__cta-badge">
-              <div class="type__cta-badge-text">お一人様1回限りの限定価格</div>
-              <img class="type__cta-badge-line" src="/mca-phsupport/img/vector-4-2.svg" alt="" aria-hidden="true" />
-            </div>
-
-            <img class="type__cta-price-img" src="/mca-phsupport/img/fv-price.webp" alt="2.5kg が 800円" />
-
-            <div class="type__cta-button">
-              <div class="type__cta-button-bg" aria-hidden="true"></div>
-              <img class="type__cta-button-arrow" src="/mca-phsupport/img/vector-1-5.svg" alt="" aria-hidden="true" />
-              <div class="type__cta-button-text">今すぐ試す</div>
-            </div>
+          <a class="type__cta" href="#footer-cta" aria-label="お一人様1回限りの限定価格 しっかり800円(2.5kg) 今すぐ試す">
+            <img class="type__cta-image" src="/mca-phsupport/img/CTA.svg" alt="お一人様1回限りの限定価格 しっかり800円(2.5kg) 今すぐ試す" />
           </a>
         </div>
       </div>
@@ -445,110 +434,19 @@
     white-space: nowrap;
   }
 
-  /* CTA block */
+  /* CTA block：FVと同じ単一画像（CTA.svg）に差し替え */
   .type__cta {
-    position: relative;
     display: block;
-    width: 335.44px;
-    height: 153.92px;
-    margin: 18px auto 0;
-  }
-
-  .type__cta-badge {
-    position: absolute;
-    width: 61.72%;
-    height: 21.01%;
-    top: 0;
-    left: 19.38%;
-  }
-
-  .type__cta-badge-text {
-    position: absolute;
-    width: 96.13%;
-    height: 74.22%;
-    top: 0;
-    left: 0;
-    transform: rotate(-0.1deg);
-    font-family: var(--font-family);
-    font-weight: 700;
-    color: var(--amber-brown);
-    font-size: var(--font-size-m);
-    letter-spacing: 0.62px;
-    line-height: 23.1px;
-    white-space: nowrap;
-  }
-
-  .type__cta-badge-line {
-    position: absolute;
-    width: 150%;
-    height: 26.29%;
-    top: 73.71%;
-    left: -7%;
-  }
-
-  /* 価格表示：FVと同じ単一画像に差し替え（旧・多重SVG構成を撤去） */
-  .type__cta-price-img {
-    position: absolute;
     width: 335px;
     height: auto;
-    top: 36px;
-    left: 0;
+    margin: 18px auto 0;
+    line-height: 0;
   }
 
-  .type__cta-button {
-    position: absolute;
-    width: 247px;
-    height: 56px;
-    top: 97px;
-    left: 45px;
-  }
-
-  .type__cta-button-bg {
-    position: absolute;
-    width: 99.19%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-color: var(--orange);
-    border-radius: 999px;
-    box-shadow: 0px 4px 4px var(--shadow-strong);
-    overflow: hidden;
-    animation: cta-glow 2s ease-in-out infinite;
-  }
-
-  .type__cta-button-bg::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 60%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent 0%, rgba(var(--white-rgb), 0.25) 50%, transparent 100%);
-    animation: cta-shine 3s ease-in-out infinite;
-    pointer-events: none;
-  }
-
-  .type__cta-button-arrow {
-    position: absolute;
-    width: 7.5%;
-    height: 34%;
-    top: 33%;
-    left: 71.5%;
-    object-fit: contain;
-  }
-
-  .type__cta-button-text {
-    position: absolute;
-    width: 46.15%;
-    height: 56.21%;
-    top: 17.57%;
-    left: 22.67%;
-    font-family: var(--font-family);
-    font-weight: 900;
-    color: var(--white);
-    font-size: var(--font-size-cta);
-    letter-spacing: 1.09px;
-    line-height: normal;
+  .type__cta-image {
+    display: block;
+    width: 100%;
+    height: auto;
   }
 
 </style>
