@@ -12,7 +12,16 @@ const OUT = 'dist';
 const PROJECTS = [
   { name: 'mca-allergencut', dist: 'mca-allergencut/dist', title: 'メディコート アドバンス アレルゲンカット' },
   { name: 'mca-phsupport', dist: 'mca-phsupport/dist', title: 'メディコート アドバンス 尿石ケア pHサポート' },
-  { name: 'kaiseki', dist: 'kaiseki/dist', title: '懐石 2つのごほうび（猫）／健美（犬）' },
+  {
+    name: 'kaiseki',
+    dist: 'kaiseki/dist',
+    title: '懐石',
+    // 1 プロジェクトに複数ページがある場合は pages で個別リンクを出す
+    pages: [
+      { path: '/kaiseki/', label: '懐石 2つのごほうび（猫）' },
+      { path: '/kaiseki/dog/', label: '懐石 健美（犬）' },
+    ],
+  },
 ];
 
 rmSync(OUT, { recursive: true, force: true });
@@ -31,7 +40,11 @@ for (const p of PROJECTS) {
 
 // ルート（ドメイン直下）に各 LP へのリンク一覧を置く
 const items = live
-  .map((p) => `      <li><a href="/${p.name}/">${p.title}</a></li>`)
+  .flatMap((p) =>
+    p.pages
+      ? p.pages.map((pg) => `      <li><a href="${pg.path}">${pg.label}</a></li>`)
+      : [`      <li><a href="/${p.name}/">${p.title}</a></li>`]
+  )
   .join('\n');
 
 writeFileSync(
