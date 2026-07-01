@@ -12,7 +12,7 @@ const OUT = 'dist';
 const PROJECTS = [
   { name: 'mca-allergencut', dist: 'mca-allergencut/dist', title: 'メディコート アドバンス アレルゲンカット' },
   { name: 'mca-phsupport', dist: 'mca-phsupport/dist', title: 'メディコート アドバンス 尿石ケア pHサポート' },
-  // { name: 'kaiseki',       dist: 'kaiseki/dist',       title: '…' },
+  { name: 'kaiseki', dist: 'kaiseki/dist', title: '懐石 2つのごほうび（猫）／健美（犬）' },
 ];
 
 rmSync(OUT, { recursive: true, force: true });

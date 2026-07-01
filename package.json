@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "description": "ペットライン LP 統合リポジトリ（1 Vercel プロジェクトでサブパス配信）",
   "scripts": {
-    "build": "cd mca-allergencut && npm install && npm run build && cd .. && cd mca-phsupport && npm install && npm run build && cd .. && node scripts/assemble.mjs",
+    "build": "cd mca-allergencut && npm install && npm run build && cd .. && cd mca-phsupport && npm install && npm run build && cd .. && cd kaiseki && npm install && npm run build && cd .. && node scripts/assemble.mjs",
     "preview": "npx serve dist -l 4330"
   }
 }

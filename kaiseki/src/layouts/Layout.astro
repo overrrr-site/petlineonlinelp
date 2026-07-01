@@ -1,0 +1,60 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = '' } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" href="/kaiseki/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&family=Kaisei+Tokumin:wght@500;700;800&family=Cormorant+Infant:ital,wght@1,700&family=Rokkitt:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+    <title>{title}</title>
+    <!-- Google Tag Manager -->
+    <script is:inline>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MRXPL4B');</script>
+    <!-- End Google Tag Manager -->
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MRXPL4B"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="kaiseki-stage">
+      <slot />
+    </div>
+
+    <script is:inline>
+      // 375px デザインを端末幅にフィットさせる等倍スケール。
+      // 上限 420px（タブレット/PC では中央寄せ）。
+      (function () {
+        var DESIGN_W = 375;
+        var MAX_W = 420;
+        function fit() {
+          var vw = Math.min(window.innerWidth, MAX_W);
+          var scale = vw / DESIGN_W;
+          document.documentElement.style.setProperty('--scale', String(scale));
+        }
+        fit();
+        window.addEventListener('resize', fit);
+        window.addEventListener('orientationchange', fit);
+      })();
+    </script>
+  </body>
+</html>

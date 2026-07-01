@@ -1,0 +1,72 @@
+/* ===== Reset (Anima は meyer-reset + box-sizing を利用していたため最小限を再現) ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f8f0e1;
+  font-family: "Zen Maru Gothic", sans-serif;
+}
+
+img {
+  display: block;
+  border: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+p {
+  margin: 0;
+}
+
+/* ===== Stage：375px 固定デザインを端末幅に合わせて等倍スケール =====
+   --scale は inline script で端末幅に応じて設定する。
+   zoom はレイアウト寸法ごと拡縮するため縦スクロール高さも自動で追従する。 */
+.kaiseki-stage {
+  width: 375px;
+  margin: 0 auto;
+  zoom: var(--scale, 1);
+}
+
+/* zoom 非対応ブラウザ向けフォールバック（transform） */
+@supports not (zoom: 1) {
+  .kaiseki-stage {
+    transform: scale(var(--scale, 1));
+    transform-origin: top center;
+  }
+}
+
+/* カルーセル左（前へ）ボタン：位置は各ページ CSS で指定。見た目は右矢印と対称 */
+.carousel-prev {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  padding: 5px;
+  z-index: 2;
+}
+.carousel-prev img {
+  width: auto;
+  height: 22px;
+}

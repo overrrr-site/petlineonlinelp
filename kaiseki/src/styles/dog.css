@@ -1,0 +1,3459 @@
+.dog-canvas {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+  position: relative;
+  background-color: #f8f0e1;
+  overflow: hidden;
+  width: 375px;
+  margin: 0 auto;
+}
+
+.dog-canvas .FV {
+  position: relative;
+  width: 375px;
+  height: 720px;
+}
+
+.dog-canvas .bg {
+  position: relative;
+  width: 375px;
+  height: 4113px;
+  /* FV直下はクリーム背景を継続し、チェック柄はこの位置から開始（猫ページに合わせ約60px） */
+  margin-top: 60px;
+}
+
+.dog-canvas .img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 375px;
+  height: 525px;
+  aspect-ratio: 0.71;
+}
+
+.dog-canvas .bg-2 {
+  position: absolute;
+  top: 525px;
+  left: 0;
+  width: 375px;
+  height: 525px;
+  aspect-ratio: 0.71;
+}
+
+.dog-canvas .bg-3 {
+  position: absolute;
+  top: 1050px;
+  left: 0;
+  width: 375px;
+  height: 525px;
+  aspect-ratio: 0.71;
+}
+
+.dog-canvas .bg-4 {
+  position: absolute;
+  top: 1575px;
+  left: 0;
+  width: 375px;
+  height: 525px;
+  aspect-ratio: 0.71;
+}
+
+.dog-canvas .bg-5 {
+  position: absolute;
+  top: 2100px;
+  left: 0;
+  width: 375px;
+  height: 525px;
+  aspect-ratio: 0.71;
+}
+
+.dog-canvas .bg-6 {
+  position: absolute;
+  top: 2625px;
+  left: 0;
+  width: 375px;
+  height: 525px;
+  aspect-ratio: 0.71;
+}
+
+.dog-canvas .bg-7 {
+  position: absolute;
+  top: 3150px;
+  left: 0;
+  width: 375px;
+  height: 525px;
+  aspect-ratio: 0.71;
+}
+
+.dog-canvas .bg-8 {
+  position: absolute;
+  top: 3675px;
+  left: 0;
+  width: 375px;
+  height: 414px;
+}
+
+.dog-canvas .LINE-UP {
+  position: relative;
+  width: 385px;
+  height: 1520px;
+  margin-right: -10px;
+}
+
+.dog-canvas .text-wrapper {
+  position: absolute;
+  top: 1670px;
+  left: 61px;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 500;
+  color: #222222;
+  font-size: 12px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 20px;
+  white-space: nowrap;
+}
+
+.dog-canvas .button-dog {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 22px;
+  position: absolute;
+  top: 1619px;
+  left: calc(50.00% - 150px);
+  background-color: #da1f00;
+  border-radius: 30px;
+}
+
+.dog-canvas .element {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+.dog-canvas .polygon {
+  position: relative;
+  width: 12px;
+  height: 13.86px;
+  aspect-ratio: 1;
+}
+
+.dog-canvas .div {
+  position: absolute;
+  top: 1579px;
+  left: calc(50.00% - 104px);
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 700;
+  color: transparent;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 30px;
+  white-space: nowrap;
+}
+
+.dog-canvas .span {
+  color: #222222;
+}
+
+.dog-canvas .text-wrapper-2 {
+  color: #da1f00;
+}
+
+.dog-canvas .frame {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 6px 10px;
+  position: absolute;
+  top: 1537px;
+  left: 133px;
+  border: 1px solid;
+  border-color: #222222;
+}
+
+.dog-canvas .text-wrapper-3 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 700;
+  color: #222222;
+  font-size: 12px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 20px;
+  white-space: nowrap;
+}
+
+.dog-canvas .text-wrapper-4 {
+  position: absolute;
+  top: 1492px;
+  left: 20px;
+  width: 335px;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 400;
+  color: #222222;
+  font-size: 10px;
+  letter-spacing: 0;
+  line-height: 15px;
+}
+
+.dog-canvas .element-2 {
+  position: absolute;
+  top: 1262px;
+  left: 20px;
+  width: 339px;
+  height: 200px;
+}
+
+.dog-canvas .button {
+  all: unset;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  position: absolute;
+  top: 150px;
+  left: 133px;
+  background-color: #da1f00;
+  border-radius: 30px;
+}
+
+.dog-canvas .text-wrapper-5 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  margin-top: -0.5px;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 0.1px;
+}
+
+.dog-canvas .polygon-2 {
+  position: relative;
+  width: 9px;
+  height: 10.39px;
+  aspect-ratio: 1;
+}
+
+.dog-canvas .text-wrapper-6 {
+  position: absolute;
+  top: 74px;
+  left: 133px;
+  width: 202px;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 400;
+  color: #222222;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 22px;
+}
+
+.dog-canvas .text-wrapper-7 {
+  position: absolute;
+  top: 47px;
+  left: 133px;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 700;
+  color: #222222;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 22px;
+  white-space: nowrap;
+}
+
+.dog-canvas .div-wrapper {
+  top: 13px;
+  left: 133px;
+  background-color: #a3b1c0;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 1px 8px;
+  position: absolute;
+  border-radius: 3px;
+}
+
+.dog-canvas .text-wrapper-8 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 14px;
+  letter-spacing: 1.4px;
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+.dog-canvas .thumb-kenbi {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 103px;
+  height: 200px;
+  aspect-ratio: 0.52;
+  object-fit: cover;
+}
+
+.dog-canvas .element-3 {
+  position: absolute;
+  top: 1015px;
+  left: 20px;
+  width: 339px;
+  height: 217px;
+}
+
+.dog-canvas .button-2 {
+  all: unset;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  position: absolute;
+  top: 181px;
+  left: 133px;
+  background-color: #da1f00;
+  border-radius: 30px;
+}
+
+.dog-canvas .element-4 {
+  position: absolute;
+  top: 61px;
+  left: 133px;
+  width: 202px;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 400;
+  color: #222222;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 22px;
+}
+
+.dog-canvas .text-wrapper-9 {
+  position: absolute;
+  top: 34px;
+  left: 133px;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 700;
+  color: #222222;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 22px;
+  white-space: nowrap;
+}
+
+.dog-canvas .frame-2 {
+  top: 0;
+  left: calc(50.00% - 36px);
+  background-color: #aa8158;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 1px 8px;
+  position: absolute;
+  border-radius: 3px;
+}
+
+.dog-canvas .thumb-kenbi-2 {
+  position: absolute;
+  top: 9px;
+  left: 0;
+  width: 103px;
+  height: 200px;
+  aspect-ratio: 0.52;
+  object-fit: cover;
+}
+
+.dog-canvas .element-5 {
+  position: absolute;
+  top: 785px;
+  left: 20px;
+  width: 339px;
+  height: 200px;
+}
+
+.dog-canvas .button-3 {
+  all: unset;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  position: absolute;
+  top: 161px;
+  left: 133px;
+  background-color: #da1f00;
+  border-radius: 30px;
+}
+
+.dog-canvas .element-DHA {
+  position: absolute;
+  top: 63px;
+  left: 133px;
+  width: 202px;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 400;
+  color: #222222;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 22px;
+}
+
+.dog-canvas .text-wrapper-10 {
+  position: absolute;
+  top: 36px;
+  left: 133px;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 700;
+  color: #222222;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 22px;
+  white-space: nowrap;
+}
+
+.dog-canvas .frame-3 {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 1px 8px;
+  position: absolute;
+  top: 2px;
+  left: calc(50.00% - 36px);
+  background-color: #aa8158;
+  border-radius: 3px;
+}
+
+.dog-canvas .element-6 {
+  position: absolute;
+  top: 555px;
+  left: 20px;
+  width: 339px;
+  height: 200px;
+}
+
+.dog-canvas .frame-4 {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 1px 8px;
+  position: absolute;
+  top: 13px;
+  left: calc(50.00% - 36px);
+  background-color: #aa8158;
+  border-radius: 3px;
+}
+
+.dog-canvas .element-7 {
+  position: absolute;
+  top: 465px;
+  left: 20px;
+  width: 335px;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 500;
+  color: #222222;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 30px;
+}
+
+.dog-canvas .text-wrapper-11 {
+  position: absolute;
+  top: 355px;
+  left: 78px;
+  font-family: "Kaisei Tokumin", Helvetica;
+  font-weight: 800;
+  color: #aa8158;
+  font-size: 30px;
+  text-align: center;
+  letter-spacing: 1.5px;
+  line-height: 40px;
+}
+
+.dog-canvas .index {
+  position: absolute;
+  top: 230px;
+  left: 101px;
+  width: 183px;
+  height: 95px;
+}
+
+.dog-canvas .text-wrapper-12 {
+  position: absolute;
+  top: 57px;
+  left: 0;
+  font-family: "Rokkitt", "Rockwell-Bold", Georgia, serif;
+  font-weight: 700;
+  color: #ede1cf;
+  font-size: 32px;
+  text-align: center;
+  letter-spacing: 6.4px;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.dog-canvas .frame-5 {
+  position: absolute;
+  top: 0;
+  left: 85px;
+  width: 12px;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.dog-canvas .text-wrapper-13 {
+  flex: 1;
+  max-height: 45px;
+  font-family: "Kaisei Tokumin", Helvetica;
+  font-weight: 700;
+  color: #a30102;
+  font-size: 12px;
+  text-align: center;
+  letter-spacing: 1.2px;
+  line-height: 12px;
+}
+
+.dog-canvas .vector {
+  margin-left: 5.5px;
+  width: 1px;
+  height: 20px;
+}
+
+.dog-canvas .img-2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 375px;
+  height: 200px;
+}
+
+.dog-canvas .REVIEW {
+  position: relative;
+  width: 383px;
+  height: 866px;
+  margin-right: -8px;
+}
+
+.dog-canvas .bg-9 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 375px;
+  height: 866px;
+  background-color: #ffffff;
+}
+
+.dog-canvas .PR {
+  position: absolute;
+  top: 746px;
+  left: 20px;
+  width: 335px;
+  font-weight: 400;
+  color: #222222;
+  font-size: 10px;
+  line-height: 15px;
+  font-family: "Zen Maru Gothic", Helvetica;
+  letter-spacing: 0;
+}
+
+.dog-canvas .carousel-review-dog-wrapper {
+  position: absolute;
+  top: 340px;
+  left: 0;
+  width: 375px;
+  height: 396px;
+  display: flex;
+  background-color: #ffffff;
+}
+
+.dog-canvas .carousel-review-dog {
+  width: 375px;
+  height: 396px;
+  position: relative;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+/* レビューカードの高さを最長カードに統一し、ドットをカード下に配置（カードとドットの干渉を解消） */
+.dog-canvas .carousel-review-dog .slide-2 {
+  height: auto;
+  min-height: 369px;
+}
+
+.dog-canvas .carousel-review-dog .slide-3 {
+  min-height: 369px;
+}
+
+.dog-canvas .slide {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 50px;
+  position: absolute;
+  top: 0;
+  left: 30px;
+}
+
+.dog-canvas .slide-2 {
+  display: flex;
+  flex-direction: column;
+  width: 315px;
+  height: 284px;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px 20px;
+  position: relative;
+  background-color: #f8f0e1;
+  border-radius: 5px;
+}
+
+.dog-canvas .text-wrapper-14 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 700;
+  color: #a30102;
+  font-size: 14px;
+  text-align: center;
+  letter-spacing: 1.4px;
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+.dog-canvas .frame-6 {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.dog-canvas .mask-group {
+  position: relative;
+  width: 78px;
+  height: 78px;
+  aspect-ratio: 1;
+}
+
+.dog-canvas .frame-7 {
+  display: flex;
+  flex-direction: column;
+  width: 112px;
+  align-items: flex-start;
+  gap: 5px;
+  position: relative;
+}
+
+.dog-canvas .frame-8 {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 5px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.dog-canvas .frame-9 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 2px 8px;
+  position: relative;
+  flex: 0 0 auto;
+  background-color: #aa8158;
+  border-radius: 3px;
+}
+
+.dog-canvas .text-wrapper-15 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 700;
+  color: #f8f0e1;
+  font-size: 14px;
+  text-align: center;
+  letter-spacing: 1.4px;
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+.dog-canvas .frame-10 {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.dog-canvas .star {
+  position: relative;
+  width: 19.02px;
+  height: 18.09px;
+  aspect-ratio: 1;
+}
+
+.dog-canvas .text-wrapper-16 {
+  position: relative;
+  width: fit-content;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 500;
+  color: #aa8158;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 22px;
+  white-space: nowrap;
+}
+
+.dog-canvas .text-wrapper-17 {
+  position: relative;
+  align-self: stretch;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 700;
+  color: #aa8158;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 2px;
+  line-height: 30px;
+}
+
+.dog-canvas .text-wrapper-18 {
+  position: relative;
+  align-self: stretch;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 400;
+  color: #222222;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 22px;
+}
+
+.dog-canvas .slide-3 {
+  display: flex;
+  flex-direction: column;
+  width: 315px;
+  align-items: center;
+  gap: 20px;
+  padding: 30px 20px;
+  position: relative;
+  background-color: #f8f0e1;
+  border-radius: 5px;
+}
+
+.dog-canvas .text-wrapper-19 {
+  position: relative;
+  align-self: stretch;
+  margin-top: -1px;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 700;
+  color: #a30102;
+  font-size: 14px;
+  text-align: center;
+  letter-spacing: 1.4px;
+  line-height: 24px;
+}
+
+.dog-canvas .mask-group-2 {
+  margin-left: 0;
+  position: relative;
+  width: 78px;
+  height: 78px;
+  margin-top: 0;
+  aspect-ratio: 1;
+}
+
+.dog-canvas .frame-11 {
+  display: flex;
+  flex-direction: column;
+  width: 144px;
+  align-items: flex-start;
+  gap: 5px;
+  position: relative;
+}
+
+.dog-canvas .mask-group-3 {
+  margin-left: 0;
+  position: relative;
+  width: 78px;
+  height: 78px;
+  margin-top: 0;
+  aspect-ratio: 1;
+}
+
+.dog-canvas .frame-12 {
+  display: flex;
+  height: 80px;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+}
+
+.dog-canvas .mask-group-4 {
+  margin-left: 0;
+  position: relative;
+  width: 78px;
+  height: 78px;
+  margin-top: 0;
+  aspect-ratio: 1;
+}
+
+.dog-canvas .frame-13 {
+  display: flex;
+  flex-direction: column;
+  width: 182px;
+  align-items: flex-start;
+  gap: 5px;
+  position: relative;
+}
+
+.dog-canvas .indicator {
+  position: absolute;
+  top: 381px;
+  left: 30px;
+  width: 315px;
+  height: 8px;
+  display: flex;
+  gap: 10px;
+}
+
+.dog-canvas .ellipse {
+  width: 8px;
+  height: 8px;
+  margin-left: 127px;
+  background-color: #a30102;
+  border-radius: 4px;
+  aspect-ratio: 1;
+}
+
+.dog-canvas .ellipse-2 {
+  width: 8px;
+  height: 8px;
+  background-color: #d9d9d9;
+  border-radius: 4px;
+  aspect-ratio: 1;
+}
+
+.dog-canvas .vector-wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px;
+  position: absolute;
+  top: 142px;
+  left: 350px;
+}
+
+.dog-canvas .vector-2 {
+  position: relative;
+  width: 12px;
+  height: 22px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  margin-left: -1px;
+  margin-right: -1px;
+}
+
+.dog-canvas .text-wrapper-20 {
+  position: absolute;
+  top: 295px;
+  left: 105px;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 400;
+  color: #222222;
+  font-size: 10px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 15px;
+  white-space: nowrap;
+}
+
+.dog-canvas .img-3 {
+  position: absolute;
+  top: 215px;
+  left: 116px;
+  width: 143px;
+  height: 70px;
+}
+
+.dog-canvas .group {
+  position: absolute;
+  top: 4px;
+  left: calc(50.00% - 30px);
+  width: 63px;
+  height: 63px;
+}
+
+.dog-canvas .text-wrapper-21 {
+  position: absolute;
+  top: 3px;
+  left: calc(50.00% - 26px);
+  width: 46px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Cormorant Infant", Helvetica;
+  font-weight: 700;
+  font-style: italic;
+  color: #aa8158;
+  font-size: 40px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 70px;
+  white-space: nowrap;
+}
+
+.dog-canvas .text-wrapper-22 {
+  position: absolute;
+  top: 0;
+  left: calc(50.00% - 22px);
+  font-family: "Kaisei Tokumin", Helvetica;
+  font-weight: 500;
+  color: #aa8158;
+  font-size: 13px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 16px;
+  white-space: nowrap;
+}
+
+.dog-canvas .group-2 {
+  position: absolute;
+  top: 52px;
+  left: 0;
+  width: 59px;
+  height: 11px;
+}
+
+.dog-canvas .element-8 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 29px;
+  height: 70px;
+  aspect-ratio: 0.42;
+  background-image: url(/kaiseki/img/dog/bg-vector.svg);
+  background-size: 100% 100%;
+}
+
+.dog-canvas .img-wrapper {
+  position: absolute;
+  top: 0;
+  left: 114px;
+  width: 29px;
+  height: 70px;
+  display: flex;
+  transform: rotate(180deg);
+  aspect-ratio: 0.42;
+}
+
+.dog-canvas .vector-3 {
+  flex: 1;
+  width: 29px;
+  transform: rotate(-180deg);
+}
+
+.dog-canvas .text-wrapper-23 {
+  position: absolute;
+  top: 170px;
+  left: 20px;
+  width: 335px;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 400;
+  color: #222222;
+  font-size: 10px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 15px;
+}
+
+.dog-canvas .text-wrapper-24 {
+  position: absolute;
+  top: 120px;
+  left: 62px;
+  font-family: "Kaisei Tokumin", Helvetica;
+  font-weight: 800;
+  color: #aa8158;
+  font-size: 30px;
+  text-align: center;
+  letter-spacing: 1.5px;
+  line-height: 40px;
+  white-space: nowrap;
+}
+
+.dog-canvas .index-2 {
+  position: absolute;
+  top: 30px;
+  left: 102px;
+  width: 179px;
+  height: 71px;
+}
+
+.dog-canvas .text-wrapper-25 {
+  position: absolute;
+  top: 33px;
+  left: 0;
+  font-family: "Rokkitt", "Rockwell-Bold", Georgia, serif;
+  font-weight: 700;
+  color: #ede1cf;
+  font-size: 32px;
+  text-align: center;
+  letter-spacing: 6.4px;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.dog-canvas .frame-14 {
+  position: absolute;
+  top: 0;
+  left: 83px;
+  width: 12px;
+  height: 46px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.dog-canvas .text-wrapper-26 {
+  flex: 1;
+  max-height: 21px;
+  font-family: "Kaisei Tokumin", Helvetica;
+  font-weight: 700;
+  color: #a30102;
+  font-size: 12px;
+  text-align: center;
+  letter-spacing: 1.2px;
+  line-height: 12px;
+}
+
+.dog-canvas .ABOUT {
+  position: relative;
+  width: 389px;
+  height: 1119px;
+  margin-right: -14px;
+}
+
+.dog-canvas .bg-10 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 375px;
+  height: 1119px;
+  background-color: #760100;
+}
+
+.dog-canvas .line {
+  position: absolute;
+  top: 524px;
+  left: 24px;
+  width: 1px;
+  height: 535px;
+  object-fit: cover;
+}
+
+.dog-canvas .text-wrapper-27 {
+  position: absolute;
+  top: 1027px;
+  left: 39px;
+  width: 315px;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 22px;
+}
+
+.dog-canvas .ellipse-3 {
+  position: absolute;
+  top: 1035px;
+  left: 20px;
+  width: 9px;
+  height: 9px;
+  background-color: #ede1cf;
+  border-radius: 4.5px;
+  aspect-ratio: 1;
+}
+
+.dog-canvas .text-wrapper-28 {
+  position: absolute;
+  top: 968px;
+  left: 39px;
+  width: 315px;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 22px;
+}
+
+.dog-canvas .ellipse-4 {
+  position: absolute;
+  top: 976px;
+  left: 20px;
+  width: 9px;
+  height: 9px;
+  background-color: #ede1cf;
+  border-radius: 4.5px;
+  aspect-ratio: 1;
+}
+
+.dog-canvas .element-9 {
+  position: absolute;
+  top: 823px;
+  left: 39px;
+  width: 316px;
+  height: 130px;
+  aspect-ratio: 2.43;
+}
+
+.dog-canvas .text-wrapper-29 {
+  position: absolute;
+  top: 791px;
+  left: 39px;
+  width: 315px;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 22px;
+}
+
+.dog-canvas .ellipse-5 {
+  position: absolute;
+  top: 799px;
+  left: 20px;
+  width: 9px;
+  height: 9px;
+  background-color: #ede1cf;
+  border-radius: 4.5px;
+  aspect-ratio: 1;
+}
+
+.dog-canvas .element-10 {
+  position: absolute;
+  top: 646px;
+  left: 39px;
+  width: 316px;
+  height: 130px;
+  aspect-ratio: 2.43;
+}
+
+.dog-canvas .text-wrapper-30 {
+  position: absolute;
+  top: 592px;
+  left: 39px;
+  width: 316px;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 22px;
+}
+
+.dog-canvas .ellipse-6 {
+  position: absolute;
+  top: 600px;
+  left: 20px;
+  width: 9px;
+  height: 9px;
+  background-color: #ede1cf;
+  border-radius: 4.5px;
+  aspect-ratio: 1;
+}
+
+.dog-canvas .text-wrapper-31 {
+  position: absolute;
+  top: 511px;
+  left: 39px;
+  width: 316px;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 22px;
+}
+
+.dog-canvas .ellipse-7 {
+  position: absolute;
+  top: 519px;
+  left: 20px;
+  width: 9px;
+  height: 9px;
+  background-color: #ede1cf;
+  border-radius: 4.5px;
+  aspect-ratio: 1;
+}
+
+.dog-canvas .text-wrapper-32 {
+  position: absolute;
+  top: 301px;
+  left: 20px;
+  width: 335px;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 30px;
+}
+
+.dog-canvas .text-wrapper-33 {
+  position: absolute;
+  top: 191px;
+  left: 46px;
+  font-family: "Kaisei Tokumin", Helvetica;
+  font-weight: 800;
+  color: #ffffff;
+  font-size: 30px;
+  text-align: center;
+  letter-spacing: 1.5px;
+  line-height: 40px;
+}
+
+.dog-canvas .index-3 {
+  position: absolute;
+  top: 30px;
+  left: 118px;
+  width: 152px;
+  height: 131px;
+}
+
+.dog-canvas .text-wrapper-34 {
+  position: absolute;
+  top: 93px;
+  left: 0;
+  font-family: "Rokkitt", "Rockwell-Bold", Georgia, serif;
+  font-weight: 700;
+  color: #ede1cf;
+  font-size: 32px;
+  text-align: center;
+  letter-spacing: 6.4px;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.dog-canvas .frame-15 {
+  position: absolute;
+  top: 0;
+  left: 70px;
+  width: 12px;
+  height: 106px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.dog-canvas .text-wrapper-35 {
+  flex: 1;
+  max-height: 81px;
+  font-family: "Kaisei Tokumin", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 12px;
+  text-align: center;
+  letter-spacing: 1.2px;
+  line-height: 12px;
+}
+
+.dog-canvas .WHY {
+  position: relative;
+  width: 343px;
+  height: 890px;
+}
+
+.dog-canvas .element-kg-g {
+  position: absolute;
+  top: 845px;
+  left: 0;
+  width: 335px;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 400;
+  color: #222222;
+  font-size: 10px;
+  letter-spacing: 0;
+  line-height: 15px;
+}
+
+.dog-canvas .element-kg {
+  position: absolute;
+  top: 710px;
+  left: 0;
+  width: 335px;
+  font-family: "Kaisei Tokumin", Helvetica;
+  font-weight: 800;
+  color: #da1f00;
+  font-size: 24px;
+  text-align: center;
+  letter-spacing: 1.2px;
+  line-height: 35px;
+}
+
+.dog-canvas .table {
+  position: absolute;
+  top: 428px;
+  left: 3px;
+  width: 329px;
+  height: 252px;
+}
+
+.dog-canvas .table-2 {
+  flex-direction: column;
+  width: 328px;
+  align-items: flex-start;
+  position: absolute;
+  top: 1px;
+  left: 0;
+  display: flex;
+  gap: 2px;
+}
+
+.dog-canvas .row {
+  align-items: center;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+  display: flex;
+  gap: 2px;
+}
+
+.dog-canvas .cell {
+  width: 188px;
+  background-color: #dcb48c;
+  display: flex;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  position: relative;
+}
+
+.dog-canvas .text-wrapper-36 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 12px;
+  line-height: 20px;
+  white-space: nowrap;
+  font-family: "Zen Maru Gothic", Helvetica;
+  letter-spacing: 0;
+}
+
+.dog-canvas .cell-2 {
+  display: flex;
+  width: 68px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  position: relative;
+  background-color: #ede1cf;
+}
+
+.dog-canvas .text-wrapper-37 {
+  position: relative;
+  width: fit-content;
+  margin-top: -6px;
+  margin-bottom: -4px;
+  font-weight: 500;
+  color: #222222;
+  font-size: 12px;
+  text-align: center;
+  line-height: 15px;
+  font-family: "Zen Maru Gothic", Helvetica;
+  letter-spacing: 0;
+}
+
+.dog-canvas .text-wrapper-38 {
+  position: relative;
+  width: fit-content;
+  margin-top: -6px;
+  margin-bottom: -4px;
+  font-weight: 700;
+  color: #222222;
+  font-size: 12px;
+  text-align: center;
+  line-height: 15px;
+  font-family: "Zen Maru Gothic", Helvetica;
+  letter-spacing: 0;
+}
+
+.dog-canvas .cell-3 {
+  width: 188px;
+  background-color: #ede1cf;
+  display: flex;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  position: relative;
+}
+
+.dog-canvas .text-wrapper-39 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 500;
+  color: #222222;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 20px;
+  white-space: nowrap;
+}
+
+.dog-canvas .cell-4 {
+  width: 68px;
+  background-color: #ffffff;
+  display: flex;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  position: relative;
+}
+
+.dog-canvas .text-wrapper-40 {
+  position: relative;
+  width: fit-content;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 500;
+  color: #222222;
+  font-size: 12px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 16px;
+  white-space: nowrap;
+}
+
+.dog-canvas .rectangle-stroke {
+  position: absolute;
+  top: 0;
+  left: 258px;
+  width: 71px;
+  height: 252px;
+}
+
+.dog-canvas .element-11 {
+  position: absolute;
+  top: 308px;
+  left: 0;
+  width: 335px;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 500;
+  color: #222222;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 30px;
+}
+
+.dog-canvas .element-12 {
+  position: absolute;
+  top: 173px;
+  left: 0;
+  width: 335px;
+  font-family: "Kaisei Tokumin", Helvetica;
+  font-weight: 800;
+  color: #aa8158;
+  font-size: 24px;
+  text-align: center;
+  letter-spacing: 1.2px;
+  line-height: 35px;
+}
+
+.dog-canvas .index-4 {
+  position: absolute;
+  top: 0;
+  left: 32px;
+  width: 279px;
+  height: 143px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.dog-canvas .frame-16 {
+  margin-left: 133px;
+  width: 12px;
+  height: 93px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.dog-canvas .text-wrapper-41 {
+  flex: 1;
+  max-height: 93px;
+  font-family: "Kaisei Tokumin", Helvetica;
+  font-weight: 700;
+  color: #a30102;
+  font-size: 12px;
+  text-align: center;
+  letter-spacing: 1.2px;
+  line-height: 12px;
+}
+
+/* 縦書きラベル内の「1kg」（横並び英数字）を列中央に揃える（12px列を左寄りに超過するため補正） */
+.dog-canvas .wy-num {
+  display: inline-block;
+  white-space: nowrap;
+  transform: translateX(-6px);
+}
+
+.dog-canvas .text-wrapper-42 {
+  width: 277px;
+  height: 38px;
+  font-family: "Rokkitt", "Rockwell-Bold", Georgia, serif;
+  font-weight: 700;
+  color: #ede1cf;
+  font-size: 32px;
+  text-align: center;
+  letter-spacing: 6.4px;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.dog-canvas .HONESTY {
+  position: relative;
+  width: 379px;
+  height: 768px;
+  margin-right: -4px;
+}
+
+.dog-canvas .bg-11 {
+  position: absolute;
+  top: 0;
+  left: calc(50.00% - 190px);
+  width: 375px;
+  height: 768px;
+  background-color: #ffffff;
+}
+
+.dog-canvas .carousel-honesty-dog-wrapper {
+  position: absolute;
+  top: 334px;
+  left: 0;
+  width: 375px;
+  height: 396px;
+  display: flex;
+  background-color: #ffffff;
+}
+
+.dog-canvas .carousel-honesty-dog {
+  width: 375px;
+  height: 396px;
+  position: relative;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+/* HONESTYカードの高さを最長カードに統一（カードとドットの干渉を解消） */
+.dog-canvas .carousel-honesty-dog .slide-5 {
+  min-height: 368px;
+}
+
+.dog-canvas .slide-4 {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 30px;
+  position: absolute;
+  top: 0;
+  left: 30px;
+}
+
+.dog-canvas .slide-5 {
+  display: flex;
+  flex-direction: column;
+  width: 315px;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px 20px;
+  position: relative;
+  background-color: #f8f0e1;
+  border-radius: 5px;
+}
+
+.dog-canvas .frame-17 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 5px 12px;
+  position: relative;
+  flex: 0 0 auto;
+  background-color: #aa8158;
+  border-radius: 3px;
+}
+
+.dog-canvas .text-wrapper-43 {
+  position: relative;
+  width: fit-content;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 700;
+  color: #aa8158;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 2px;
+  line-height: 30px;
+}
+
+.dog-canvas .indicator-2 {
+  top: 380px;
+  width: 315px;
+  position: absolute;
+  left: 30px;
+  height: 8px;
+}
+
+.dog-canvas .ellipse-8 {
+  position: absolute;
+  top: 0;
+  left: calc(50.00% - 22px);
+  width: 8px;
+  height: 8px;
+  background-color: #a30102;
+  border-radius: 4px;
+  aspect-ratio: 1;
+}
+
+.dog-canvas .ellipse-9 {
+  position: absolute;
+  top: 0;
+  left: calc(50.00% - 4px);
+  width: 8px;
+  height: 8px;
+  background-color: #d9d9d9;
+  border-radius: 4px;
+  aspect-ratio: 1;
+}
+
+.dog-canvas .ellipse-10 {
+  position: absolute;
+  top: 0;
+  left: calc(50.00% + 14px);
+  width: 8px;
+  height: 8px;
+  background-color: #d9d9d9;
+  border-radius: 4px;
+  aspect-ratio: 1;
+}
+
+.dog-canvas .button-4 {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px;
+  position: absolute;
+  top: 163px;
+  left: 350px;
+}
+
+.dog-canvas .text-wrapper-44 {
+  position: absolute;
+  top: 244px;
+  left: 20px;
+  width: 335px;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 500;
+  color: #222222;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 30px;
+}
+
+.dog-canvas .text-wrapper-45 {
+  position: absolute;
+  top: 144px;
+  left: 36px;
+  font-family: "Kaisei Tokumin", Helvetica;
+  font-weight: 800;
+  color: #aa8158;
+  font-size: 24px;
+  text-align: center;
+  letter-spacing: 1.2px;
+  line-height: 35px;
+}
+
+.dog-canvas .index-5 {
+  position: absolute;
+  top: 30px;
+  left: 84px;
+  width: 211px;
+  height: 84px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.dog-canvas .frame-18 {
+  margin-left: 99px;
+  width: 12px;
+  height: 34px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.dog-canvas .text-wrapper-46 {
+  flex: 1;
+  max-height: 33px;
+  font-family: "Kaisei Tokumin", Helvetica;
+  font-weight: 700;
+  color: #a30102;
+  font-size: 12px;
+  text-align: center;
+  letter-spacing: 1.2px;
+  line-height: 12px;
+}
+
+.dog-canvas .text-wrapper-47 {
+  width: 209px;
+  height: 38px;
+  font-family: "Rokkitt", "Rockwell-Bold", Georgia, serif;
+  font-weight: 700;
+  color: #ede1cf;
+  font-size: 32px;
+  text-align: center;
+  letter-spacing: 6.4px;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.dog-canvas .bg-cta {
+  position: relative;
+  width: 375px;
+  height: 1012px;
+}
+
+.dog-canvas .bg-12 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 375px;
+  height: 398px;
+  aspect-ratio: 0.94;
+}
+
+.dog-canvas .bg-13 {
+  position: absolute;
+  top: 398px;
+  left: 0;
+  width: 375px;
+  height: 398px;
+  aspect-ratio: 0.94;
+}
+
+.dog-canvas .bg-14 {
+  position: absolute;
+  top: 796px;
+  left: 0;
+  width: 375px;
+  height: 398px;
+  aspect-ratio: 0.94;
+}
+
+.dog-canvas .bg-qa {
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  height: 2315px;
+  background-color: #ffffff;
+}
+
+.dog-canvas .footer {
+  position: absolute;
+  top: 13449px;
+  left: 20px;
+  width: 335px;
+  height: 35px;
+  background-color: transparent;
+}
+
+.dog-canvas .text {
+  position: absolute;
+  top: 20px;
+  left: 18px;
+  width: 306px;
+  height: 15px;
+  display: flex;
+}
+
+.dog-canvas .text-wrapper-48 {
+  width: 120px;
+  height: 15px;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 400;
+  color: #636363;
+  font-size: 10px;
+  letter-spacing: 0;
+  line-height: 15px;
+  white-space: nowrap;
+}
+
+.dog-canvas .line-2 {
+  width: 1px;
+  height: 15px;
+  margin-left: 10px;
+  object-fit: cover;
+}
+
+.dog-canvas .text-wrapper-49 {
+  width: 100px;
+  height: 15px;
+  margin-left: 9px;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 400;
+  color: #636363;
+  font-size: 10px;
+  letter-spacing: 0;
+  line-height: 15px;
+  white-space: nowrap;
+}
+
+.dog-canvas .text-wrapper-50 {
+  width: 40px;
+  height: 15px;
+  margin-left: 9px;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 400;
+  color: #636363;
+  font-size: 10px;
+  letter-spacing: 0;
+  line-height: 15px;
+  white-space: nowrap;
+}
+
+.dog-canvas .line-3 {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 335px;
+  height: 1px;
+  object-fit: cover;
+}
+
+.dog-canvas .QA {
+  position: absolute;
+  width: 335px;
+  height: 2130px;
+  top: 11259px;
+  left: 20px;
+}
+
+.dog-canvas .QA-2 {
+  top: 1020px;
+  width: 339px;
+  height: 1110px;
+  position: absolute;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.dog-canvas .QA-3 {
+  margin-left: 94px;
+  width: 146px;
+  height: 38px;
+  font-family: "Rokkitt", "Rockwell-Bold", Georgia, serif;
+  font-weight: 700;
+  color: #ede1cf;
+  font-size: 32px;
+  text-align: center;
+  letter-spacing: 6.4px;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.dog-canvas .text-wrapper-51 {
+  width: 335px;
+  height: 30px;
+  margin-top: 30px;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 500;
+  color: #222222;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 30px;
+}
+
+.dog-canvas .element-13 {
+  width: 335px;
+  height: 158px;
+  position: relative;
+  margin-top: 30px;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+}
+
+.dog-canvas .frame-19 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 10px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+  background-color: #f8f0e1;
+  border-radius: 5px 5px 0px 0px;
+}
+
+.dog-canvas .frame-20 {
+  display: flex;
+  flex-direction: column;
+  width: 20px;
+  height: 20px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 2px 4px 4px;
+  position: relative;
+  background-color: #aa8158;
+  border-radius: 10px;
+  aspect-ratio: 1;
+}
+
+.dog-canvas .text-wrapper-52 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 10px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 10px;
+  white-space: nowrap;
+}
+
+.dog-canvas .text-wrapper-53 {
+  position: relative;
+  width: 289px;
+  margin-top: -1px;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 22px;
+}
+
+.dog-canvas .frame-21 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 10px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+  background-color: #ffffff;
+  border-radius: 0px 0px 5px 5px;
+  border: 1px solid;
+  border-color: #f8f0e1;
+}
+
+.dog-canvas .text-wrapper-54 {
+  position: relative;
+  width: 314px;
+  margin-top: -1px;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 22px;
+}
+
+.dog-canvas .element-14 {
+  width: 335px;
+  height: 158px;
+  position: relative;
+  margin-top: 20px;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+}
+
+.dog-canvas .element-15 {
+  width: 335px;
+  height: 180px;
+  position: relative;
+  margin-top: 20px;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+}
+
+.dog-canvas .element-16 {
+  display: flex;
+  width: 335px;
+  height: 136px;
+  position: relative;
+  margin-top: 20px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.dog-canvas .element-17 {
+  display: flex;
+  width: 335px;
+  height: 114px;
+  position: relative;
+  margin-top: 20px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.dog-canvas .QA-4 {
+  top: 0;
+  width: 337px;
+  height: 960px;
+  position: absolute;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.dog-canvas .index-6 {
+  margin-left: 94px;
+  width: 148px;
+  height: 132px;
+  position: relative;
+}
+
+.dog-canvas .frame-22 {
+  position: absolute;
+  top: 0;
+  left: 68px;
+  width: 12px;
+  height: 107px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.dog-canvas .text-wrapper-55 {
+  flex: 1;
+  max-height: 81px;
+  font-family: "Kaisei Tokumin", Helvetica;
+  font-weight: 700;
+  color: #a30102;
+  font-size: 12px;
+  text-align: center;
+  letter-spacing: 1.2px;
+  line-height: 12px;
+}
+
+.dog-canvas .QA-5 {
+  position: absolute;
+  top: 94px;
+  left: 0;
+  font-family: "Rokkitt", "Rockwell-Bold", Georgia, serif;
+  font-weight: 700;
+  color: #ede1cf;
+  font-size: 32px;
+  text-align: center;
+  letter-spacing: 6.4px;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.dog-canvas .element-18 {
+  width: 335px;
+  height: 136px;
+  position: relative;
+  margin-top: 30px;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+}
+
+.dog-canvas .frame-23 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 12px 10px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+  background-color: #f8f0e1;
+  border-radius: 5px 5px 0px 0px;
+}
+
+.dog-canvas .CTA {
+  position: absolute;
+  top: 10232px;
+  left: calc(50.00% - 168px);
+  width: 339px;
+  height: 939px;
+}
+
+.dog-canvas .button-dog-2 {
+  top: 819px;
+  display: inline-flex;
+  align-items: center;
+  position: absolute;
+  left: calc(50.00% - 170px);
+}
+
+.dog-canvas .thumb-kenbi-3 {
+  position: relative;
+  width: 62px;
+  height: 120px;
+  aspect-ratio: 0.52;
+  object-fit: cover;
+}
+
+.dog-canvas .button-5 {
+  display: flex;
+  width: 273px;
+  height: 72px;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 0px 40px 40px 0px;
+}
+
+.dog-canvas .ADULT-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 2px 6px;
+  position: relative;
+  flex: 0 0 auto;
+  background-color: #a3b1c1;
+  border-radius: 3px;
+}
+
+.dog-canvas .text-wrapper-56 {
+  position: relative;
+  width: 49px;
+  margin-top: -1px;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 12px;
+  text-align: center;
+  letter-spacing: 1.2px;
+  line-height: 16px;
+}
+
+.dog-canvas .element-19 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 132px;
+  margin-top: -1px;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 700;
+  color: #222222;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: 26px;
+}
+
+.dog-canvas .vector-4 {
+  position: absolute;
+  top: 54px;
+  left: 310px;
+  width: 6px;
+  height: 11px;
+  aspect-ratio: 0.5;
+}
+
+.dog-canvas .button-dog-3 {
+  top: 689px;
+  display: inline-flex;
+  align-items: center;
+  position: absolute;
+  left: calc(50.00% - 170px);
+}
+
+.dog-canvas .frame-24 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 2px 6px;
+  position: relative;
+  flex: 0 0 auto;
+  background-color: #aa8158;
+  border-radius: 3px;
+}
+
+.dog-canvas .text-wrapper-57 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 132px;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 700;
+  color: #222222;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: 26px;
+}
+
+.dog-canvas .button-dog-4 {
+  top: 559px;
+  display: inline-flex;
+  align-items: center;
+  position: absolute;
+  left: calc(50.00% - 170px);
+}
+
+.dog-canvas .p {
+  position: relative;
+  width: 132px;
+  margin-top: -1.5px;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 700;
+  color: #222222;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: 26px;
+}
+
+.dog-canvas .text-wrapper-58 {
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 700;
+  color: #222222;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: 26px;
+}
+
+.dog-canvas .text-wrapper-59 {
+  font-size: 16px;
+}
+
+.dog-canvas .button-dog-5 {
+  top: 429px;
+  display: inline-flex;
+  align-items: center;
+  position: absolute;
+  left: calc(50.00% - 170px);
+}
+
+.dog-canvas .text-wrapper-60 {
+  position: absolute;
+  top: 375px;
+  left: 8px;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 30px;
+  white-space: nowrap;
+}
+
+.dog-canvas .element-20 {
+  position: absolute;
+  top: 300px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.dog-canvas .text-wrapper-61 {
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 30px;
+}
+
+.dog-canvas .text-wrapper-62 {
+  font-size: 60px;
+  vertical-align: baseline;
+  line-height: 1;
+}
+
+.dog-canvas .frame-25 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 6px 10px;
+  position: absolute;
+  top: 267px;
+  left: calc(50.00% - 56px);
+  border: 1px solid;
+  border-color: #ffffff;
+}
+
+.dog-canvas .text-wrapper-63 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 12px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 20px;
+  white-space: nowrap;
+}
+
+.dog-canvas .img-4 {
+  position: absolute;
+  top: 0;
+  left: 15px;
+  width: 305px;
+  height: 237px;
+}
+
+.dog-canvas .FEATURE {
+  position: absolute;
+  top: 4166px;
+  left: 20px;
+  width: 339px;
+  height: 693px;
+}
+
+.dog-canvas .bg-15 {
+  position: absolute;
+  top: 46px;
+  left: 0;
+  width: 335px;
+  height: 647px;
+  background-color: #ffffff;
+}
+
+.dog-canvas .cariusel-peature-dog-wrapper {
+  position: absolute;
+  top: 333px;
+  left: 0;
+  width: 335px;
+  height: 330px;
+  display: flex;
+}
+
+.dog-canvas .cariusel-peature-dog {
+  width: 335px;
+  height: 352px;
+  position: relative;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+.dog-canvas .slide-6 {
+  display: flex;
+  flex-direction: column;
+  width: 275px;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px 20px;
+  position: relative;
+  background-color: #f8f0e1;
+  border-radius: 5px;
+}
+
+.dog-canvas .indicator-3 {
+  top: 340px;
+  width: 275px;
+  display: flex;
+  gap: 10px;
+  position: absolute;
+  left: 30px;
+  height: 8px;
+}
+
+.dog-canvas .ellipse-11 {
+  margin-left: 103px;
+  width: 8px;
+  height: 8px;
+  background-color: #a30102;
+  border-radius: 4px;
+  aspect-ratio: 1;
+}
+
+.dog-canvas .button-6 {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px;
+  position: absolute;
+  top: 141px;
+  left: 310px;
+}
+
+.dog-canvas .sozai-kibble-seiken {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  width: 80px;
+  height: 110px;
+  aspect-ratio: 0.73;
+  object-fit: cover;
+}
+
+.dog-canvas .text-wrapper-64 {
+  position: absolute;
+  top: 243px;
+  left: 30px;
+  width: 275px;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 500;
+  color: #222222;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 30px;
+}
+
+.dog-canvas .text-wrapper-65 {
+  position: absolute;
+  top: 178px;
+  left: 67px;
+  font-family: "Kaisei Tokumin", Helvetica;
+  font-weight: 800;
+  color: #aa8158;
+  font-size: 24px;
+  text-align: center;
+  letter-spacing: 1.2px;
+  line-height: 35px;
+  white-space: nowrap;
+}
+
+.dog-canvas .index-7 {
+  position: absolute;
+  top: 76px;
+  left: 68px;
+  width: 203px;
+  height: 72px;
+}
+
+.dog-canvas .text-wrapper-66 {
+  position: absolute;
+  top: 34px;
+  left: 0;
+  font-family: "Rokkitt", "Rockwell-Bold", Georgia, serif;
+  font-weight: 700;
+  color: #f8f0e1;
+  font-size: 32px;
+  text-align: center;
+  letter-spacing: 6.4px;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.dog-canvas .frame-26 {
+  position: absolute;
+  top: 0;
+  left: 95px;
+  width: 12px;
+  height: 47px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.dog-canvas .text-wrapper-67 {
+  flex: 1;
+  max-height: 22px;
+  font-family: "Kaisei Tokumin", Helvetica;
+  font-weight: 700;
+  color: #a30102;
+  font-size: 12px;
+  text-align: center;
+  letter-spacing: 1.2px;
+  line-height: 12px;
+}
+
+.dog-canvas .footstamp-brown {
+  position: absolute;
+  top: 0;
+  left: 159px;
+  width: 18px;
+  height: 16px;
+  aspect-ratio: 1.14;
+}
+
+.dog-canvas .HEALTH-CARE {
+  position: absolute;
+  top: 2845px;
+  left: 20px;
+  width: 341px;
+  height: 1291px;
+}
+
+.dog-canvas .bg-16 {
+  position: absolute;
+  top: 46px;
+  left: 0;
+  width: 335px;
+  height: 1245px;
+  background-color: #ffffff;
+}
+
+.dog-canvas .text-wrapper-68 {
+  position: absolute;
+  top: 1231px;
+  left: 30px;
+  width: 275px;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 400;
+  color: #222222;
+  font-size: 10px;
+  letter-spacing: 0;
+  line-height: 15px;
+}
+
+.dog-canvas .element-21 {
+  position: absolute;
+  top: 939px;
+  left: 30px;
+  width: 279px;
+  height: 262px;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.dog-canvas .img-kenbi-point {
+  width: 275px;
+  height: 130px;
+  aspect-ratio: 2.12;
+}
+
+.dog-canvas .text-wrapper-69 {
+  margin-left: 39px;
+  width: 196px;
+  height: 24px;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 700;
+  color: #aa8158;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 2px;
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+.dog-canvas .frame-27 {
+  display: inline-flex;
+  margin-left: -4px;
+  height: 34px;
+  width: 253px;
+  align-self: center;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 5px 12px;
+  background-color: #f8f0e1;
+  border-radius: 3px;
+}
+
+.dog-canvas .text-wrapper-70 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 700;
+  color: #aa8158;
+  font-size: 14px;
+  text-align: center;
+  letter-spacing: 1.4px;
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+.dog-canvas .text-wrapper-71 {
+  width: 275px;
+  height: 44px;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 400;
+  color: #222222;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 22px;
+}
+
+.dog-canvas .element-22 {
+  position: absolute;
+  top: 647px;
+  left: 30px;
+  width: 279px;
+  height: 262px;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.dog-canvas .text-wrapper-72 {
+  margin-left: 61px;
+  width: 152px;
+  height: 24px;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 700;
+  color: #aa8158;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 2px;
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+.dog-canvas .frame-28 {
+  display: inline-flex;
+  margin-left: -4px;
+  height: 34px;
+  width: 146px;
+  align-self: center;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 5px 12px;
+  background-color: #f8f0e1;
+  border-radius: 3px;
+}
+
+.dog-canvas .element-23 {
+  position: absolute;
+  top: 333px;
+  left: 30px;
+  width: 279px;
+  height: 284px;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.dog-canvas .text-wrapper-73 {
+  margin-left: 72px;
+  width: 130px;
+  height: 24px;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 700;
+  color: #aa8158;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 2px;
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+.dog-canvas .frame-29 {
+  display: inline-flex;
+  margin-left: -4px;
+  height: 34px;
+  width: 219px;
+  align-self: center;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 5px 12px;
+  background-color: #f8f0e1;
+  border-radius: 3px;
+}
+
+.dog-canvas .text-wrapper-74 {
+  width: 275px;
+  height: 66px;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 400;
+  color: #222222;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 22px;
+}
+
+.dog-canvas .index-8 {
+  position: absolute;
+  top: 76px;
+  left: 11px;
+  width: 318px;
+  height: 72px;
+}
+
+.dog-canvas .frame-30 {
+  position: absolute;
+  top: 0;
+  left: 153px;
+  width: 12px;
+  height: 47px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.dog-canvas .INGREDIENTS {
+  position: absolute;
+  top: 882px;
+  left: 20px;
+  width: 341px;
+  height: 1933px;
+}
+
+.dog-canvas .bg-17 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 335px;
+  height: 1933px;
+  background-color: #ffffff;
+}
+
+.dog-canvas .frame-31 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 1869px;
+  left: 81px;
+  background-color: #760100;
+  border-radius: 3px;
+}
+
+.dog-canvas .text-wrapper-75 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 18px;
+  white-space: nowrap;
+}
+
+.dog-canvas .group-3 {
+  position: absolute;
+  top: 1841px;
+  left: 129px;
+  width: 80px;
+  height: 18px;
+  display: flex;
+  gap: 2.5px;
+}
+
+.dog-canvas .vector-5 {
+  margin-top: 1.5px;
+  width: 8px;
+  height: 17px;
+  margin-left: -0.5px;
+}
+
+.dog-canvas .text-wrapper-76 {
+  width: 58px;
+  height: 18px;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 700;
+  color: #a30102;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 18px;
+  white-space: nowrap;
+}
+
+.dog-canvas .vector-6 {
+  margin-top: 1.5px;
+  width: 8px;
+  height: 17px;
+}
+
+.dog-canvas .element-24 {
+  position: absolute;
+  top: 1751px;
+  left: 30px;
+  width: 275px;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 400;
+  color: #222222;
+  font-size: 10px;
+  letter-spacing: 0;
+  line-height: 15px;
+}
+
+.dog-canvas .niwatori {
+  position: absolute;
+  top: 1535px;
+  left: 170px;
+  width: 152px;
+  height: 186px;
+  display: flex;
+  flex-direction: column;
+}
+
+.dog-canvas .img-5 {
+  width: 150px;
+  height: 150px;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.dog-canvas .div-2 {
+  margin-left: 39px;
+  width: 72px;
+  height: 36px;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 400;
+  color: #222222;
+  font-size: 12px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 18px;
+}
+
+.dog-canvas .text-wrapper-77 {
+  font-weight: 700;
+}
+
+.dog-canvas .text-wrapper-78 {
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 400;
+  color: #222222;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 18px;
+}
+
+.dog-canvas .amani {
+  position: absolute;
+  top: 1535px;
+  left: 15px;
+  width: 152px;
+  height: 186px;
+  display: flex;
+  flex-direction: column;
+}
+
+.dog-canvas .element-25 {
+  margin-left: 18px;
+  width: 114px;
+  height: 36px;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 400;
+  color: #222222;
+  font-size: 12px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 18px;
+}
+
+.dog-canvas .komugi {
+  position: absolute;
+  top: 1329px;
+  left: 170px;
+  width: 152px;
+  height: 186px;
+  display: flex;
+  flex-direction: column;
+}
+
+.dog-canvas .div-3 {
+  margin-left: 9px;
+  width: 132px;
+  height: 36px;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 400;
+  color: #222222;
+  font-size: 12px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 18px;
+}
+
+.dog-canvas .tomorokoshi {
+  position: absolute;
+  top: 1329px;
+  left: 15px;
+  width: 152px;
+  height: 186px;
+  display: flex;
+  flex-direction: column;
+}
+
+.dog-canvas .shiitake {
+  position: absolute;
+  top: 1123px;
+  left: 170px;
+  width: 152px;
+  height: 186px;
+  display: flex;
+  flex-direction: column;
+}
+
+.dog-canvas .div-4 {
+  margin-left: 27px;
+  width: 96px;
+  height: 36px;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 400;
+  color: #222222;
+  font-size: 12px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 18px;
+}
+
+.dog-canvas .satsumaimo {
+  position: absolute;
+  top: 1123px;
+  left: 15px;
+  width: 152px;
+  height: 186px;
+  display: flex;
+  flex-direction: column;
+}
+
+.dog-canvas .div-5 {
+  margin-left: 15px;
+  width: 120px;
+  height: 36px;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 400;
+  color: #222222;
+  font-size: 12px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 18px;
+}
+
+.dog-canvas .komatsuna {
+  position: absolute;
+  top: 899px;
+  left: 170px;
+  width: 152px;
+  height: 204px;
+  display: flex;
+  flex-direction: column;
+}
+
+.dog-canvas .div-6 {
+  margin-left: 33px;
+  width: 84px;
+  height: 54px;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 400;
+  color: #222222;
+  font-size: 12px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 18px;
+}
+
+.dog-canvas .ke-ru {
+  position: absolute;
+  top: 899px;
+  left: 15px;
+  width: 152px;
+  height: 204px;
+  display: flex;
+  flex-direction: column;
+}
+
+.dog-canvas .ninjin {
+  position: absolute;
+  top: 693px;
+  left: 170px;
+  width: 152px;
+  height: 186px;
+  display: flex;
+  flex-direction: column;
+}
+
+.dog-canvas .tomato {
+  position: absolute;
+  top: 693px;
+  left: 15px;
+  width: 152px;
+  height: 186px;
+  display: flex;
+  flex-direction: column;
+}
+
+.dog-canvas .div-7 {
+  margin-left: 33px;
+  width: 84px;
+  height: 36px;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 400;
+  color: #222222;
+  font-size: 12px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 18px;
+}
+
+.dog-canvas .text-wrapper-79 {
+  position: absolute;
+  top: 553px;
+  left: 30px;
+  width: 275px;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 500;
+  color: #222222;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 30px;
+}
+
+.dog-canvas .element-26 {
+  position: absolute;
+  top: 453px;
+  left: 67px;
+  font-family: "Kaisei Tokumin", Helvetica;
+  font-weight: 800;
+  color: #aa8158;
+  font-size: 24px;
+  text-align: center;
+  letter-spacing: 1.2px;
+  line-height: 35px;
+}
+
+.dog-canvas .img-kenbi {
+  position: absolute;
+  top: 122px;
+  left: 0;
+  width: 335px;
+  height: 301px;
+  aspect-ratio: 1.11;
+  object-fit: cover;
+}
+
+.dog-canvas .index-9 {
+  position: absolute;
+  top: 30px;
+  left: 12px;
+  width: 317px;
+  height: 72px;
+}
+
+.dog-canvas .group-4 {
+  position: absolute;
+  top: 0;
+  left: 152px;
+  width: 14px;
+  height: 47px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.dog-canvas .text-wrapper-80 {
+  width: 12px;
+  height: 22px;
+  font-family: "Kaisei Tokumin", Helvetica;
+  font-weight: 700;
+  color: #a30102;
+  font-size: 12px;
+  text-align: center;
+  letter-spacing: 1.2px;
+  line-height: 12px;
+}
+
+.dog-canvas .follow {
+  position: fixed;
+  top: auto;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 375px;
+  height: 40px;
+  background-color: #760100;
+  z-index: 50;
+}
+
+.dog-canvas .frame-32 {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  top: 7px;
+  left: calc(50.00% - 124px);
+}
+
+.dog-canvas .text-wrapper-81 {
+  position: relative;
+  width: fit-content;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 22px;
+  white-space: nowrap;
+}
+
+.dog-canvas .frame-33 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 2px 10px;
+  position: relative;
+  flex: 0 0 auto;
+  background-color: #aa8158;
+  border-radius: 21px;
+}
+
+.dog-canvas .text-wrapper-82 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: "Zen Maru Gothic", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 22px;
+  white-space: nowrap;
+}
+
+.dog-canvas .vector-7 {
+  position: relative;
+  width: 5px;
+  height: 9px;
+  margin-right: -0.5px;
+}
+/* inject original css code above */
+
+.dog-canvas .button-dog,
+.dog-canvas .button,
+.dog-canvas .button-2,
+.dog-canvas .button-3,
+.dog-canvas .button-dog-2,
+.dog-canvas .button-dog-3,
+.dog-canvas .button-dog-4,
+.dog-canvas .button-dog-5,
+.dog-canvas .follow,
+.dog-canvas .text-wrapper-48,
+.dog-canvas .text-wrapper-49,
+.dog-canvas .text-wrapper-50 {
+  text-decoration: none;
+}
+
+.dog-canvas .button,
+.dog-canvas .button-2,
+.dog-canvas .button-3 {
+  cursor: pointer;
+}
+
+.dog-canvas .button-dog,
+.dog-canvas .button-dog-2,
+.dog-canvas .button-dog-3,
+.dog-canvas .button-dog-4,
+.dog-canvas .button-dog-5,
+.dog-canvas .follow {
+  cursor: pointer;
+  color: inherit;
+}
+
+.dog-canvas .button-dog:focus-visible,
+.dog-canvas .button:focus-visible,
+.dog-canvas .button-2:focus-visible,
+.dog-canvas .button-3:focus-visible,
+.dog-canvas .button-dog-2:focus-visible,
+.dog-canvas .button-dog-3:focus-visible,
+.dog-canvas .button-dog-4:focus-visible,
+.dog-canvas .button-dog-5:focus-visible,
+.dog-canvas .follow:focus-visible,
+.dog-canvas .text-wrapper-48:focus-visible,
+.dog-canvas .text-wrapper-49:focus-visible,
+.dog-canvas .text-wrapper-50:focus-visible,
+.dog-canvas summary:focus-visible {
+  outline: 2px solid #4a90e2;
+  outline-offset: 2px;
+}
+
+.dog-canvas .button-dog:hover,
+.dog-canvas .button:hover,
+.dog-canvas .button-2:hover,
+.dog-canvas .button-3:hover,
+.dog-canvas .button-dog-2:hover,
+.dog-canvas .button-dog-3:hover,
+.dog-canvas .button-dog-4:hover,
+.dog-canvas .button-dog-5:hover,
+.dog-canvas .follow:hover {
+  filter: brightness(0.98);
+}
+
+.dog-canvas main {
+  position: static;
+}
+
+.dog-canvas .QA details {
+  overflow: hidden;
+}
+
+.dog-canvas .QA summary {
+  list-style: none;
+  cursor: pointer;
+}
+
+.dog-canvas .QA summary::-webkit-details-marker {
+  display: none;
+}
+
+.dog-canvas .QA details[open] .frame-21 {
+  display: flex;
+}
+
+.dog-canvas .QA details:not([open]) .frame-21 {
+  display: none;
+}
+
+.dog-canvas .footer .text a {
+  display: inline-block;
+  color: #636363;
+}
+
+.dog-canvas img {
+  max-width: 100%;
+}
+
+/* 価格の数字を強調（LINE UP / 追従バーの「500」を周囲の2倍） */
+.dog-canvas .price-x2 {
+  font-size: 2em;
+  font-weight: 700;
+  line-height: 1;
+  vertical-align: -0.06em;
+  letter-spacing: 0.5px;
+}
+
+/* CTAボタンの光る演出（グローのみ：猫ページと共通）
+   - 赤いCTA（タイプ選択・各タイプの「試す」）：グロー赤
+   - 追従バーの「今すぐ試す」ピル：グロー金
+   - メインCTAの商品カード：やわらかいソフトグロー */
+.dog-canvas .button-dog,
+.dog-canvas .button,
+.dog-canvas .button-2,
+.dog-canvas .button-3 {
+  animation: cta-glow-red 2.8s ease-in-out infinite;
+}
+
+.dog-canvas .frame-33 {
+  animation: cta-glow-gold 2.8s ease-in-out infinite;
+}
+
+/* CTA 商品カードのラベル（白ピル）を猫と同じソフトグローで（画像は光らせない） */
+.dog-canvas .button-5 {
+  animation: cta-glow-soft 3s ease-in-out infinite;
+}
+
+@keyframes cta-glow-red {
+  0%,
+  100% {
+    box-shadow: 0 2px 8px 0 rgba(218, 31, 0, 0.18);
+  }
+  50% {
+    box-shadow: 0 6px 22px 2px rgba(218, 31, 0, 0.5),
+      0 0 14px 1px rgba(255, 150, 120, 0.55);
+  }
+}
+
+@keyframes cta-glow-gold {
+  0%,
+  100% {
+    box-shadow: 0 2px 8px 0 rgba(170, 129, 88, 0.2);
+  }
+  50% {
+    box-shadow: 0 6px 18px 1px rgba(170, 129, 88, 0.55),
+      0 0 12px 1px rgba(232, 200, 150, 0.6);
+  }
+}
+
+@keyframes cta-glow-soft {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 240, 210, 0);
+  }
+  50% {
+    box-shadow: 0 0 18px 3px rgba(255, 238, 205, 0.75),
+      0 0 6px 1px rgba(255, 220, 170, 0.5);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dog-canvas .button-dog,
+  .dog-canvas .button,
+  .dog-canvas .button-2,
+  .dog-canvas .button-3,
+  .dog-canvas .frame-33,
+  .dog-canvas .button-dog-2,
+  .dog-canvas .button-dog-3,
+  .dog-canvas .button-dog-4,
+  .dog-canvas .button-dog-5 {
+    animation: none;
+  }
+}
+
+/* フロー配置の各セクションを canvas 内で左右中央に */
+.dog-canvas main {
+  width: 375px;
+}
+.dog-canvas main > section {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* WHY セクションの上下余白を猫ページに合わせる（上30px・下60px） */
+.dog-canvas .WHY {
+  margin-top: 30px;
+  margin-bottom: 60px;
+}
+
+/* LINE-UP セクション下端に余白 */
+.dog-canvas .LINE-UP {
+  margin-bottom: 60px;
+}
+
+/* INDEX 英字タイトルを左右中央に（left:0 のみだと左寄せになるため right:0 を補う） */
+.dog-canvas .text-wrapper-12,
+.dog-canvas .text-wrapper-25,
+.dog-canvas .text-wrapper-34,
+.dog-canvas .text-wrapper-66 {
+  right: 0;
+}
+
+/* カルーセル左ボタンの位置（各右矢印と同じ top、左端側） */
+.dog-canvas .carousel-review-dog .carousel-prev { top: 142px; left: 0; }
+.dog-canvas .carousel-honesty-dog .carousel-prev { top: 163px; left: 0; }
+.dog-canvas .cariusel-peature-dog .carousel-prev { top: 141px; left: 0; }
+
+/* ※注釈は右揃え */
+.dog-canvas .PR,
+.dog-canvas .text-wrapper-4,
+.dog-canvas .element-kg-g,
+.dog-canvas .element-24,
+.dog-canvas .text-wrapper-68 {
+  text-align: right;
+}
+
+/* FV の「500円で今すぐ試す」ボタン：画像上に独立した透明クリック領域＋光演出（猫と共通） */
+.dog-canvas .fv-cta {
+  position: absolute;
+  left: 42px;
+  top: 645px;
+  width: 291px;
+  height: 50px;
+  border-radius: 26px;
+  overflow: hidden;
+  display: block;
+  z-index: 20;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  animation: fv-cta-glow 2.4s ease-in-out infinite;
+}
+.dog-canvas .fv-cta-shine {
+  position: absolute;
+  top: -10%;
+  left: -80%;
+  width: 55%;
+  height: 120%;
+  background: linear-gradient(
+    100deg,
+    rgba(255, 255, 255, 0) 35%,
+    rgba(255, 255, 255, 0.65) 50%,
+    rgba(255, 255, 255, 0) 65%
+  );
+  transform: skewX(-18deg);
+  pointer-events: none;
+  animation: fv-cta-shine 3.4s ease-in-out infinite;
+}
+@keyframes fv-cta-shine {
+  0% {
+    left: -80%;
+  }
+  45%,
+  100% {
+    left: 130%;
+  }
+}
+@keyframes fv-cta-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(218, 31, 0, 0);
+  }
+  50% {
+    box-shadow: 0 4px 20px 2px rgba(218, 31, 0, 0.5);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dog-canvas .fv-cta {
+    animation: none;
+  }
+  .dog-canvas .fv-cta-shine {
+    display: none;
+  }
+}

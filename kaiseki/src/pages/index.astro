@@ -1,0 +1,270 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { catFaqGroups } from '../data/faqs';
+import { catCtaLinks, footerLinks } from '../data/links';
+import { reviewStats, catReviews } from '../data/reviews';
+import { whyTableRows, catHonestySlides, catFeatureSlides } from '../data/carousels';
+import { catCtaButtons } from '../data/products';
+import '../styles/cat.css';
+
+const IMG = '/kaiseki/img/cat/';
+const catFooterClasses = ['text-wrapper', 'div', 'text-wrapper-2'] as const;
+---
+
+<Layout
+  title="懐石 2つのごほうび | 猫様には、懐石。"
+  description="猫様のための総合栄養食「懐石 2つのごほうび」。お試し対象5商品を各300円（税込・送料当社負担）でお試しいただけます。"
+>
+<div class="cat-canvas"><div class="bg-cta" aria-hidden="true" >{Array.from({ length: 3 }).map(() => (
+<img class="bg" src={`${IMG}cta-bg-tile.png`}  alt="" />
+))}</div>
+<div class="bg-qa" aria-hidden="true" ></div>
+<footer class="footer" ><img class="line" src="/kaiseki/img/cat/footer-line.svg"  alt="" />
+<nav class="link"  aria-label="フッターナビゲーション">{footerLinks.map((link, index) => (
+<Fragment>
+{index > 0 && <img class="img" src="/kaiseki/img/cat/footer-divider.svg"  alt="" />}
+<a class={catFooterClasses[index]} href={link.href} target="_blank" rel="noopener noreferrer" >{link.label}</a>
+</Fragment>
+))}</nav></footer>
+<div class="bg-2" aria-hidden="true" >{Array.from({ length: 5 }).map(() => (
+<img class="bg-3" src={`${IMG}products-bg-tile.png`}  alt="" />
+))}</div>
+<section class="QA" ><div class="QA-2" ><div class="index" ><div class="QA-3" >Q&amp;A/1</div>
+<div class="frame" ><div class="text-wrapper-3" >よくあるご質問</div>
+<img class="vector" src="/kaiseki/img/cat/index-underline.svg"  alt="" /></div></div>
+<h2 class="text-wrapper-4" >ご購入・使い方について</h2>
+{catFaqGroups.purchase.map((item) => (
+<div class={item.itemClass} ><div class={item.frameClass} ><div class="div-wrapper" ><div class="text-wrapper-5" >Q</div></div>
+<div class="text-wrapper-6" >{item.question}</div></div>
+<div class="frame-3" ><div class="text-wrapper-7" >{item.answer}</div></div></div>
+))}</div>
+<div class="QA-4" ><div class="QA-5" >Q&amp;A/2</div>
+<h2 class="text-wrapper-4" >商品・保管・選び方について</h2>
+{catFaqGroups.product.map((item) => (
+<div class={item.itemClass} ><div class={item.frameClass} ><div class="div-wrapper" ><div class="text-wrapper-5" >Q</div></div>
+<div class="text-wrapper-6" >{item.question}</div></div>
+<div class="frame-3" ><div class="text-wrapper-7" >{item.answer}</div></div></div>
+))}</div></section>
+<section class="CTA" id="cta" >{catCtaButtons.map((b) => (
+<a class={b.btnClass} href={b.href} target="_blank" rel="noopener noreferrer" ><img class="thumb" src={`${IMG}${b.thumb}`}  alt="" />
+<div class="button" ><div class={b.badgeWrapClass} ><div class={b.badgeClass} >{b.badge}</div></div>
+<Fragment set:html={b.labelHtml} /></div>
+<img class="vector-2" src={`${IMG}cta-chevron.svg`}  alt="" /></a>
+))}
+<div class="frame-6" ><div class="text-wrapper-11" >迷ったらコレ</div></div>
+<div class="text-wrapper-12" >気になるタイプを選んで、商品ページへ。</div>
+<p class="div-6" ><span class="text-wrapper-13" >各</span>
+<span class="text-wrapper-14" >300</span>
+<span class="text-wrapper-13" >円 (税込)</span></p>
+<div class="frame-7" ><div class="text-wrapper-15" >お一人様1回限り</div></div>
+<div class="img-2" ><div class="text-wrapper-16" >イメージ</div>
+<img class="thumb-gohoubi" src="/kaiseki/img/cat/thumb-kidney-stack.png"  alt="" />
+<img class="thumb-2" src="/kaiseki/img/cat/thumb-urinary-stack.png"  alt="" />
+<img class="thumb-3" src="/kaiseki/img/cat/thumb-grainfree-stack.png"  alt="" />
+<img class="thumb-4" src="/kaiseki/img/cat/thumb-kitten-stack.png"  alt="" />
+<img class="thumb-5" src="/kaiseki/img/cat/thumb-standard-stack.png"  alt="" />
+<img class="img-3" src="/kaiseki/img/cat/cta-product-group.png"  alt="" /></div></section>
+<section class="HONESTY" ><div class="bg-honesty" ></div>
+<div class="carousel-honesty-cat" ><div class="slide" >{catHonestySlides.map((s, i) => (
+<div class="slide-2" ><div class="text-wrapper-17" >{i + 1}/{catHonestySlides.length}</div>
+<div class="frame-8" ><div class="text-wrapper-18" >{s.label}</div></div>
+<h3 class="text-wrapper-19" set:html={s.title}></h3>
+<div class="text-wrapper-20" set:html={s.body}></div></div>
+))}</div>
+<div class="indicator" ><div class="ellipse" ></div>
+<div class="ellipse-2" ></div>
+<div class="ellipse-3" ></div></div>
+<button type="button" class="carousel-prev" aria-label="前のスライド"><img src={`${IMG}carousel-arrow-left.png`} alt="" /></button>
+<div class="vector-wrapper" ><img class="vector-3" src="/kaiseki/img/cat/carousel-arrow.svg"  alt="" /></div></div>
+<div class="text-wrapper-21" >すべての猫様に合うわけではありません。<br/>だからこそ、私たちからのお願いです。</div>
+<h2 class="text-wrapper-22" >猫様に合わない場合は、<br/>ご使用をお控えください。</h2>
+<div class="index-2" ><div class="frame-9" ><div class="text-wrapper-23" >ご案内</div>
+<img class="vector" src="/kaiseki/img/cat/index-underline.svg"  alt="" /></div>
+<div class="text-wrapper-24" >HONESTY</div></div></section>
+<section class="WHY" ><div class="index-3" ><div class="text-wrapper-25" >WHY 65g×10</div>
+<div class="group" ><div class="frame-10" ><div class="text-wrapper-26" >約<span class="wy-num" >10</span>日分試せる理由</div></div>
+<img class="vector" src="/kaiseki/img/cat/index-underline.svg"  alt="" /></div></div>
+<h3 class="text-wrapper-28" >少量サンプルでは見えない<br/>&#34;猫様のお気に入り&#34; を<br/>約10日分で<br/>しっかり確かめる。</h3>
+<div class="text-wrapper-29" >フード選びで本当に確認したいのは、食いつき・食べ続けてくれるかどうか・便の様子。<br/>これらは、1〜2食では見えてきません。</div>
+<div class="table" ><div class="table-2" ><div class="row" ><div class="cell" ><div class="text-wrapper-11" >確認できること</div></div>
+<div class="cell-2" ><div class="text-wrapper-30" >少量<br/>サンプル</div></div>
+<div class="cell-2" ><div class="text-wrapper-31" >たっぷり<br/>お試し</div></div></div>
+{whyTableRows.map((row) => (
+<div class="row" ><div class="cell-3" ><div class="text-wrapper-32" >{row.label}</div></div>
+<div class="cell-4" ><div class="text-wrapper-33" >{row.sample}</div></div>
+<div class="cell-4" ><div class="text-wrapper-33" >{row.full}</div></div></div>
+))}</div>
+<img class="rectangle-stroke" src="/kaiseki/img/cat/why-table-border.svg"  alt="" /></div>
+<h2 class="text-wrapper-34" >だから、<br/>300円で約10日分を、<br/>しっかり試せることに<br/>意味があります。</h2>
+<div class="text-wrapper-35" >※ 約10日分は、65g×10袋 (一部60g×10袋) を成猫1日必要量50〜80gで試す場合の目安。猫様の体重・年齢・運動量により変動します。</div></section>
+<section class="ABOUT" ><div class="bg-4" ></div>
+<img class="line-2" src="/kaiseki/img/cat/about-line.svg"  alt="" />
+<div class="text-wrapper-36" >製造の各工程で、独自の厳しい品質基準に基づく入念なチェックを実施。</div>
+<div class="ellipse-4" ></div>
+<img class="img-4" src="/kaiseki/img/cat/about-factory.png"  alt="岐阜県多治見の自社工場" />
+<div class="text-wrapper-37" >岐阜県多治見の自社工場で国内製造。</div>
+<div class="ellipse-5" ></div>
+<img class="img-5" src="/kaiseki/img/cat/about-lab.png"  alt="茨城県つくばの研究開発拠点" />
+<div class="text-wrapper-38" >茨城県つくばの研究開発拠点で、日々フードを研究。</div>
+<div class="ellipse-6" ></div>
+<div class="text-wrapper-39" >1967年に誕生。日本初のドライキャットフードを世に出したパイオニア。</div>
+<div class="ellipse-7" ></div>
+<div class="text-wrapper-40" >ペットラインは1967年（昭和42年）に誕生、日本で初めてドライキャットフードを開発・販売した、キャットフードのパイオニア。「愛情を品質に」をモットーに、自社の研究開発センターと国内工場で、国産フードをつくり続けています。</div>
+<h2 class="text-wrapper-41" >猫と暮らす毎日を<br/>国産の品質で。</h2>
+<div class="index-4" ><div class="text-wrapper-42" >ABOUT</div>
+<div class="frame-11" ><div class="text-wrapper-43" >私たちについて</div>
+<img class="vector" src="/kaiseki/img/cat/index-underline-about.svg"  alt="" /></div></div></section>
+<section class="REVIEW" ><div class="bg-5" ></div>
+<div class="PR" >ペットラインしあわせマルシェユーザーレビュー（PR/自社調査）<br/>懐石 2つのごほうび/お試し対象5商品/{reviewStats.cat.total}件/{reviewStats.cat.asOf}<br/>※ 個人の感想であり、効果効能を示すものではありません。<br/>※ 現在も件数が増えています。</div>
+<div class="carousel-review-cat" ><div class="slide" >{catReviews.map((r, i) => (
+<div class="slide-3" ><div class="text-wrapper-44" >{i + 1}/{catReviews.length}</div>
+<div class={r.wrapClass} ><img class={r.avatarClass} src={`${IMG}${r.avatar}`}  alt={`${r.name}の猫様`} />
+<div class={r.infoClass} ><div class="frame-14" ><div class="frame-15" ><div class="text-wrapper-18" >{r.product}</div></div>
+{r.hasStars ? (
+<div class="frame-16" >{Array.from({ length: 4 }).map(() => (
+<img class="star" src={`${IMG}star-full.svg`}  alt="" />
+))}
+<img class="star" src={`${IMG}star-half.svg`}  alt="" /></div>
+) : (
+<div class="frame-16" ></div>
+)}</div>
+<div class="text-wrapper-45" >{r.name}</div></div></div>
+<h3 class="text-wrapper-46" set:html={r.title}></h3>
+<div class="text-wrapper-20" >{r.body}</div></div>
+))}</div>
+<div class="indicator-2" ><div class="ellipse-8" ></div>
+<div class="ellipse-9" ></div>
+<div class="ellipse-9" ></div>
+<div class="ellipse-9" ></div>
+<div class="ellipse-9" ></div></div>
+<button type="button" class="carousel-prev" aria-label="前のスライド"><img src={`${IMG}carousel-arrow-left.png`} alt="" /></button>
+<div class="img-wrapper" ><img class="vector-3" src="/kaiseki/img/cat/carousel-arrow.svg"  alt="" /></div></div>
+<div class="text-wrapper-47" >お試し対象5商品 合計レビュー {reviewStats.cat.total}件</div>
+<div class="img-6" ><div class="group-2" ><div class="text-wrapper-48" >4.6</div>
+<div class="text-wrapper-49" >高評価</div>
+<img class="group-3" src="/kaiseki/img/cat/review-rating.png"  alt="" /></div>
+<div class="div-7" ></div>
+<div class="vector-wrapper-2" ><img class="vector-4" src="/kaiseki/img/cat/review-rating-deco.svg"  alt="" /></div></div>
+<div class="text-wrapper-50" >ペットラインしあわせマルシェユーザーレビュー（PR/自社調査）</div>
+<h2 class="text-wrapper-51" >飼い主さんの声</h2>
+<div class="index-5" ><div class="text-wrapper-52" >REVIEW</div>
+<div class="frame-19" ><div class="text-wrapper-53" >評価</div>
+<img class="vector" src="/kaiseki/img/cat/index-underline.svg"  alt="" /></div></div></section>
+<section class="LINE-UP" ><div class="text-wrapper-54" >LINE UP 2</div>
+<h2 class="text-wrapper-55" >気になる悩みで選ぶ。</h2>
+<div class="text-wrapper-56" >毎日のごはんで、健康に配慮を。<br/>気になるポイントに合わせて、3タイプ。</div>
+<div class="HEALTH" ><div class="review" ><img class="subtract" src="/kaiseki/img/cat/lineup-badge-a.svg"  alt="" />
+<div class="text-wrapper-57" >★4.6 / 848件</div>
+<div class="text-wrapper-58" >レビュー評価</div></div>
+<div class="div-8" >原材料として穀類不使用設計。熟成かつお/熟成まぐろのトッピング。</div>
+<h3 class="text-wrapper-59" >グレインフリー</h3>
+<div class="frame-20" ><div class="text-wrapper-60" >HEALTH</div></div>
+<img class="thumb-6" src="/kaiseki/img/cat/thumb-grainfree-card.png"  alt="グレインフリー 商品画像" /></div>
+<div class="HEALTH-2" ><div class="review-2" ><img class="subtract" src="/kaiseki/img/cat/lineup-badge-b.svg"  alt="" />
+<div class="text-wrapper-61" >★4.6 / 953件</div>
+<div class="text-wrapper-58" >レビュー評価</div></div>
+<div class="text-wrapper-62" >マグネシウム含有量調整0.08%。熟成かつお/熟成まぐろのトッピング。</div>
+<h3 class="text-wrapper-59" >下部尿路の健康維持に配慮</h3>
+<div class="frame-20" ><div class="text-wrapper-60" >HEALTH</div></div>
+<img class="thumb-7" src="/kaiseki/img/cat/thumb-urinary-card.png"  alt="下部尿路の健康維持 商品画像" /></div>
+<div class="HEALTH-3" ><div class="review-3" ><img class="subtract" src="/kaiseki/img/cat/lineup-badge-a.svg"  alt="" />
+<div class="text-wrapper-63" >★4.6 / 1,094件</div>
+<div class="text-wrapper-58" >レビュー評価</div></div>
+<p class="div-8" ><span class="text-wrapper-64" >リン約20%・ナトリウム約40%カット※。 熟成かつお/熟成まぐろのトッピング。<br/></span>
+<span class="text-wrapper-65" >※小魚添えペア お肉とお魚味比</span></p>
+<h3 class="text-wrapper-59" >腎臓の健康維持に配慮</h3>
+<div class="frame-20" ><div class="text-wrapper-60" >HEALTH</div></div>
+<img class="thumb-8" src="/kaiseki/img/cat/thumb-kidney-card.png"  alt="腎臓の健康維持 商品画像" /></div>
+<p class="PR-n-n-n" >ペットラインしあわせマルシェユーザーレビュー (PR/自社調査)　<br/>グレインフリー n=848 / 下部尿路の健康維持 n=953 / 腎臓の健康維持 n=1,094 (2026年6月時点)</p>
+<div class="frame-21" ><div class="text-wrapper-66" >お一人様1回限り</div></div>
+<p class="div-9" ><span class="text-wrapper-67" >気になるタイプを、</span>
+<span class="text-wrapper-68" ><span class="price-x2" >300</span>円</span>
+<span class="text-wrapper-67" >で</span></p>
+<a class="button-cat-6" href="#cta" ><div class="text-wrapper-69" >健康タイプから選ぶ</div>
+<img class="polygon" src="/kaiseki/img/cat/btn-arrow.svg"  alt="" /></a>
+<div class="text-wrapper-70" >※送料当社負担/お届け1回のみ・自動継続なし</div></section>
+<section class="LINE-UP-2" ><div class="text-wrapper-71" >※送料当社負担/お届け1回のみ・自動継続なし</div>
+<a class="button-2" href="#cta" ><div class="text-wrapper-72" >今すぐ試す</div>
+<img class="polygon" src="/kaiseki/img/cat/btn-arrow.svg"  alt="" /></a>
+<p class="div-10" ><span class="text-wrapper-67" >まずは「小魚添えペア」を、</span>
+<span class="text-wrapper-68" ><span class="price-x2" >300</span>円</span>
+<span class="text-wrapper-67" >で。</span></p>
+<div class="frame-22" ><div class="text-wrapper-66" >お一人様1回限り</div></div>
+<p class="PR-n-n" >ペットラインしあわせマルシェユーザーレビュー (PR / 自社調査)<br/>小魚添えペア n=1,135 / 子ねこ用 おさかな添えペア n=353 (2026年6月時点)</p>
+<div class="KITTEN" ><img class="thumb-9" src="/kaiseki/img/cat/thumb-kitten-card.png"  alt="子ねこ用 おさかな添えペア 商品画像" />
+<div class="frame-23" ><div class="text-wrapper-73" >FOR KITTEN</div></div>
+<h3 class="text-wrapper-74" >子ねこ用<br/>おさかな添えペア</h3>
+<div class="text-wrapper-75" >本枯れ節＆薄切りまぐろ / 本枯れ節＆しらす</div>
+<div class="review-4" ><img class="subtract" src="/kaiseki/img/cat/lineup-badge-a.svg"  alt="" />
+<div class="text-wrapper-61" >★4.6 / 353件</div>
+<div class="text-wrapper-58" >レビュー評価</div></div></div>
+<div class="STANDARD" ><img class="thumb-9" src="/kaiseki/img/cat/thumb-standard-card.png"  alt="小魚添えペア 商品画像" />
+<div class="frame-24" ><div class="text-wrapper-73" >STANDARD</div></div>
+<h3 class="text-wrapper-76" >小魚添えペア</h3>
+<div class="text-wrapper-75" >小魚＆本枯れ節 <br/>/ 小魚＆薄切りまぐろ</div>
+<div class="review-4" ><img class="subtract" src="/kaiseki/img/cat/lineup-badge-a.svg"  alt="" />
+<div class="text-wrapper-77" >★4.7 / 1,135件</div>
+<div class="text-wrapper-58" >レビュー評価</div></div></div>
+<div class="text-wrapper-78" >おいしさにこだわった粒に、<br/>厳選トッピング。<br/>年齢に合わせて、2タイプ。</div>
+<h2 class="text-wrapper-79" >まずは、ここから。</h2>
+<div class="index-6" ><div class="text-wrapper-80" >LINE UP 1</div>
+<div class="frame-25" ><div class="text-wrapper-81" >お品書き</div>
+<img class="vector" src="/kaiseki/img/cat/index-underline.svg"  alt="" /></div></div>
+<img class="img-7" src="/kaiseki/img/cat/lineup-hero.png"  alt="お試し商品イメージ" /></section>
+<section class="FEATURE" ><div class="rectangle" ></div>
+<div class="cariusel-peature-cat" ><div class="slide" >{catFeatureSlides.map((s, i) => (
+<div class="slide-2" ><div class="text-wrapper-17" >{i + 1}/{catFeatureSlides.length}</div>
+<div class="frame-8" ><div class="text-wrapper-18" >{s.label}</div></div>
+<h3 class="text-wrapper-19" set:html={s.title}></h3>
+<div class="text-wrapper-20" set:html={s.body}></div></div>
+))}</div>
+<button type="button" class="carousel-prev" aria-label="前のスライド"><img src={`${IMG}carousel-arrow-left.png`} alt="" /></button>
+<div class="button-3" ><img class="vector-3" src="/kaiseki/img/cat/carousel-arrow.svg"  alt="" /></div>
+<div class="indicator-3" ><div class="ellipse-10" ></div>
+<div class="ellipse-9" ></div>
+<div class="ellipse-9" ></div>
+<div class="ellipse-9" ></div></div>
+<img class="YSK" src="/kaiseki/img/cat/feature-kibble.png"  alt="" /></div>
+<div class="text-wrapper-82" >毎日続けるごはんだからこそ、<br/>小さな配慮を、たくさん詰め込みました。</div>
+<h2 class="text-wrapper-83" >猫様のための工夫</h2>
+<div class="index-7" ><div class="text-wrapper-52" >FEATURE</div>
+<div class="frame-26" ><div class="text-wrapper-53" >特徴</div>
+<img class="vector" src="/kaiseki/img/cat/index-underline.svg"  alt="" /></div></div></section>
+<img class="FV" src="/kaiseki/img/cat/fv-hero.png"  alt="懐石 2つのごほうび お試しキャンペーンのファーストビュー" />
+<a class="fv-cta" href="#cta" aria-label="300円（税込）で今すぐ試す"><span class="fv-cta-shine" ></span></a>
+<a class="follow" href={catCtaLinks.follow} target="_blank" rel="noopener noreferrer" ><div class="frame-27" ><div class="text-wrapper-84" ><span class="price-x2" >300</span>円・送料当社負担</div>
+<div class="frame-28" ><div class="text-wrapper-85" >今すぐ試す</div>
+<img class="vector-5" src="/kaiseki/img/cat/follow-arrow.svg"  alt="" /></div></div></a>
+<section class="PRODUCTS" ><div class="div-11" ><div class="rectangle-2" ></div>
+<div class="text-wrapper-86" >2種類の小分けパック×各5本</div>
+<img class="img-gohoubi" src="/kaiseki/img/cat/products-freshpack.png"  alt="小分けフレッシュパック" />
+<div class="text-wrapper-87" >イメージ</div>
+<p class="element-g" ><span class="text-wrapper-88" >アルミ蒸着分包＋脱酸素剤で酸化を防ぎ、開けたての香りを最後まで。 </span>
+<span class="text-wrapper-89" >※子ねこ用と機能性銘柄は60g×10袋。</span></p>
+<h3 class="element-g-2" >65g×10袋の<br/>小分けフレッシュパック</h3>
+<img class="point-brown" src="/kaiseki/img/cat/products-point-3.svg"  alt="" />
+<img class="footstamp-brown" src="/kaiseki/img/cat/products-footstamp-a.svg"  alt="" /></div>
+<div class="div-12" ><div class="rectangle-3" ></div>
+<img class="img-8" src="/kaiseki/img/cat/products-wave-kibble.png"  alt="波型粒" />
+<div class="text-wrapper-90" >イメージ</div>
+<div class="text-wrapper-91" >波型のくぼみにおいしさパウダーが絡みやすい設計。</div>
+<h3 class="text-wrapper-92" >波型粒で、<br/>おいしさをキャッチ</h3>
+<img class="point-brown-2" src="/kaiseki/img/cat/products-point-2.svg"  alt="" />
+<img class="footstamp-brown-2" src="/kaiseki/img/cat/products-footstamp-b.svg"  alt="" /></div>
+<div class="img-9" ><img class="hero" src="/kaiseki/img/cat/products-hero.png"  alt="懐石 2つのごほうび 商品イメージ" />
+<div class="text-wrapper-93" >イメージ</div></div>
+<div class="div-13" ><div class="rectangle-4" ></div>
+<img class="img-10" src="/kaiseki/img/cat/products-topping.png"  alt="2種のトッピング" />
+<div class="text-wrapper-94" >おいしさにこだわった粒に、2種類の厳選したトッピング。</div>
+<h3 class="text-wrapper-95" >2種のトッピングで<br/>飽きのこない味わい</h3>
+<img class="point-brown-3" src="/kaiseki/img/cat/products-point-1.svg"  alt="" /></div>
+<h2 class="text-wrapper-96" >おいしさにこだわった粒に、<br/>2種のトッピング。<br/>2種の小分けで、<br/>飽きのこない味わいに。</h2>
+<div class="title" ><div class="text-wrapper-97" >毎日のごはんに、「ごほうび」を。</div>
+<div class="text-wrapper-98" >懐石</div>
+<img class="logo" src="/kaiseki/img/cat/products-logo.png"  alt="懐石 ロゴ" /></div></section></div>
+</Layout>
+
+<script>
+  import { initCarousels } from '../scripts/carousel';
+  initCarousels();
+</script>

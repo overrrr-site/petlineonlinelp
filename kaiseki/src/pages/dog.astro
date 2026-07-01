@@ -1,0 +1,344 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { dogFaqGroups } from '../data/faqs';
+import { dogCtaLinks, footerLinks } from '../data/links';
+import { reviewStats, dogReviews } from '../data/reviews';
+import { dogIngredients } from '../data/ingredients';
+import { whyTableRows, dogHonestySlides, dogFeatureSlides } from '../data/carousels';
+import { dogHealthCare, dogLineup, dogCtaCards } from '../data/products';
+import '../styles/dog.css';
+
+const dogBgTiles = Array.from({ length: 8 }, (_, i) => ({
+  class: i === 0 ? 'img' : `bg-${i + 1}`,
+  src: i === 7 ? 'top-bg-tile-end.png' : 'top-bg-tile.png',
+}));
+
+const IMG = '/kaiseki/img/dog/';
+const dogFooterClasses = ['text-wrapper-48', 'text-wrapper-49', 'text-wrapper-50'] as const;
+---
+
+<Layout
+  title="懐石 健美 | 愛犬には、懐石。"
+  description="厳選した10種類以上の素材で、美しく健やかな毎日を。愛犬のための総合栄養食「懐石 健美」。1kg（250g×4袋）を500円（税込・送料当社負担）でお試しいただけます。"
+>
+<div class="dog-canvas">
+<img class="FV" src="/kaiseki/img/dog/fv-hero.png" alt="懐石 健美 お試しキャンペーンのファーストビュー" />
+<a class="fv-cta" href="#cta" aria-label="500円（税込）で今すぐ試す"><span class="fv-cta-shine"></span></a>
+<div class="bg" aria-hidden="true">
+{dogBgTiles.map((t) => (
+<img class={t.class} src={`${IMG}${t.src}`} alt="" />
+))}
+</div>
+<main>
+<section class="LINE-UP" aria-labelledby="lineup-heading">
+<div class="text-wrapper-4">※1：リン約95%・ナトリウム約95%に調整（1歳から比）</div>
+{dogLineup.map((p) => (
+<article class={p.articleClass} aria-label={p.title}>
+<a class={p.buttonClass} href={p.href} target="_blank" rel="noopener noreferrer" aria-label={`${p.title} の商品ページへ`}>
+<div class="text-wrapper-5">1kgを500円で試す</div>
+<img class="polygon-2" src={`${IMG}btn-chevron.svg`} alt="" />
+</a>
+<div class={p.descClass} set:html={p.desc}></div>
+<h3 class={p.h3Class}>{p.title}</h3>
+<div class={p.badgeClass}><div class="text-wrapper-8">{p.badge}</div></div>
+<img class={p.imgClass} src={`${IMG}${p.thumb}`} alt={`${p.title} 商品画像`} />
+</article>
+))}
+<div class="element-7">おすすめ順で4タイプ。<br/>年齢や気になるタイプから、まずは1袋。</div>
+<h2 class="text-wrapper-11" id="lineup-heading">あなたの愛犬に<br/>どの懐石？</h2>
+<div class="index">
+<div class="text-wrapper-12">LINE UP</div>
+<div class="frame-5"><div class="text-wrapper-13">お品書き</div><img class="vector" src="/kaiseki/img/dog/index-underline.svg" alt="" /></div>
+</div>
+<img class="img-2" src="/kaiseki/img/dog/lineup-product-group.png" alt="" />
+</section>
+<section class="REVIEW" aria-labelledby="review-heading">
+<div class="bg-9" aria-hidden="true"></div>
+<div class="PR">ペットラインしあわせマルシェユーザーレビュー（PR/自社調査）<br/>懐石 健美 お試し対象4商品/{reviewStats.dog.total}件/{reviewStats.dog.asOf}<br/>※ 個人の感想であり、効果効能を示すものではありません。<br/>※&nbsp;2026年3月新登場のため、現在も件数が増えています。</div>
+<div class="carousel-review-dog-wrapper" role="region" aria-label="レビュー一覧">
+<div class="carousel-review-dog">
+<div class="slide">
+{dogReviews.map((r, i) => (
+<article class={r.articleClass} aria-label={`レビュー ${i + 1}`}>
+<div class={i === 0 ? 'text-wrapper-14' : 'text-wrapper-19'}>{i + 1}/{dogReviews.length}</div>
+<div class={r.wrapClass}>
+<img class={r.avatarClass} src={`${IMG}${r.avatar}`} alt={r.avatarAlt} />
+<div class={r.infoClass}>
+<div class="frame-8">
+<div class="frame-9"><div class="text-wrapper-15">{r.product}</div></div>
+{r.hasStars ? (
+<div class="frame-10" aria-label="星5">
+{Array.from({ length: 5 }).map(() => (
+<img class="star" src={`${IMG}star.svg`} alt="" />
+))}
+</div>
+) : (
+<div class="frame-10"></div>
+)}
+</div>
+<div class="text-wrapper-16">{r.name}</div>
+</div>
+</div>
+<h3 class="text-wrapper-17" set:html={r.title}></h3>
+<p class="text-wrapper-18">{r.body}</p>
+</article>
+))}
+</div>
+<div class="indicator" aria-hidden="true">
+<div class="ellipse"></div>
+<div class="ellipse-2"></div>
+<div class="ellipse-2"></div>
+<div class="ellipse-2"></div>
+</div>
+<button type="button" class="carousel-prev" aria-label="前のスライド"><img src={`${IMG}carousel-arrow-left.png`} alt="" /></button>
+<div class="vector-wrapper" aria-hidden="true"><img class="vector-2" src="/kaiseki/img/dog/carousel-arrow.svg" alt="" /></div>
+</div>
+</div>
+<div class="text-wrapper-20">お試し対象4商品&nbsp;合計レビュー&nbsp;{reviewStats.dog.total}件</div>
+<div class="img-3" aria-hidden="true">
+<div class="group">
+<div class="text-wrapper-21">4.4</div>
+<div class="text-wrapper-22">高評価</div>
+<img class="group-2" src="/kaiseki/img/dog/review-rating.png" alt="" />
+</div>
+<div class="element-8"></div>
+<div class="img-wrapper"><img class="vector-3" src="/kaiseki/img/dog/review-arrow.svg" alt="" /></div>
+</div>
+<div class="text-wrapper-23">ペットラインしあわせマルシェユーザーレビュー（PR/自社調査）</div>
+<h2 class="text-wrapper-24" id="review-heading">先行ユーザーの声</h2>
+<div class="index-2">
+<div class="text-wrapper-25">REVIEW</div>
+<div class="frame-14"><div class="text-wrapper-26">評価</div><img class="vector" src="/kaiseki/img/dog/index-underline.svg" alt="" /></div>
+</div>
+</section>
+<section class="ABOUT" aria-labelledby="about-heading">
+<div class="bg-10" aria-hidden="true"></div>
+<img class="line" src="/kaiseki/img/dog/about-line.svg" alt="" />
+<div class="text-wrapper-27">2026年3月、愛犬用「懐石 健美」新登場。</div>
+<div class="ellipse-3" aria-hidden="true"></div>
+<div class="text-wrapper-28">製造の各工程で、独自の厳しい品質基準に基づく入念なチェックを実施。</div>
+<div class="ellipse-4" aria-hidden="true"></div>
+<img class="element-9" src="/kaiseki/img/dog/about-factory.png" alt="岐阜県多治見の自社工場" />
+<div class="text-wrapper-29">岐阜県多治見の自社工場で国内製造。</div>
+<div class="ellipse-5" aria-hidden="true"></div>
+<img class="element-10" src="/kaiseki/img/dog/about-lab.png" alt="茨城県つくばの研究開発拠点" />
+<div class="text-wrapper-30">茨城県つくばの研究開発拠点で、日々フードを研究。</div>
+<div class="ellipse-6" aria-hidden="true"></div>
+<div class="text-wrapper-31">1967年に誕生。日本初のドライキャットフードを世に出したパイオニアとして、日本のごはんを研究。</div>
+<div class="ellipse-7" aria-hidden="true"></div>
+<p class="text-wrapper-32">ペットラインは1967年（昭和42年）に誕生したペットフードメーカー。「愛情を品質に」をモットーに、自社の研究開発拠点と国内工場で、国産フードをつくり続けています。懐石 健美は、2026年3月に愛犬用として新登場しました。</p>
+<h2 class="text-wrapper-33" id="about-heading">愛犬と暮らす毎日を<br/>国産の品質で。</h2>
+<div class="index-3">
+<div class="text-wrapper-34">ABOUT</div>
+<div class="frame-15"><div class="text-wrapper-35">私たちについて</div><img class="vector" src="/kaiseki/img/dog/index-underline-about.svg" alt="" /></div>
+</div>
+</section>
+<section class="WHY" aria-labelledby="why-heading">
+<div class="element-kg-g">※ 目安（1歳から）：小型犬（5kg・1日95〜125g）で約8〜9日分。中型犬（10kg）・大型犬（20kg）は商品パッケージの給与量表をご確認ください。</div>
+<h2 class="element-kg" id="why-heading">だから、500円で1kgを、<br/>しっかり試せることに<br/>意味があります。</h2>
+<div class="table" role="img" aria-label="少量サンプルとたっぷりお試しの比較表">
+<div class="table-2">
+<div class="row">
+<div class="cell"><div class="text-wrapper-36">確認できること</div></div>
+<div class="cell-2"><div class="text-wrapper-37">少量<br/>サンプル</div></div>
+<div class="cell-2"><div class="text-wrapper-38">たっぷり<br/>お試し</div></div>
+</div>
+{whyTableRows.map((row) => (
+<div class="row">
+<div class="cell-3"><div class="text-wrapper-39">{row.label}</div></div>
+<div class="cell-4"><div class="text-wrapper-40">{row.sample}</div></div>
+<div class="cell-4"><div class="text-wrapper-40">{row.full}</div></div>
+</div>
+))}
+</div>
+<img class="rectangle-stroke" src="/kaiseki/img/dog/why-table-border.svg" alt="" />
+</div>
+<p class="element-11">フード選びで本当に確認したいのは、食いつき・食べ続けてくれるかどうか・便の様子。<br/>これらは、1〜2食では見えてきません。</p>
+<h3 class="element-12">少量サンプルでは見えない<br/>&#34;愛犬との相性&#34;を<br/>1kgでしっかり確かめる。</h3>
+<div class="index-4">
+<div class="frame-16"><div class="text-wrapper-41"><span class="wy-num">1kg</span>で試せる理由</div><img class="vector" src="/kaiseki/img/dog/index-underline.svg" alt="" /></div>
+<div class="text-wrapper-42">WHY 250g×4</div>
+</div>
+</section>
+<section class="HONESTY" aria-labelledby="honesty-heading">
+<div class="bg-11" aria-hidden="true"></div>
+<div class="carousel-honesty-dog-wrapper" role="region" aria-label="ご案内一覧">
+<div class="carousel-honesty-dog">
+<div class="slide-4">
+{dogHonestySlides.map((s, i) => (
+<article class="slide-5" aria-label={`ご案内 ${i + 1}`}>
+<div class="text-wrapper-14">{i + 1}/{dogHonestySlides.length}</div>
+<div class="frame-17"><div class="text-wrapper-15">{s.label}</div></div>
+<h3 class="text-wrapper-43" set:html={s.title}></h3>
+<p class="text-wrapper-18" set:html={s.body}></p>
+</article>
+))}
+</div>
+<div class="indicator-2" aria-hidden="true">
+<div class="ellipse-8"></div>
+<div class="ellipse-9"></div>
+<div class="ellipse-10"></div>
+</div>
+<button type="button" class="carousel-prev" aria-label="前のスライド"><img src={`${IMG}carousel-arrow-left.png`} alt="" /></button>
+<div class="button-4" aria-hidden="true"><img class="vector-2" src="/kaiseki/img/dog/carousel-arrow.svg" alt="" /></div>
+</div>
+</div>
+<p class="text-wrapper-44">すべての愛犬に合うわけではありません。<br/>だからこそ、私たちからのお願いです。</p>
+<h2 class="text-wrapper-45" id="honesty-heading">愛犬に合わない場合は、<br/>ご使用をお控えください。</h2>
+<div class="index-5">
+<div class="frame-18"><div class="text-wrapper-46">ご案内</div><img class="vector" src="/kaiseki/img/dog/index-underline.svg" alt="" /></div>
+<div class="text-wrapper-47">HONESTY</div>
+</div>
+</section>
+<div class="bg-cta" aria-hidden="true">
+<img class="bg-12" src="/kaiseki/img/dog/ingredients-bg-tile.png" alt="" />
+<img class="bg-13" src="/kaiseki/img/dog/ingredients-bg-tile.png" alt="" />
+<img class="bg-14" src="/kaiseki/img/dog/ingredients-bg-tile.png" alt="" />
+</div>
+<div class="bg-qa" aria-hidden="true"></div>
+<section class="INGREDIENTS" aria-labelledby="ingredients-heading">
+<div class="bg-17" aria-hidden="true"></div>
+<div class="frame-31"><div class="text-wrapper-75">着色料・香料 無添加</div></div>
+<div class="group-3" aria-hidden="true"><img class="vector-5" src="/kaiseki/img/dog/ingredients-sarani-deco.svg" alt="" /><div class="text-wrapper-76">さらに!!</div><img class="vector-6" src="/kaiseki/img/dog/deco-vector-6.svg" alt="" /></div>
+<div class="element-24">※「懐石 健美 グレインフリー 1歳から」は9種類以上の素材を使用。原材料として穀類不使用とし、タピオカ粉を使用しています。</div>
+{dogIngredients.map((item) => (
+<div class={item.wrapperClass}>
+<img class="img-5" src={`${IMG}${item.img}`} alt={item.alt} />
+<p class={item.textClass}><span class="text-wrapper-77">{item.name}<br/></span><span class="text-wrapper-78" set:html={item.desc}></span></p>
+</div>
+))}
+<p class="text-wrapper-79">緑黄色野菜・穀類・アマニ油・たんぱく質源。素材ひとつひとつにこだわり、毎日の主食に。</p>
+<h2 class="element-26" id="ingredients-heading">10種類以上※の<br/>こだわり素材使用</h2>
+<img class="img-kenbi" src="/kaiseki/img/dog/healthcare-hero.png" alt="懐石 健美と素材イメージ" />
+<div class="index-9">
+<div class="text-wrapper-66">INGREDIENTS</div>
+<div class="group-4"><div class="text-wrapper-80">材料</div><img class="vector" src="/kaiseki/img/dog/index-underline.svg" alt="" /></div>
+</div>
+</section>
+<section class="HEALTH-CARE" aria-labelledby="health-care-heading">
+<div class="bg-16" aria-hidden="true"></div>
+<div class="text-wrapper-68">※ 効果効能を保証するものではありません。毎日の主食として、健康維持にご活用ください。</div>
+{dogHealthCare.map((c) => (
+<article class={c.articleClass}>
+<img class="img-kenbi-point" src={`${IMG}${c.img}`} alt={c.title} />
+<h3 class={c.h3Class}>{c.title}</h3>
+<div class={c.frameClass}><div class="text-wrapper-70">{c.tag}</div></div>
+<p class={c.bodyClass}>{c.body}</p>
+</article>
+))}
+<p class="text-wrapper-64">毎日続けるごはんだからこそ、3つの健康維持に配慮を。</p>
+<h2 class="text-wrapper-65" id="health-care-heading">愛犬の健康に配慮</h2>
+<div class="index-8">
+<div class="text-wrapper-66">HEALTH CARE</div>
+<div class="frame-30"><div class="text-wrapper-67">健康</div><img class="vector" src="/kaiseki/img/dog/index-underline.svg" alt="" /></div>
+</div>
+<img class="footstamp-brown" src="/kaiseki/img/dog/footstamp-a.svg" alt="" />
+</section>
+<section class="FEATURE" aria-labelledby="feature-heading">
+<div class="bg-15" aria-hidden="true"></div>
+<div class="cariusel-peature-dog-wrapper" role="region" aria-label="特徴一覧">
+<div class="cariusel-peature-dog">
+<div class="slide-4">
+{dogFeatureSlides.map((s, i) => (
+<article class="slide-6" aria-label={`特徴 ${i + 1}`}>
+<div class="text-wrapper-14">{i + 1}/{dogFeatureSlides.length}</div>
+<div class="frame-17"><div class="text-wrapper-15">{s.label}</div></div>
+<h3 class="text-wrapper-43" set:html={s.title}></h3>
+<p class="text-wrapper-18" set:html={s.body}></p>
+</article>
+))}
+</div>
+<div class="indicator-3" aria-hidden="true">
+<div class="ellipse-11"></div>
+<div class="ellipse-2"></div>
+<div class="ellipse-2"></div>
+<div class="ellipse-2"></div>
+</div>
+<button type="button" class="carousel-prev" aria-label="前のスライド"><img src={`${IMG}carousel-arrow-left.png`} alt="" /></button>
+<div class="button-6" aria-hidden="true"><img class="vector-2" src="/kaiseki/img/dog/carousel-arrow.svg" alt="" /></div>
+<img class="sozai-kibble-seiken" src="/kaiseki/img/dog/feature-kibble.png" alt="" />
+</div>
+</div>
+<p class="text-wrapper-64">毎日続けるごはんだからこそ、小さな配慮を、たくさん詰め込みました。</p>
+<h2 class="text-wrapper-65" id="feature-heading">愛犬のための工夫</h2>
+<div class="index-7">
+<div class="text-wrapper-66">FEATURE</div>
+<div class="frame-26"><div class="text-wrapper-67">特徴</div><img class="vector" src="/kaiseki/img/dog/index-underline.svg" alt="" /></div>
+</div>
+<img class="footstamp-brown" src="/kaiseki/img/dog/footstamp-b.svg" alt="" />
+</section>
+<section class="CTA" id="cta" aria-labelledby="cta-heading">
+{dogCtaCards.map((c) => (
+<a class={c.btnClass} href={c.href} target="_blank" rel="noopener noreferrer" aria-label={c.aria}>
+<img class="thumb-kenbi-3" src={`${IMG}${c.thumb}`} alt={c.thumbAlt} />
+<div class="button-5">
+<div class={c.badgeWrapClass}><div class="text-wrapper-56">{c.badge}</div></div>
+<Fragment set:html={c.labelHtml} />
+</div>
+<img class="vector-4" src={`${IMG}lineup-card-arrow.svg`} alt="" />
+</a>
+))}
+<div class="text-wrapper-60">愛犬に合うタイプを選んで、商品ページへ。</div>
+<p class="element-20" id="cta-heading"><span class="text-wrapper-61">各</span><span class="text-wrapper-62">500</span><span class="text-wrapper-61">円 (税込)</span></p>
+<div class="frame-25"><div class="text-wrapper-63">お一人様1回限り</div></div>
+<img class="img-4" src="/kaiseki/img/dog/lineup-hero.png" alt="お試し商品イメージ" />
+</section>
+<section class="QA" aria-labelledby="qa-heading">
+<div class="QA-2">
+<div class="QA-3">Q&amp;A/2</div>
+<h2 class="text-wrapper-51">商品・保管・選び方について</h2>
+{dogFaqGroups.product.map((item) => (
+<details class={item.detailsClass} open>
+<summary class={item.summaryClass}>
+<div class="frame-20"><div class="text-wrapper-52">Q</div></div>
+<div class="text-wrapper-53">{item.question}</div>
+</summary>
+<div class="frame-21"><div class="text-wrapper-54">{item.answer}</div></div>
+</details>
+))}
+</div>
+<div class="QA-4">
+<div class="index-6">
+<div class="frame-22"><div class="text-wrapper-55">よくあるご質問</div><img class="vector" src="/kaiseki/img/dog/index-underline.svg" alt="" /></div>
+<div class="QA-5" id="qa-heading">Q&amp;A/1</div>
+</div>
+<h2 class="text-wrapper-51">ご購入・使い方について</h2>
+{dogFaqGroups.purchase.map((item) => (
+<details class={item.detailsClass} open>
+<summary class={item.summaryClass}>
+<div class="frame-20"><div class="text-wrapper-52">Q</div></div>
+<div class="text-wrapper-53">{item.question}</div>
+</summary>
+<div class="frame-21"><div class="text-wrapper-54">{item.answer}</div></div>
+</details>
+))}
+</div>
+</section>
+</main>
+<footer class="footer">
+<nav class="text" aria-label="フッターナビゲーション">
+{footerLinks.map((link, index) => (
+<Fragment>
+{index > 0 && <img class="line-2" src="/kaiseki/img/dog/footer-divider.svg" alt="" />}
+<a class={dogFooterClasses[index]} href={link.href} target="_blank" rel="noopener noreferrer">{link.label}</a>
+</Fragment>
+))}
+</nav>
+<img class="line-3" src="/kaiseki/img/dog/footer-line.svg" alt="" />
+</footer>
+<a class="follow" href={dogCtaLinks.follow} target="_blank" rel="noopener noreferrer" aria-label="今すぐ試す">
+<div class="frame-32">
+<div class="text-wrapper-81"><span class="price-x2">500</span>円・送料当社負担</div>
+<div class="frame-33">
+<div class="text-wrapper-82">今すぐ試す</div>
+<img class="vector-7" src="/kaiseki/img/dog/follow-arrow.svg" alt="" />
+</div>
+</div>
+</a>
+</div>
+</Layout>
+
+<script>
+  import { initCarousels } from '../scripts/carousel';
+  initCarousels();
+</script>
