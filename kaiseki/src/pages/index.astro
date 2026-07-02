@@ -29,24 +29,24 @@ const catFooterClasses = ['text-wrapper', 'div', 'text-wrapper-2'] as const;
 <div class="bg-2" aria-hidden="true" >{Array.from({ length: 5 }).map(() => (
 <img class="bg-3" src={`${IMG}products-bg-tile.png`}  alt="" />
 ))}</div>
-<section class="QA" ><div class="QA-2" ><div class="index" ><div class="QA-3" >Q&amp;A/1</div>
+<section class="QA" data-section="faq" data-section-order="11" ><div class="QA-2" ><div class="index" ><div class="QA-3" >Q&amp;A/1</div>
 <div class="frame" ><div class="text-wrapper-3" >よくあるご質問</div>
 <img class="vector" src="/kaiseki/img/cat/index-underline.svg"  alt="" /></div></div>
 <h2 class="text-wrapper-4" >ご購入・使い方について</h2>
-{catFaqGroups.purchase.map((item) => (
+{catFaqGroups.purchase.map((item, idx) => (
 <div class={item.itemClass} ><div class={item.frameClass} ><div class="div-wrapper" ><div class="text-wrapper-5" >Q</div></div>
-<div class="text-wrapper-6" >{item.question}</div></div>
+<div class="text-wrapper-6 js-accordion-toggle" data-accordion-title={item.question} data-accordion-order={idx + 1} data-section="faq" >{item.question}</div></div>
 <div class="frame-3" ><div class="text-wrapper-7" >{item.answer}</div></div></div>
 ))}</div>
 <div class="QA-4" ><div class="QA-5" >Q&amp;A/2</div>
 <h2 class="text-wrapper-4" >商品・保管・選び方について</h2>
-{catFaqGroups.product.map((item) => (
+{catFaqGroups.product.map((item, idx) => (
 <div class={item.itemClass} ><div class={item.frameClass} ><div class="div-wrapper" ><div class="text-wrapper-5" >Q</div></div>
-<div class="text-wrapper-6" >{item.question}</div></div>
+<div class="text-wrapper-6 js-accordion-toggle" data-accordion-title={item.question} data-accordion-order={idx + 1} data-section="faq" >{item.question}</div></div>
 <div class="frame-3" ><div class="text-wrapper-7" >{item.answer}</div></div></div>
 ))}</div></section>
-<section class="CTA" id="cta" >{catCtaButtons.map((b) => (
-<a class={b.btnClass} href={b.href} target="_blank" rel="noopener noreferrer" ><img class="thumb" src={`${IMG}${b.thumb}`}  alt="" />
+<section class="CTA" id="cta" data-section="offer" data-section-order="10" >{catCtaButtons.map((b, idx) => (
+<a class={b.btnClass} href={b.href} target="_blank" rel="noopener noreferrer" data-lp="kaiseki_cat" data-cta-position="product" data-cta-section="offer" data-destination="official_ec" data-product-id={b.sku} data-product-name={b.name} data-product-position={idx + 1} ><img class="thumb" src={`${IMG}${b.thumb}`}  alt="" />
 <div class="button" ><div class={b.badgeWrapClass} ><div class={b.badgeClass} >{b.badge}</div></div>
 <Fragment set:html={b.labelHtml} /></div>
 <img class="vector-2" src={`${IMG}cta-chevron.svg`}  alt="" /></a>
@@ -64,7 +64,7 @@ const catFooterClasses = ['text-wrapper', 'div', 'text-wrapper-2'] as const;
 <img class="thumb-4" src="/kaiseki/img/cat/thumb-kitten-stack.png"  alt="" />
 <img class="thumb-5" src="/kaiseki/img/cat/thumb-standard-stack.png"  alt="" />
 <img class="img-3" src="/kaiseki/img/cat/cta-product-group.png"  alt="" /></div></section>
-<section class="HONESTY" ><div class="bg-honesty" ></div>
+<section class="HONESTY" data-section="caution" data-section-order="7" ><div class="bg-honesty" ></div>
 <div class="carousel-honesty-cat" ><div class="slide" >{catHonestySlides.map((s, i) => (
 <div class="slide-2" ><div class="text-wrapper-17" >{i + 1}/{catHonestySlides.length}</div>
 <div class="frame-8" ><div class="text-wrapper-18" >{s.label}</div></div>
@@ -81,7 +81,7 @@ const catFooterClasses = ['text-wrapper', 'div', 'text-wrapper-2'] as const;
 <div class="index-2" ><div class="frame-9" ><div class="text-wrapper-23" >ご案内</div>
 <img class="vector" src="/kaiseki/img/cat/index-underline.svg"  alt="" /></div>
 <div class="text-wrapper-24" >HONESTY</div></div></section>
-<section class="WHY" ><div class="index-3" ><div class="text-wrapper-25" >WHY 65g×10</div>
+<section class="WHY" data-section="why" data-section-order="6" ><div class="index-3" ><div class="text-wrapper-25" >WHY 65g×10</div>
 <div class="group" ><div class="frame-10" ><div class="text-wrapper-26" >約<span class="wy-num" >10</span>日分試せる理由</div></div>
 <img class="vector" src="/kaiseki/img/cat/index-underline.svg"  alt="" /></div></div>
 <h3 class="text-wrapper-28" >少量サンプルでは見えない<br/>&#34;猫様のお気に入り&#34; を<br/>約10日分で<br/>しっかり確かめる。</h3>
@@ -97,7 +97,7 @@ const catFooterClasses = ['text-wrapper', 'div', 'text-wrapper-2'] as const;
 <img class="rectangle-stroke" src="/kaiseki/img/cat/why-table-border.svg"  alt="" /></div>
 <h2 class="text-wrapper-34" >だから、<br/>300円で約10日分を、<br/>しっかり試せることに<br/>意味があります。</h2>
 <div class="text-wrapper-35" >※ 約10日分は、65g×10袋 (一部60g×10袋) を成猫1日必要量50〜80gで試す場合の目安。猫様の体重・年齢・運動量により変動します。</div></section>
-<section class="ABOUT" ><div class="bg-4" ></div>
+<section class="ABOUT" data-section="about" data-section-order="5" ><div class="bg-4" ></div>
 <img class="line-2" src="/kaiseki/img/cat/about-line.svg"  alt="" />
 <div class="text-wrapper-36" >製造の各工程で、独自の厳しい品質基準に基づく入念なチェックを実施。</div>
 <div class="ellipse-4" ></div>
@@ -114,7 +114,7 @@ const catFooterClasses = ['text-wrapper', 'div', 'text-wrapper-2'] as const;
 <div class="index-4" ><div class="text-wrapper-42" >ABOUT</div>
 <div class="frame-11" ><div class="text-wrapper-43" >私たちについて</div>
 <img class="vector" src="/kaiseki/img/cat/index-underline-about.svg"  alt="" /></div></div></section>
-<section class="REVIEW" ><div class="bg-5" ></div>
+<section class="REVIEW" data-section="reviews" data-section-order="4" ><div class="bg-5" ></div>
 <div class="PR" >ペットラインしあわせマルシェユーザーレビュー（PR/自社調査）<br/>懐石 2つのごほうび/お試し対象5商品/{reviewStats.cat.total}件/{reviewStats.cat.asOf}<br/>※ 個人の感想であり、効果効能を示すものではありません。<br/>※ 現在も件数が増えています。</div>
 <div class="carousel-review-cat" ><div class="slide" >{catReviews.map((r, i) => (
 <div class="slide-3" ><div class="text-wrapper-44" >{i + 1}/{catReviews.length}</div>
@@ -150,7 +150,7 @@ const catFooterClasses = ['text-wrapper', 'div', 'text-wrapper-2'] as const;
 <div class="index-5" ><div class="text-wrapper-52" >REVIEW</div>
 <div class="frame-19" ><div class="text-wrapper-53" >評価</div>
 <img class="vector" src="/kaiseki/img/cat/index-underline.svg"  alt="" /></div></div></section>
-<section class="LINE-UP" ><div class="text-wrapper-54" >LINE UP 2</div>
+<section class="LINE-UP" data-section="lineup" data-section-order="3" ><div class="text-wrapper-54" >LINE UP 2</div>
 <h2 class="text-wrapper-55" >気になる悩みで選ぶ。</h2>
 <div class="text-wrapper-56" >毎日のごはんで、健康に配慮を。<br/>気になるポイントに合わせて、3タイプ。</div>
 <div class="HEALTH" ><div class="review" ><img class="subtract" src="/kaiseki/img/cat/lineup-badge-a.svg"  alt="" />
@@ -180,11 +180,11 @@ const catFooterClasses = ['text-wrapper', 'div', 'text-wrapper-2'] as const;
 <p class="div-9" ><span class="text-wrapper-67" >気になるタイプを、</span>
 <span class="text-wrapper-68" ><span class="price-x2" >300</span>円</span>
 <span class="text-wrapper-67" >で</span></p>
-<a class="button-cat-6" href="#cta" ><div class="text-wrapper-69" >健康タイプから選ぶ</div>
+<a class="button-cat-6" href="#cta" data-lp="kaiseki_cat" data-cta-position="lineup" data-cta-role="scroll_to_offer" ><div class="text-wrapper-69" >健康タイプから選ぶ</div>
 <img class="polygon" src="/kaiseki/img/cat/btn-arrow.svg"  alt="" /></a>
 <div class="text-wrapper-70" >※送料当社負担/お届け1回のみ・自動継続なし</div></section>
-<section class="LINE-UP-2" ><div class="text-wrapper-71" >※送料当社負担/お届け1回のみ・自動継続なし</div>
-<a class="button-2" href="#cta" ><div class="text-wrapper-72" >今すぐ試す</div>
+<section class="LINE-UP-2" data-section="lineup" data-section-order="2" ><div class="text-wrapper-71" >※送料当社負担/お届け1回のみ・自動継続なし</div>
+<a class="button-2" href="#cta" data-lp="kaiseki_cat" data-cta-position="lineup" data-cta-role="scroll_to_offer" ><div class="text-wrapper-72" >今すぐ試す</div>
 <img class="polygon" src="/kaiseki/img/cat/btn-arrow.svg"  alt="" /></a>
 <p class="div-10" ><span class="text-wrapper-67" >まずは「小魚添えペア」を、</span>
 <span class="text-wrapper-68" ><span class="price-x2" >300</span>円</span>
@@ -211,7 +211,7 @@ const catFooterClasses = ['text-wrapper', 'div', 'text-wrapper-2'] as const;
 <div class="frame-25" ><div class="text-wrapper-81" >お品書き</div>
 <img class="vector" src="/kaiseki/img/cat/index-underline.svg"  alt="" /></div></div>
 <img class="img-7" src="/kaiseki/img/cat/lineup-hero.png"  alt="お試し商品イメージ" /></section>
-<section class="FEATURE" ><div class="rectangle" ></div>
+<section class="FEATURE" data-section="ingenuity" data-section-order="8" ><div class="rectangle" ></div>
 <div class="cariusel-peature-cat" ><div class="slide" >{catFeatureSlides.map((s, i) => (
 <div class="slide-2" ><div class="text-wrapper-17" >{i + 1}/{catFeatureSlides.length}</div>
 <div class="frame-8" ><div class="text-wrapper-18" >{s.label}</div></div>
@@ -230,12 +230,12 @@ const catFooterClasses = ['text-wrapper', 'div', 'text-wrapper-2'] as const;
 <div class="index-7" ><div class="text-wrapper-52" >FEATURE</div>
 <div class="frame-26" ><div class="text-wrapper-53" >特徴</div>
 <img class="vector" src="/kaiseki/img/cat/index-underline.svg"  alt="" /></div></div></section>
-<img class="FV" src="/kaiseki/img/cat/fv-hero.png"  alt="懐石 2つのごほうび お試しキャンペーンのファーストビュー" />
-<a class="fv-cta" href="#cta" aria-label="300円（税込）で今すぐ試す"><span class="fv-cta-shine" ></span></a>
-<a class="follow" href={catCtaLinks.follow} target="_blank" rel="noopener noreferrer" ><div class="frame-27" ><div class="text-wrapper-84" ><span class="price-x2" >300</span>円・送料当社負担</div>
+<img class="FV" src="/kaiseki/img/cat/fv-hero.png"  alt="懐石 2つのごほうび お試しキャンペーンのファーストビュー" data-section="fv" data-section-order="1" />
+<a class="fv-cta" href="#cta" aria-label="300円（税込）で今すぐ試す" data-lp="kaiseki_cat" data-cta-position="fv" data-cta-role="scroll_to_offer"><span class="fv-cta-shine" ></span></a>
+<a class="follow" href={catCtaLinks.follow} target="_blank" rel="noopener noreferrer" data-lp="kaiseki_cat" data-cta-position="floating" data-cta-section="offer" data-destination="official_ec" data-product-id="cKS2G" data-product-name="フォロー/一覧" ><div class="frame-27" ><div class="text-wrapper-84" ><span class="price-x2" >300</span>円・送料当社負担</div>
 <div class="frame-28" ><div class="text-wrapper-85" >今すぐ試す</div>
 <img class="vector-5" src="/kaiseki/img/cat/follow-arrow.svg"  alt="" /></div></div></a>
-<section class="PRODUCTS" ><div class="div-11" ><div class="rectangle-2" ></div>
+<section class="PRODUCTS" data-section="product" data-section-order="9" ><div class="div-11" ><div class="rectangle-2" ></div>
 <div class="text-wrapper-86" >2種類の小分けパック×各5本</div>
 <img class="img-gohoubi" src="/kaiseki/img/cat/products-freshpack.png"  alt="小分けフレッシュパック" />
 <div class="text-wrapper-87" >イメージ</div>

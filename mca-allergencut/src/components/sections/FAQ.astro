@@ -25,7 +25,7 @@ const FAQS = [
 ];
 ---
 
-<section class="section" style="background:var(--background-02)" aria-labelledby="faq-purchase-title">
+<section class="section" style="background:var(--background-02)" aria-labelledby="faq-purchase-title" data-section="faq" data-section-order="12">
   <div class="screen-wrapper">
     <div class="faq screen">
       <div class="faq__container">
@@ -37,9 +37,9 @@ const FAQS = [
         <div class="faq__content">
           <div class="faq__card">
             <div class="faq__items">
-              {FAQS.map((f) => (
+              {FAQS.map((f, i) => (
                 <div class="faq__item">
-                  <div class="faq__item-question-wrap">
+                  <div class="faq__item-question-wrap js-accordion-toggle" data-accordion-title={f.q} data-accordion-order={i + 1} data-section="faq">
                     <span class="faq__item-badge"><span class="faq__item-badge-text">Q</span></span>
                     <p class="faq__item-question">{f.q}</p>
                   </div>
