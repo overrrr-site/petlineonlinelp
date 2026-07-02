@@ -3266,3 +3266,10 @@
 .cat-canvas .carousel-honesty-cat .carousel-prev { top: 163px; left: 0; }
 .cat-canvas .carousel-review-cat .carousel-prev { top: 160px; left: 0; }
 .cat-canvas .cariusel-peature-cat .carousel-prev { top: 152px; left: 0; }
+
+/* でぃまろさん（タイトルが最長で2行化＝カードが他より高くなる）のカードだけ
+   タイトルを1行に収めて高さを他カード（383px）に揃える */
+.cat-canvas .carousel-review-cat .slide-3:last-child .text-wrapper-46 {
+  font-size: 16px;
+  letter-spacing: 1px;
+}
