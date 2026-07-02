@@ -35,8 +35,8 @@ export const catReviews = [
   },
   {
     wrapClass: 'frame-12', infoClass: 'frame-17', avatarClass: 'mask-group-5', avatar: 'review-avatar-default.png',
-    product: '腎臓の健康維持', hasStars: false, name: 'でぃまろさん', title: '最後までしっかり',
-    body: '健康系のフードは食べてくれるか心配でしたが、開けた瞬間からしっかり興味を示し、食いつきが良かったです。香りも自然で食べやすいサイズ感。60gずつの小分けパックで、鮮度を保ったまま最後まであげられるのもありがたいです。',
+    product: '腎臓の健康維持', hasStars: false, name: 'でぃまろさん', title: '最後までしっかり食べてくれました',
+    body: '健康系のフードは食べてくれるか心配でしたが、開けた瞬間からしっかり興味を示し、食いつきが良かったです。香りも自然で食べやすいサイズ感。60gずつの小分けパックで、おいしさを保ったまま最後まであげられるのもありがたいです。',
   },
 ] as const;
 
