@@ -4,8 +4,14 @@
 <section class="section" style="background:var(--background-02)" aria-label="ファーストビュー" data-section="fv" data-section-order="1">
   <div class="screen-wrapper">
     <div class="fv screen">
+      <div class="fv__offer-strip" aria-label="初回限定800円（2kg/2.5kg） 送料当社負担 自動継続なし">
+        <span class="fv__offer-item fv__offer-item--price"><span class="fv__offer-limited">初回限定</span><span class="fv__offer-price">800<span class="fv__offer-yen">円</span></span><span class="fv__offer-weight">2kg/2.5kg</span></span>
+        <span class="fv__offer-item">送料当社負担</span>
+        <span class="fv__offer-item">自動継続なし</span>
+      </div>
+
       <div class="fv__hero">
-        <img class="fv__hero-image" src="/mca-allergencut/img/kv-photo.webp" alt="メディコートアドバンス アレルゲンカットのパッケージと犬のビジュアル" loading="eager" />
+        <img class="fv__hero-image" src="/mca-allergencut/img/kv-photo.webp" alt="メディコートアドバンス アレルゲンカットのパッケージと犬のビジュアル" loading="eager" fetchpriority="high" />
         <div class="fv__card">
           <div class="fv__card-bg" aria-hidden="true"></div>
           <img class="fv__card-package" src="/mca-allergencut/img/u0311-3-2.webp" alt="商品パッケージ" loading="eager" />
@@ -54,6 +60,63 @@
     will-change: transform;
   }
 
+  /* オファー確認ストリップ：バナーで約束した「初回限定800円/送料当社負担/自動継続なし」を
+     着地直後に即時再確認し、広告との期待値ギャップを埋める */
+  .fv__offer-strip {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 440px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--orange);
+    color: var(--white);
+    font-family: var(--font-family);
+    z-index: 5;
+  }
+
+  .fv__offer-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 0 10px;
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    white-space: nowrap;
+  }
+
+  .fv__offer-item + .fv__offer-item {
+    border-left: 1px solid rgba(var(--white-rgb), 0.5);
+  }
+
+  .fv__offer-item--price {
+    gap: 3px;
+  }
+
+  .fv__offer-limited {
+    font-size: var(--font-size-xxs);
+    font-weight: 700;
+  }
+
+  .fv__offer-price {
+    font-size: var(--font-size-l);
+    font-weight: 900;
+    line-height: 1;
+  }
+
+  .fv__offer-yen {
+    font-size: var(--font-size-xs);
+    font-weight: 900;
+  }
+
+  .fv__offer-weight {
+    font-size: var(--font-size-xxs);
+    font-weight: 700;
+  }
+
   /* Hero */
   .fv__hero {
     position: absolute;
@@ -76,7 +139,7 @@
   /* Product card */
   .fv__card {
     position: absolute;
-    top: -25px;
+    top: -7px;
     left: 239px;
     width: 164px;
     height: 202px;

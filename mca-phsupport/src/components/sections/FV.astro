@@ -1,11 +1,18 @@
 ---
+import OfferCTA from '../ui/OfferCTA.astro';
 ---
 
 <section class="section" style="background:var(--background-02)" aria-labelledby="fv-title" data-section="fv" data-section-order="1">
   <div class="screen-wrapper">
     <div class="fv screen">
+      <div class="fv__offer-strip" aria-label="初回限定800円（2.5kg） 送料当社負担 自動継続なし">
+        <span class="fv__offer-item fv__offer-item--price"><span class="fv__offer-limited">初回限定</span><span class="fv__offer-price">800<span class="fv__offer-yen">円</span></span><span class="fv__offer-weight">2.5kg</span></span>
+        <span class="fv__offer-item">送料当社負担</span>
+        <span class="fv__offer-item">自動継続なし</span>
+      </div>
+
       <div class="fv__hero">
-        <img class="fv__hero-image" src="/mca-phsupport/img/kv-photo.webp" alt="メディコートアドバンス 尿石ケアのパッケージと犬のビジュアル" />
+        <img class="fv__hero-image" src="/mca-phsupport/img/kv-photo-766.webp" alt="メディコートアドバンス 尿石ケアのパッケージと犬のビジュアル" width="766" height="1052" fetchpriority="high" />
         <div class="fv__card">
           <div class="fv__card-bg" aria-hidden="true"></div>
           <img class="fv__card-package" src="/mca-phsupport/img/u0311-2.webp" alt="商品パッケージ" />
@@ -28,9 +35,9 @@
       <p class="fv__lead">ミネラルバランスを調整することにより、<br/>尿pHをコントロールした国産の食事管理フード。</p>
       <p class="fv__micro">送料当社負担 / お届けは1回のみ。自動継続なし。</p>
 
-      <a class="fv__cta" href="#footer-cta" data-lp="phsupport" data-cta="fv" aria-label="お一人様1回限りの限定価格 しっかり800円 2.5kg 今すぐ試す" data-cta-position="fv" data-cta-role="scroll_to_offer">
-        <img class="fv__cta-image" src="/mca-phsupport/img/CTA.svg" alt="お一人様1回限りの限定価格 しっかり800円(2.5kg) 今すぐ試す" />
-      </a>
+      <div class="fv__cta">
+        <OfferCTA lp="phsupport" position="fv" href="#footer-cta" ariaLabel="お一人様1回限りの限定価格 しっかり試せる2.5kgが800円 今すぐ試す" />
+      </div>
 
       <p class="fv__swipe-text">swipe</p>
     </div>
@@ -45,6 +52,63 @@
     background-color: var(--background-02);
     overflow: hidden !important;
     will-change: transform;
+  }
+
+  /* オファー確認ストリップ：バナーで約束した「初回限定800円/送料当社負担/自動継続なし」を
+     着地直後に即時再確認し、広告との期待値ギャップを埋める */
+  .fv__offer-strip {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 440px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--orange);
+    color: var(--white);
+    font-family: var(--font-family);
+    z-index: 5;
+  }
+
+  .fv__offer-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 0 11px;
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    white-space: nowrap;
+  }
+
+  .fv__offer-item + .fv__offer-item {
+    border-left: 1px solid rgba(var(--white-rgb), 0.5);
+  }
+
+  .fv__offer-item--price {
+    gap: 3px;
+  }
+
+  .fv__offer-limited {
+    font-size: var(--font-size-xxs);
+    font-weight: 700;
+  }
+
+  .fv__offer-price {
+    font-size: var(--font-size-l);
+    font-weight: 900;
+    line-height: 1;
+  }
+
+  .fv__offer-yen {
+    font-size: var(--font-size-xs);
+    font-weight: 900;
+  }
+
+  .fv__offer-weight {
+    font-size: var(--font-size-xxs);
+    font-weight: 700;
   }
 
   .fv__hero {
@@ -67,7 +131,7 @@
 
   .fv__card {
     position: absolute;
-    top: -25px;
+    top: -7px;
     left: 239px;
     width: 164px;
     height: 202px;
@@ -216,9 +280,7 @@
     position: absolute;
     top: 590px;
     left: 0;
-    display: block;
     width: 440px;
-    line-height: 0;
   }
 
   /* 補足（送料/お届け）：CTAボタンの下に配置 */
@@ -234,12 +296,6 @@
     line-height: 1.25;
     text-align: center;
     font-family: var(--font-family);
-  }
-
-  .fv__cta-image {
-    display: block;
-    width: 100%;
-    height: auto;
   }
 
   .fv__swipe-text {

@@ -1,4 +1,5 @@
 ---
+import OfferCTA from '../ui/OfferCTA.astro';
 ---
 
 <section class="section" aria-labelledby="type-title" data-section="type" data-section-order="7">
@@ -52,9 +53,9 @@
             </div>
           </article>
 
-          <a class="type__cta" href="#footer-cta" aria-label="お一人様1回限りの限定価格 しっかり800円(2.5kg) 今すぐ試す" data-lp="phsupport" data-cta-position="type" data-cta-role="scroll_to_offer">
-            <img class="type__cta-image" src="/mca-phsupport/img/CTA.svg" alt="お一人様1回限りの限定価格 しっかり800円(2.5kg) 今すぐ試す" />
-          </a>
+          <div class="type__cta">
+            <OfferCTA lp="phsupport" position="type" href="#footer-cta" ariaLabel="お一人様1回限りの限定価格 しっかり試せる2.5kgが800円 今すぐ試す" />
+          </div>
         </div>
       </div>
     </div>
@@ -434,19 +435,10 @@
     white-space: nowrap;
   }
 
-  /* CTA block：FVと同じ単一画像（CTA.svg）に差し替え。上のカード幅(380px)に揃える */
+  /* CTA block：FVと同じHTML/CSS化したOfferCTA。上のカード幅(380px)に揃える */
   .type__cta {
-    display: block;
     width: 380px;
-    height: auto;
     margin: 18px auto 0;
-    line-height: 0;
-  }
-
-  .type__cta-image {
-    display: block;
-    width: 100%;
-    height: auto;
   }
 
 </style>
