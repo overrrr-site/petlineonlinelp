@@ -24,3 +24,13 @@ pnpm-debug.log*
 # design comps / reference (any subproject) — not needed in the public repo
 _reference/
 reference/
+
+# 設計・計画ドキュメント / エージェント作業ログ — public リポジトリには出さない
+docs/superpowers/
+.superpowers/
+
+# 運用手順書 / 計測・広告の実データ / クライアント資料 — public リポジトリには出さない
+/GTM追加設定手順.md
+/新規LP追加手順.md
+/analytics/
+/wireframes/
