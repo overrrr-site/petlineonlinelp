@@ -289,7 +289,7 @@ const dogFooterClasses = ['text-wrapper-48', 'text-wrapper-49', 'text-wrapper-50
 <h2 class="text-wrapper-51">商品・保管・選び方について</h2>
 {dogFaqGroups.product.map((item, idx) => (
 <details class={item.detailsClass} open>
-<summary class={`${item.summaryClass} js-accordion-toggle`} data-accordion-title={item.question} data-accordion-order={idx + 1} data-section="faq">
+<summary class={`${item.summaryClass} js-accordion-toggle`} data-accordion-title={item.question} data-accordion-order={idx + 1}>
 <div class="frame-20"><div class="text-wrapper-52">Q</div></div>
 <div class="text-wrapper-53">{item.question}</div>
 </summary>
@@ -305,7 +305,7 @@ const dogFooterClasses = ['text-wrapper-48', 'text-wrapper-49', 'text-wrapper-50
 <h2 class="text-wrapper-51">ご購入・使い方について</h2>
 {dogFaqGroups.purchase.map((item, idx) => (
 <details class={item.detailsClass} open>
-<summary class={`${item.summaryClass} js-accordion-toggle`} data-accordion-title={item.question} data-accordion-order={idx + 1} data-section="faq">
+<summary class={`${item.summaryClass} js-accordion-toggle`} data-accordion-title={item.question} data-accordion-order={idx + 1}>
 <div class="frame-20"><div class="text-wrapper-52">Q</div></div>
 <div class="text-wrapper-53">{item.question}</div>
 </summary>

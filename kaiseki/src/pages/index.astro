@@ -35,14 +35,14 @@ const catFooterClasses = ['text-wrapper', 'div', 'text-wrapper-2'] as const;
 <h2 class="text-wrapper-4" >ご購入・使い方について</h2>
 {catFaqGroups.purchase.map((item, idx) => (
 <div class={item.itemClass} ><div class={item.frameClass} ><div class="div-wrapper" ><div class="text-wrapper-5" >Q</div></div>
-<div class="text-wrapper-6 js-accordion-toggle" data-accordion-title={item.question} data-accordion-order={idx + 1} data-section="faq" >{item.question}</div></div>
+<div class="text-wrapper-6 js-accordion-toggle" data-accordion-title={item.question} data-accordion-order={idx + 1} >{item.question}</div></div>
 <div class="frame-3" ><div class="text-wrapper-7" >{item.answer}</div></div></div>
 ))}</div>
 <div class="QA-4" ><div class="QA-5" >Q&amp;A/2</div>
 <h2 class="text-wrapper-4" >商品・保管・選び方について</h2>
 {catFaqGroups.product.map((item, idx) => (
 <div class={item.itemClass} ><div class={item.frameClass} ><div class="div-wrapper" ><div class="text-wrapper-5" >Q</div></div>
-<div class="text-wrapper-6 js-accordion-toggle" data-accordion-title={item.question} data-accordion-order={idx + 1} data-section="faq" >{item.question}</div></div>
+<div class="text-wrapper-6 js-accordion-toggle" data-accordion-title={item.question} data-accordion-order={idx + 1} >{item.question}</div></div>
 <div class="frame-3" ><div class="text-wrapper-7" >{item.answer}</div></div></div>
 ))}</div></section>
 <section class="CTA" id="cta" data-section="offer" data-section-order="10" >{catCtaButtons.map((b, idx) => (
