@@ -195,9 +195,11 @@
     gap: 8px;
   }
 
+  /* 改行位置は <br> で固定。最長行は全角11文字のため、
+     .feat__body の幅273pxに収まる上限は24px。余白を見て22pxとする。 */
   .feat__h {
     color: var(--brown-amber);
-    font-size: var(--font-size-subheading);
+    font-size: var(--font-size-xl);
     font-weight: 700;
     line-height: 1.4;
     margin: 0;
