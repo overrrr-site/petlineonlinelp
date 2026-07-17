@@ -13,12 +13,17 @@ import Caution from '../components/sections/Caution.astro';
 import CTA from '../components/sections/CTA.astro';
 import FAQ from '../components/sections/FAQ.astro';
 import FAQ2 from '../components/sections/FAQ2.astro';
+
+// PUBLIC_LP_VARIANT=slim のとき Problem / Solution を描画しないスリム版を出力する。
+// 未設定・未知の値は full（現行構成）にフォールバックするため、
+// 切り戻しは Vercel の環境変数を外して再デプロイするだけでよい。
+const variant = import.meta.env.PUBLIC_LP_VARIANT === 'slim' ? 'slim' : 'full';
 ---
 
 <Layout title="メディコートアドバンス 尿石ケア pHサポート | ペットライン">
   <FV />
-  <Problem />
-  <Solution />
+  {variant === 'full' && <Problem />}
+  {variant === 'full' && <Solution />}
   <Features />
   <Ingenuity />
   <WhyTwoKg />
