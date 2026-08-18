@@ -36,7 +36,10 @@ import OfferCTA from '../ui/OfferCTA.astro';
       <p class="fv__micro">送料当社負担 / お届けは1回のみ。自動継続なし。</p>
 
       <div class="fv__cta">
-        <OfferCTA lp="phsupport" position="fv" href="#footer-cta" ariaLabel="お一人様1回限りの限定価格 しっかり試せる2.5kgが800円 今すぐ試す" />
+        {/* 飛び先は申込セクション（最下部）ではなく、3番目の年齢別セクション。
+            FV時点では年齢を選んでいないため商品を決め打ちできず、まず年齢を
+            選んでもらってから各商品詳細ページへ直接送る導線にしている。 */}
+        <OfferCTA lp="phsupport" position="fv" href="#type" ctaRole="scroll_to_type" ariaLabel="お一人様1回限りの限定価格 しっかり試せる2.5kgが800円 今すぐ試す" />
       </div>
 
       <p class="fv__swipe-text">swipe</p>
