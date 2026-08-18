@@ -14,7 +14,7 @@
         <section class="feat" aria-labelledby="reason-01-title">
           <div class="feat__row">
             <div class="feat__illus feat__illus--dog">
-              <img class="feat__img" src="/mca-phsupport/img/feat-dog.webp" alt="犬のイラスト" loading="lazy" />
+              <img class="feat__img" src="/mca-phsupport/img/feat-ph-balance.svg" alt="尿pHを弱酸性に保つイメージ（酸とアルカリの天秤）" width="205" height="167" loading="lazy" />
               <span class="feat__badge">01</span>
             </div>
             <div class="feat__body">
@@ -155,6 +155,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  /* 01の天秤SVGは透過（旧 feat-dog.webp は白背景を画像に内包していた）。
+     02/03 の白カードと見た目を揃えるため、枠側で白地を用意する。 */
+  .feat__illus--dog {
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 10px 0;
+    box-sizing: border-box;
   }
 
   .feat__img {
