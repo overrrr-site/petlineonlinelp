@@ -111,7 +111,8 @@ const INGENUITY_SLIDES = [
   .ingenuity__header {
     position: absolute;
     top: 101px;
-    left: 108px;
+    /* 440px キャンバスに 225px を中央配置 → (440-225)/2 = 107.5px（旧 108px は 0.5px 右寄り） */
+    left: 107.5px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -134,7 +135,7 @@ const INGENUITY_SLIDES = [
     margin-right: -46px;
     color: var(--brown-amber);
     font-size: var(--font-size-title-xl);
-    font-weight: 700;
+    font-weight: 900;
     letter-spacing: 1.80px;
     text-align: center;
   }
@@ -149,7 +150,8 @@ const INGENUITY_SLIDES = [
     font-family: var(--font-family);
     font-weight: 500;
     font-size: var(--font-size-s);
-    letter-spacing: 0.7px;
+    /* 他セクションの説明文に合わせて字間なし（旧 0.7px） */
+    letter-spacing: normal;
     line-height: 1.7;
     text-align: center;
   }
@@ -262,7 +264,9 @@ const INGENUITY_SLIDES = [
     color: var(--text-dark);
     font-size: var(--font-size-s);
     font-weight: 500;
-    letter-spacing: 0.80px;
+    /* 他セクションの説明文（feat__text / why__desc / type__option-desc / FAQ回答）は
+       すべて字間なし。ここだけ 0.80px で間延びして見えていたため揃えた。 */
+    letter-spacing: normal;
     line-height: 1.7;
     text-align: center;
   }

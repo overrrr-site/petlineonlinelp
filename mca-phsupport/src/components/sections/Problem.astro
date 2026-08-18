@@ -100,7 +100,9 @@ const CARE_ITEMS = [
   .dailycare__frame {
     position: absolute;
     top: 44px;
-    left: 17px;
+    /* 440px キャンバスに 405px を中央配置 → (440-405)/2 = 17.5px。
+       17px だと 0.5px 左寄りになり、DAILY CARE のラベルが中央に見えなかった。 */
+    left: 17.5px;
     width: 405px;
     display: flex;
     flex-direction: column;
@@ -127,7 +129,7 @@ const CARE_ITEMS = [
   .dailycare__title-jp {
     color: var(--brown-amber);
     font-size: var(--font-size-title-l);
-    font-weight: 700;
+    font-weight: 900;
     letter-spacing: 1.5px;
     line-height: 1.35;
     margin: 0;
