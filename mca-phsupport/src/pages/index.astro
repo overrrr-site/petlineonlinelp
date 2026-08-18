@@ -2,7 +2,6 @@
 import Layout from '../layouts/Layout.astro';
 import FV from '../components/sections/FV.astro';
 import Problem from '../components/sections/Problem.astro';
-import Solution from '../components/sections/Solution.astro';
 import Features from '../components/sections/Features.astro';
 import Ingenuity from '../components/sections/Ingenuity.astro';
 import WhyTwoKg from '../components/sections/WhyTwoKg.astro';
@@ -13,21 +12,31 @@ import Caution from '../components/sections/Caution.astro';
 import CTA from '../components/sections/CTA.astro';
 import FAQ from '../components/sections/FAQ.astro';
 import FAQ2 from '../components/sections/FAQ2.astro';
-
-// PUBLIC_LP_VARIANT=slim のとき Problem / Solution を描画しないスリム版を出力する。
-// 未設定・未知の値は full（現行構成）にフォールバックするため、
-// 切り戻しは Vercel の環境変数を外して再デプロイするだけでよい。
-const variant = import.meta.env.PUBLIC_LP_VARIANT === 'slim' ? 'slim' : 'full';
 ---
 
+{/*
+  全12セクション構成（2026-08-17〜）。
+
+  ・Solution（data-section="product" / order=3「毎日のごはんだから、ミネラルバランスで選ぶ」）を
+    恒久削除。FVで商品・価格・年齢別が出揃うため内容が重複していた。
+    コンポーネント自体は src/components/sections/Solution.astro に残してある。
+  ・SolutionMid（年齢別）を表示3番目に前倒し。広告クリエイティブの「年齢に合わせて」
+    訴求からの連続性を作るため。スリム版実験で実質5番目に繰り上がった際、
+    このセクションのCTAクリック率が 1.08%→1.78% に上がったことが根拠。
+  ・data-section-order は振り直さない（1,2,4,5,6,7,8,9,10,11,12,13 と飛ぶ）。
+    振り直すと GA4 の前後比較が同じ土俵に乗らなくなるため。slim実験と同じ判断。
+    詳細は GTM追加設定手順.md §9。
+  ・PUBLIC_LP_VARIANT による slim 出し分けは廃止。スリム版実験は 2026-08-17 に
+    「EC遷移CTA率 18.37%→16.44%」で失敗と結論し終了。Solution を恒久削除したため
+    slim構成（Problem+Solution削除）は再現対象ではなくなった。
+*/}
 <Layout title="メディコートアドバンス 尿石ケア pHサポート | ペットライン">
   <FV />
-  {variant === 'full' && <Problem />}
-  {variant === 'full' && <Solution />}
+  <Problem />
+  <SolutionMid />
   <Features />
   <Ingenuity />
   <WhyTwoKg />
-  <SolutionMid />
   <Reviews />
   <About />
   <Caution />

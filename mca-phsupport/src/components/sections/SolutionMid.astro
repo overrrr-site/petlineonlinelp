@@ -1,8 +1,9 @@
 ---
-import OfferCTA from '../ui/OfferCTA.astro';
+/* 年齢別セクション。CTAは各年齢の商品詳細ページへ直接送るため、
+   共通の OfferCTA（#footer-cta へのアンカー）は使わず、このファイル内で組んでいる。 */
 ---
 
-<section class="section" aria-labelledby="type-title" data-section="type" data-section-order="7">
+<section class="section" id="type" aria-labelledby="type-title" data-section="type" data-section-order="7">
   <div class="screen-wrapper">
     <div class="type screen">
       <div class="type__inner">
@@ -10,7 +11,6 @@ import OfferCTA from '../ui/OfferCTA.astro';
           <div class="type__title-wrapper">
             <div class="type__title-block">
               <div class="type__heading">
-                <p class="type__label">あなたの愛犬は成犬？シニア？</p>
                 <div class="type__title-row">
                   <h2 class="type__title" id="type-title">2タイプから、<br/> 年齢で選ぶ。</h2>
                 </div>
@@ -18,6 +18,14 @@ import OfferCTA from '../ui/OfferCTA.astro';
             </div>
           </div>
         </div>
+
+        {/* 共通オファー（お一人様1回限り／2.5kg 800円）。CTAが年齢別の2本に分かれたため、
+            どちらにも等しくかかる価格表示は見出し直下へ出している。 */}
+        <img
+          class="type__price"
+          src="/mca-phsupport/img/cta-badge-price.svg"
+          alt="お一人様1回限りの限定価格 しっかり試せる2.5kgが800円（税込）"
+        />
 
         <div class="type__card-area--rice">
           <article class="type__option--rice">
@@ -33,6 +41,25 @@ import OfferCTA from '../ui/OfferCTA.astro';
                 <p class="type__option-desc">成犬の下部尿路の健康維持に配慮。日々の食事管理に。<br/>尿pH 6.0〜6.3　DHA・EPA 2400mg/kg</p>
               </div>
             </div>
+            {/* CTAは各カードの枠内に置く。どちらのボタンがどちらの商品か迷わせないため。
+                計測は A-1（EC遷移リンク）＋ A-4（product_click）契約に準拠。 */}
+            <a
+              class="type__cta-button type__cta-button--adult"
+              href="https://www.petlineonline.com/shop/g/gU0311/"
+              data-lp="phsupport"
+              data-cta-position="type"
+              data-cta-section="type"
+              data-destination="official_ec"
+              data-product-id="gU0311"
+              data-product-name="1歳から（成犬用）2.5kg"
+              data-product-position="1"
+              aria-label="1歳から（成犬用）2.5kg を試す"
+            >
+              <span class="type__cta-button-text">今すぐ試す</span>
+              <svg class="type__cta-button-arrow" width="9" height="15" viewBox="0 0 9 15" fill="none" aria-hidden="true">
+                <path d="M1 1L7 7.5L1 14" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </a>
           </article>
           <div class="type__pick-badge"><div class="type__pick-badge-text">成犬に</div></div>
         </div>
@@ -51,11 +78,24 @@ import OfferCTA from '../ui/OfferCTA.astro';
                 <p class="type__option-desc">シニア犬の体調変化に合わせて栄養設計を再調整。シニア期の心臓の健康維持に、ナトリウム含有量を調整。<br/>尿pH 6.2〜6.5　DHA・EPA 2200mg/kg</p>
               </div>
             </div>
+            <a
+              class="type__cta-button type__cta-button--senior"
+              href="https://www.petlineonline.com/shop/g/gU0315/"
+              data-lp="phsupport"
+              data-cta-position="type"
+              data-cta-section="type"
+              data-destination="official_ec"
+              data-product-id="gU0315"
+              data-product-name="11歳から（シニア用）2.5kg"
+              data-product-position="2"
+              aria-label="11歳から（シニア用）2.5kg を試す"
+            >
+              <span class="type__cta-button-text">今すぐ試す</span>
+              <svg class="type__cta-button-arrow" width="9" height="15" viewBox="0 0 9 15" fill="none" aria-hidden="true">
+                <path d="M1 1L7 7.5L1 14" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </a>
           </article>
-
-          <div class="type__cta">
-            <OfferCTA lp="phsupport" position="type" href="#footer-cta" ariaLabel="お一人様1回限りの限定価格 しっかり試せる2.5kgが800円 今すぐ試す" />
-          </div>
         </div>
       </div>
     </div>
@@ -77,7 +117,9 @@ import OfferCTA from '../ui/OfferCTA.astro';
     width: 380px;
     align-items: center;
     justify-content: center;
-    gap: 22px;
+    /* カード内にCTAが入って全体が縦に伸びたため 22→14 に詰めた。
+       320×568 相当の小画面で FloatingCTA に隠れないための余白確保。 */
+    gap: 14px;
     position: relative;
     top: 64px;
     left: 24px;
@@ -94,10 +136,12 @@ import OfferCTA from '../ui/OfferCTA.astro';
     flex: 0 0 auto;
   }
 
+  /* ラベル（あなたの愛犬は成犬？シニア？）を外して見出し1本になったため、
+     高さ固定（旧 124px）をやめて内容に合わせる。固定のままだと下に19pxの
+     余りが残り、価格ブロックとの間だけが不自然に空いていた。 */
   .type__title-wrapper {
     position: relative;
     width: 350px;
-    height: 124px;
   }
 
   .type__title-block {
@@ -120,19 +164,6 @@ import OfferCTA from '../ui/OfferCTA.astro';
     flex: 0 0 auto;
   }
 
-  .type__label {
-    position: relative;
-    align-self: stretch;
-    margin-top: -1px;
-    font-family: var(--font-family);
-    font-weight: 700;
-    color: var(--orange);
-    font-size: var(--font-size-s);
-    text-align: center;
-    letter-spacing: 1px;
-    line-height: 22px;
-  }
-
   .type__title-row {
     display: flex;
     align-items: center;
@@ -149,31 +180,31 @@ import OfferCTA from '../ui/OfferCTA.astro';
     width: fit-content;
     margin-top: -1px;
     font-family: var(--font-family);
-    font-weight: 700;
+    font-weight: 900;
     color: var(--brown-amber);
-    font-size: var(--font-size-title-m);
+    font-size: var(--font-size-title-xl);
     text-align: center;
     letter-spacing: 1.5px;
     line-height: normal;
   }
 
-  /* Card area: rice */
+  /* Card area: rice
+     カード内にCTAを入れたため高さは内容依存。旧 top:12px 分は padding-top で確保し、
+     「成犬に」バッジ（card-area 基準の絶対配置）の位置は変えない。 */
   .type__card-area--rice {
     position: relative;
     width: 380px;
-    height: 180px;
+    padding-top: 12px;
   }
 
   .type__option--rice {
-    display: inline-flex;
-    height: 168px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    padding: 2px 11px;
-    position: absolute;
-    top: 12px;
-    left: 0;
+    gap: 8px;
+    padding: 12px 11px;
+    position: relative;
     width: 380px;
     box-sizing: border-box;
     background-color: var(--white);
@@ -187,15 +218,15 @@ import OfferCTA from '../ui/OfferCTA.astro';
   .type__card-area--pea {
     position: relative;
     width: 380px;
-    height: 233px;
   }
 
   .type__option--pea {
-    display: inline-flex;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 12px;
-    gap: 10px;
+    gap: 8px;
     position: relative;
     width: 380px;
     box-sizing: border-box;
@@ -270,8 +301,14 @@ import OfferCTA from '../ui/OfferCTA.astro';
     line-height: 28px;
   }
 
+  /* シニア側の商品名は、同じカード内のCTAボタン（セリーズ）と色を合わせる。
+     容量表記（2.5kg）は成犬側と共通の情報なので色は変えない。 */
+  .type__option-name--pea .type__option-name-main {
+    color: var(--cerise);
+  }
+
   .type__option-name-main {
-    font-weight: 700;
+    font-weight: 900;
     letter-spacing: 1px;
     line-height: 24px;
     font-family: var(--font-family);
@@ -436,9 +473,59 @@ import OfferCTA from '../ui/OfferCTA.astro';
   }
 
   /* CTA block：FVと同じHTML/CSS化したOfferCTA。上のカード幅(380px)に揃える */
-  .type__cta {
+  /* 共通オファー（見出し直下）。両カードに等しくかかる価格表示 */
+  .type__price {
+    display: block;
     width: 380px;
-    margin: 18px auto 0;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  /* CTAは各カードの枠内。色はFVの年齢ラベルと最終CTAに合わせて
+     1歳から=ティール / 11歳から=セリーズ。 */
+  .type__cta-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 300px;
+    height: 48px;
+    border-radius: 999px;
+    box-shadow: 0px 4px 4px var(--shadow-strong);
+    overflow: hidden;
+    text-decoration: none;
+    font-family: var(--font-family);
+    font-weight: 900;
+    font-size: var(--font-size-cta);
+    letter-spacing: 0.5px;
+    color: var(--white);
+    animation: cta-glow 2s ease-in-out infinite;
+  }
+
+  .type__cta-button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent 0%, rgba(var(--white-rgb), 0.25) 50%, transparent 100%);
+    animation: cta-shine 3s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  .type__cta-button--adult {
+    background-color: var(--teal);
+  }
+
+  .type__cta-button--senior {
+    background-color: var(--cerise);
+  }
+
+  .type__cta-button-arrow {
+    color: var(--white);
+    flex-shrink: 0;
   }
 
 </style>

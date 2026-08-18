@@ -10,12 +10,18 @@ interface Props {
   position: string;
   href?: string;
   ariaLabel?: string;
+  /** バッジ＋価格の画像を出すか。FVは価格をFV画像側に持っているため false で重複を避ける */
+  showPrice?: boolean;
+  /** ページ内ジャンプの飛び先を表す計測値。href に合わせて渡す */
+  ctaRole?: string;
 }
 const {
   lp,
   position,
   href = '#footer-cta',
   ariaLabel = 'お一人様1回限りの限定価格 しっかり試せる2.5kgが800円 今すぐ試す',
+  showPrice = true,
+  ctaRole = 'scroll_to_offer',
 } = Astro.props;
 ---
 
@@ -24,14 +30,16 @@ const {
   href={href}
   data-lp={lp}
   data-cta-position={position}
-  data-cta-role="scroll_to_offer"
+  data-cta-role={ctaRole}
   aria-label={ariaLabel}
 >
-  <img
-    class="offer-cta__badge-price"
-    src="/mca-phsupport/img/cta-badge-price.svg"
-    alt="お一人様1回限りの限定価格 しっかり試せる2.5kgが800円（税込）"
-  />
+  {showPrice && (
+    <img
+      class="offer-cta__badge-price"
+      src="/mca-phsupport/img/cta-badge-price.svg"
+      alt="お一人様1回限りの限定価格 しっかり試せる2.5kgが800円（税込）"
+    />
+  )}
 
   <span class="offer-cta__button">
     <span class="offer-cta__button-text">今すぐ試す</span>
