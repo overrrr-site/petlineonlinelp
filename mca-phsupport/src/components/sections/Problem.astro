@@ -17,7 +17,7 @@
         <header class="dailycare__title">
           <p class="dailycare__label">ABOUT</p>
           <h2 class="dailycare__title-jp" id="daily-care-title">毎日のごはんで、<br />おしっこの悩みをケア。</h2>
-          <p class="dailycare__desc">愛犬にも意外と多い&ldquo;おしっこ&rdquo;の悩み。ぼうこうや尿道に結石ができると、深刻な問題につながることもあります。</p>
+          <p class="dailycare__desc">愛犬にも意外と多い&ldquo;おしっこ&rdquo;の悩み。ぼうこうや尿道に結石（尿石）ができると、深刻な問題につながることもあります。</p>
         </header>
 
         <div class="dailycare__zone">
@@ -125,7 +125,9 @@
 
   .dailycare__zone-illust {
     display: block;
-    width: 343px;
+    /* カード内側（380 - 16*2 = 348px）に対して左右へ余白を残す。
+       原寸343pxを縮小表示するため、解像度の面でも有利になる */
+    width: 300px;
     height: auto;
   }
 
@@ -136,7 +138,7 @@
     font-size: var(--font-size-s);
     font-weight: 500;
     line-height: 1.7;
-    text-align: center;
+    text-align: left;
   }
 
   .dailycare__em {
@@ -159,6 +161,6 @@
     font-size: var(--font-size-s);
     font-weight: 700;
     line-height: 1.7;
-    text-align: center;
+    text-align: left;
   }
 </style>

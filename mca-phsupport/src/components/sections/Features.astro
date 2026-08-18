@@ -162,8 +162,14 @@
   .feat__illus--dog {
     background-color: var(--white);
     border-radius: 10px;
-    padding: 10px 0;
+    /* 天秤は横長なので、02/03（108px角）と白カードの高さを揃えつつ
+       上下左右に余白が残るよう padding と画像幅を調整している */
+    padding: 18px 0;
     box-sizing: border-box;
+  }
+
+  .feat__illus--dog .feat__img {
+    width: 88px;
   }
 
   .feat__img {
