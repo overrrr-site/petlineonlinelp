@@ -85,6 +85,23 @@ const { title, description } = Astro.props;
     e.preventDefault();
     // スナップ単位（セクション全体）へスクロールして、セクション上部が
     // 見切れないようにする（id はセクション内のカードに付いているため）
-    (target.closest('.section') || target).scrollIntoView({ behavior: 'smooth' });
+    const section = target.closest('.section') as HTMLElement | null;
+    const container = document.querySelector('.lp-container') as HTMLElement | null;
+
+    // scroll-snap-type:y mandatory のコンテナでは、スムーススクロールが
+    // スナップに打ち消されてまったく動かない（画面サイズによっては動くことも
+    // あるが再現性がなく、320×568 相当では確実に動かない）。
+    // scrollIntoView / scrollTo / CSS scroll-behavior のいずれも同じ。
+    // CTAが無反応になる方が損失が大きいため、確実に動く instant を使う。
+    // 1画面1セクションのスワイプ型UIなので、瞬間移動でも体験上の違和感は小さい。
+    // 各セクションは 100dvh ＝ コンテナ高と同じなので、並び順×コンテナ高で位置が出る。
+    if (section && container) {
+      const index = Array.prototype.indexOf.call(container.children, section);
+      if (index >= 0) {
+        container.scrollTo({ top: index * container.clientHeight, behavior: 'instant' });
+        return;
+      }
+    }
+    (section || target).scrollIntoView({ behavior: 'instant' });
   });
 </script>
