@@ -29,6 +29,9 @@ reference/
 docs/superpowers/
 .superpowers/
 
+# エージェント向け指示ファイル — public リポジトリには出さない（各階層に置きうるのでアンカーしない）
+CLAUDE.md
+
 # 運用手順書 / 計測・広告の実データ / クライアント資料 — public リポジトリには出さない
 /GTM追加設定手順.md
 /新規LP追加手順.md
