@@ -240,7 +240,6 @@ body .lp-container > .section {
 }
 
 body .lp-container :is(
-  .allergen__inner,
   .why__inner,
   .type__inner,
   .about__inner
@@ -248,12 +247,10 @@ body .lp-container :is(
   top: var(--section-top) !important;
 }
 
-body .lp-container .product__inner {
-  top: var(--section-top-compact) !important;
-}
-
-body .lp-container :is(.features__header, .faq__container, .faq2__container) {
-  margin-top: var(--section-top-compact) !important;
+/* FAQ / FAQ2 はカードが max-height で内部スクロールするため、上マージンを詰めた分だけ
+   カードの表示可能高を増やせる。--section-top-compact(56px) より小さい専用値を使う。 */
+body .lp-container :is(.faq__container, .faq2__container) {
+  margin-top: var(--space-5) !important;
 }
 
 body .lp-container :is(.ingenuity__header, .reviews__header, .caution__header) {
@@ -261,14 +258,11 @@ body .lp-container :is(.ingenuity__header, .reviews__header, .caution__header) {
 }
 
 body .lp-container :is(
-  .allergen__intro,
   .why__lead,
   .type__heading,
   .about__intro,
   .faq__header,
   .faq2__header,
-  .features__header,
-  .features__header-inner,
   .ingenuity__header,
   .reviews__header,
   .caution__header-inner
@@ -278,17 +272,12 @@ body .lp-container :is(
 
 body .lp-container :is(
   .about__inner,
-  .footercta__body,
   .faq__content,
   .faq2__content
 ) {
   gap: var(--body-gap) !important;
 }
 
-body .lp-container :is(.features__card--01, .features__card--02, .features__card--03) {
-  margin-top: var(--card-gap) !important;
-}
-
 body .lp-container :is(.faq__container, .faq2__container) {
-  gap: var(--space-4) !important;
+  gap: var(--space-3) !important;
 }

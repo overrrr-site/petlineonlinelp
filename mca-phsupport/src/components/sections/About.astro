@@ -52,12 +52,12 @@
   .about__inner {
     position: relative;
     top: 64px;
-    left: 17px;
+    left: 12px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 24px;
-    width: 405px;
+    width: 416px;
   }
 
   /* ========================================
@@ -75,10 +75,10 @@
     align-self: stretch;
     color: var(--orange);
     font-family: var(--font-family);
-    font-size: var(--font-size-s);
+    font-size: var(--font-size-label);
     font-weight: 700;
     letter-spacing: 1px;
-    line-height: 22px;
+    line-height: var(--lh-tight);
     text-align: center;
   }
 
@@ -89,24 +89,24 @@
     font-size: var(--font-size-title-m);
     font-weight: 900;
     letter-spacing: 1.5px;
-    line-height: 1.35;
+    line-height: var(--lh-heading);
     text-align: center;
   }
 
   .about__image {
-    width: 330px;
-    height: 162px;
+    width: 380px;
+    height: 187px;
     object-fit: cover;
   }
 
   .about__desc {
-    width: 330px;
+    width: 380px;
     color: var(--text-dark);
     font-family: var(--font-family);
     font-size: var(--font-size-s);
     font-weight: 500;
     letter-spacing: 0.7px;
-    line-height: 1.7;
+    line-height: var(--lh-body);
     text-align: center;
   }
 
@@ -118,7 +118,7 @@
     flex-direction: column;
     align-items: flex-end;
     gap: 8px;
-    width: 330px;
+    width: 380px;
   }
 
   .about__feature {
@@ -126,7 +126,7 @@
     align-items: center;
     gap: 15px;
     width: 100%;
-    padding: 10px 28px;
+    padding: 10px 20px;
     background-color: var(--white);
     border: 1px solid var(--green-vivid);
     border-radius: 5px;
@@ -163,13 +163,14 @@
   }
 
   .about__feature-text {
-    width: 245px;
+    flex: 1;
+    min-width: 0;
     color: var(--text-dark);
     font-family: var(--font-family);
     font-size: var(--font-size-l);
     font-weight: 700;
     letter-spacing: 0;
-    line-height: 23px;
+    line-height: var(--lh-heading);
   }
 
   .about__feature-text--develop {
@@ -196,7 +197,7 @@
     font-size: var(--font-size-xs);
     font-weight: 500;
     letter-spacing: 0.5px;
-    line-height: 18px;
+    line-height: var(--lh-note);
     text-align: center;
     white-space: nowrap;
   }
