@@ -53,9 +53,9 @@
   /* Font sizes — 440px デザインキャンバス上の値。実機の見た目は「値 × --scale」。
      iPhone 13/14 の Safari では --scale ≈ 0.777 なので 17px → 13.2px 相当。 */
   --font-size-xxxs: 11px;          /* Features の補足・ラベル */
-  --font-size-xxs: 11.5px;         /* FloatingCTA の注記・表セル */
+  --font-size-xxs: 11.5px;         /* FloatingCTA の注記・CTAの肉球バッジ */
   --font-size-xs: 12.5px;          /* 注釈の標準 */
-  --font-size-cell: 13px;          /* .feat__sub（列幅185.5pxで上限） */
+  --font-size-cell: 14px;          /* .feat__sub（2カラムの列幅198pxで上限） */
   --font-size-label: 14px;         /* 英字ラベル（ABOUT / REASON / REVIEW …）。本文とは別枠 */
   --font-size-s: 17px;             /* 本文の標準 */
   --font-size-m: 17px;
