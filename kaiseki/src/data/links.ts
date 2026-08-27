@@ -15,6 +15,10 @@ export const footerLinks = [
 
 export const catCtaLinks = {
   kidney: 'https://www.petlineonline.com/shop/g/gU6324/',
+  // TODO(2026-09-01): 新商品「小魚添えペア 合鴨とお魚味」の商品ページURLに差し替える。
+  // ペットラインからURL未共有のため、暫定でお試し対象一覧（cKS2G）に逃がしている。
+  // 差し替え時は products.ts の catCtaButtons の sku（現在 'TBD-AIGAMO'）も併せて更新すること。
+  aigamo: 'https://www.petlineonline.com/shop/c/cKS2G/',
   urinary: 'https://www.petlineonline.com/shop/g/gU6322/',
   grainfree: 'https://www.petlineonline.com/shop/g/gU6321/',
   kitten: 'https://www.petlineonline.com/shop/g/gU6314/',

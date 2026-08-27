@@ -47,8 +47,8 @@ const catFooterClasses = ['text-wrapper', 'div', 'text-wrapper-2'] as const;
 ))}</div></section>
 <section class="CTA" id="cta" data-section="offer" data-section-order="10" >{catCtaButtons.map((b, idx) => (
 <a class={b.btnClass} href={b.href} target="_blank" rel="noopener noreferrer" data-lp="kaiseki_cat" data-cta-position="product" data-cta-section="offer" data-destination="official_ec" data-product-id={b.sku} data-product-name={b.name} data-product-position={idx + 1} ><img class="thumb" src={`${IMG}${b.thumb}`}  alt="" />
-<div class="button" ><div class={b.badgeWrapClass} ><div class={b.badgeClass} >{b.badge}</div></div>
-<Fragment set:html={b.labelHtml} /></div>
+<div class="button" ><div class={b.labelClass} ><div class={b.badgeWrapClass} ><div class={b.badgeClass} >{b.badge}</div></div>
+<Fragment set:html={b.labelHtml} /></div></div>
 <img class="vector-2" src={`${IMG}cta-chevron.svg`}  alt="" /></a>
 ))}
 <div class="frame-6" ><div class="text-wrapper-11" >迷ったらコレ</div></div>
@@ -58,12 +58,13 @@ const catFooterClasses = ['text-wrapper', 'div', 'text-wrapper-2'] as const;
 <span class="text-wrapper-13" >円 (税込)</span></p>
 <div class="frame-7" ><div class="text-wrapper-15" >お一人様1回限り</div></div>
 <div class="img-2" ><div class="text-wrapper-16" >イメージ</div>
-<img class="thumb-gohoubi" src="/kaiseki/img/cat/thumb-kidney-stack.png"  alt="" />
-<img class="thumb-2" src="/kaiseki/img/cat/thumb-urinary-stack.png"  alt="" />
-<img class="thumb-3" src="/kaiseki/img/cat/thumb-grainfree-stack.png"  alt="" />
+<img class="thumb-cta-6" src="/kaiseki/img/cat/thumb-kidney-stack-v2.png"  alt="" />
+<img class="thumb-gohoubi" src="/kaiseki/img/cat/thumb-urinary-stack-v2.png"  alt="" />
+<img class="thumb-2" src="/kaiseki/img/cat/thumb-grainfree-stack-v2.png"  alt="" />
+<img class="thumb-3" src="/kaiseki/img/cat/thumb-aigamo-stack.png"  alt="" />
 <img class="thumb-4" src="/kaiseki/img/cat/thumb-kitten-stack.png"  alt="" />
 <img class="thumb-5" src="/kaiseki/img/cat/thumb-standard-stack.png"  alt="" />
-<img class="img-3" src="/kaiseki/img/cat/cta-product-group.png"  alt="" /></div></section>
+<img class="img-3" src="/kaiseki/img/cat/cta-product-group-v2.png"  alt="" /></div></section>
 <section class="HONESTY" data-section="caution" data-section-order="7" ><div class="bg-honesty" ></div>
 <div class="carousel-honesty-cat" ><div class="slide" >{catHonestySlides.map((s, i) => (
 <div class="slide-2" ><div class="text-wrapper-17" >{i + 1}/{catHonestySlides.length}</div>
@@ -109,7 +110,7 @@ const catFooterClasses = ['text-wrapper', 'div', 'text-wrapper-2'] as const;
 <div class="ellipse-6" ></div>
 <div class="text-wrapper-39" >1967年に誕生。日本初のドライキャットフードを世に出したパイオニア。</div>
 <div class="ellipse-7" ></div>
-<div class="text-wrapper-40" >ペットラインは1967年（昭和42年）に誕生、日本で初めてドライキャットフードを開発・販売した、キャットフードのパイオニア。「愛情を品質に」をモットーに、自社の研究開発センターと国内工場で、国産フードをつくり続けています。</div>
+<div class="text-wrapper-40" >ペットラインは1967年（昭和42年）に誕生、日本で初めてドライキャットフードを開発・販売した、キャットフードのパイオニア。「愛情を品質に」をモットーに、自社の研究開発拠点と国内工場で、国産フードをつくり続けています。</div>
 <h2 class="text-wrapper-41" >猫と暮らす毎日を<br/>国産の品質で。</h2>
 <div class="index-4" ><div class="text-wrapper-42" >ABOUT</div>
 <div class="frame-11" ><div class="text-wrapper-43" >私たちについて</div>
@@ -130,7 +131,7 @@ const catFooterClasses = ['text-wrapper', 'div', 'text-wrapper-2'] as const;
 )}</div>
 <div class="text-wrapper-45" >{r.name}</div></div></div>
 <h3 class="text-wrapper-46" set:html={r.title}></h3>
-<div class="text-wrapper-20" >{r.body}</div></div>
+<div class="text-wrapper-20" set:html={r.body}></div></div>
 ))}</div>
 <div class="indicator-2" ><div class="ellipse-8" ></div>
 <div class="ellipse-9" ></div>
@@ -191,20 +192,27 @@ const catFooterClasses = ['text-wrapper', 'div', 'text-wrapper-2'] as const;
 <span class="text-wrapper-67" >で。</span></p>
 <div class="frame-22" ><div class="text-wrapper-66" >お一人様1回限り</div></div>
 <p class="PR-n-n" >ペットラインしあわせマルシェユーザーレビュー (PR / 自社調査)<br/>小魚添えペア n=1,135 / 子ねこ用 おさかな添えペア n=353 (2026年6月時点)</p>
-<div class="KITTEN" ><img class="thumb-9" src="/kaiseki/img/cat/thumb-kitten-card.png"  alt="子ねこ用 おさかな添えペア 商品画像" />
-<div class="frame-23" ><div class="text-wrapper-73" >FOR KITTEN</div></div>
-<h3 class="text-wrapper-74" >子ねこ用<br/>おさかな添えペア</h3>
+<div class="KITTEN" ><img class="thumb-9" src="/kaiseki/img/cat/thumb-kitten-card.png"  alt="子ねこ用 おさかな添えペア お肉とお魚味 商品画像" />
+<div class="card-body-2" ><div class="frame-23" ><div class="text-wrapper-73" >FOR KITTEN</div></div>
+<h3 class="text-wrapper-74" >子ねこ用<br/>おさかな添えペア<br/>お肉とお魚味</h3>
 <div class="text-wrapper-75" >本枯れ節＆薄切りまぐろ / 本枯れ節＆しらす</div>
 <div class="review-4" ><img class="subtract" src="/kaiseki/img/cat/lineup-badge-a.svg"  alt="" />
 <div class="text-wrapper-61" >★4.6 / 353件</div>
-<div class="text-wrapper-58" >レビュー評価</div></div></div>
-<div class="STANDARD" ><img class="thumb-9" src="/kaiseki/img/cat/thumb-standard-card.png"  alt="小魚添えペア 商品画像" />
-<div class="frame-24" ><div class="text-wrapper-73" >STANDARD</div></div>
-<h3 class="text-wrapper-76" >小魚添えペア</h3>
+<div class="text-wrapper-58" >レビュー評価</div></div></div></div>
+<div class="STANDARD" ><img class="thumb-10" src="/kaiseki/img/cat/thumb-standard-card.png"  alt="小魚添えペア お肉とお魚味 商品画像" />
+<div class="card-body" ><div class="frame-24" ><div class="text-wrapper-73" >STANDARD</div></div>
+<h3 class="text-wrapper-76" >小魚添えペア<br/>お肉とお魚味</h3>
 <div class="text-wrapper-75" >小魚＆本枯れ節 <br/>/ 小魚＆薄切りまぐろ</div>
 <div class="review-4" ><img class="subtract" src="/kaiseki/img/cat/lineup-badge-a.svg"  alt="" />
 <div class="text-wrapper-77" >★4.7 / 1,135件</div>
-<div class="text-wrapper-58" >レビュー評価</div></div></div>
+<div class="text-wrapper-58" >レビュー評価</div></div></div></div>
+<div class="STANDARD-2" ><img class="thumb-9" src="/kaiseki/img/cat/thumb-aigamo-card.png"  alt="小魚添えペア 合鴨とお魚味 商品画像" />
+<div class="card-body" ><div class="frame-24" ><div class="text-wrapper-73" >STANDARD</div></div>
+<h3 class="text-wrapper-76" >小魚添えペア<br/>合鴨とお魚味</h3>
+<div class="text-wrapper-75" >小魚＆本枯れ節 <br/>/ 小魚＆薄切りまぐろ</div>
+<div class="review-5" ><img class="subtract-2" src="/kaiseki/img/cat/lineup-badge-wide.svg"  alt="" />
+<div class="text-wrapper-99" >2026年9月より新発売</div>
+<div class="text-wrapper-100" >レビュー評価</div></div></div></div>
 <div class="text-wrapper-78" >おいしさにこだわった粒に、<br/>厳選トッピング。<br/>年齢に合わせて、2タイプ。</div>
 <h2 class="text-wrapper-79" >まずは、ここから。</h2>
 <div class="index-6" ><div class="text-wrapper-80" >LINE UP 1</div>
@@ -230,7 +238,7 @@ const catFooterClasses = ['text-wrapper', 'div', 'text-wrapper-2'] as const;
 <div class="index-7" ><div class="text-wrapper-52" >FEATURE</div>
 <div class="frame-26" ><div class="text-wrapper-53" >特徴</div>
 <img class="vector" src="/kaiseki/img/cat/index-underline.svg"  alt="" /></div></div></section>
-<img class="FV" src="/kaiseki/img/cat/fv-hero.png"  alt="懐石 2つのごほうび お試しキャンペーンのファーストビュー" data-section="fv" data-section-order="1" />
+<img class="FV" src="/kaiseki/img/cat/fv-hero-v2.png"  alt="懐石 2つのごほうび お試しキャンペーンのファーストビュー" data-section="fv" data-section-order="1" />
 <a class="fv-cta" href="#cta" aria-label="300円（税込）で今すぐ試す" data-lp="kaiseki_cat" data-cta-position="fv" data-cta-role="scroll_to_offer"><span class="fv-cta-shine" ></span></a>
 <a class="follow" href={catCtaLinks.follow} target="_blank" rel="noopener noreferrer" data-lp="kaiseki_cat" data-cta-position="floating" data-cta-section="offer" data-destination="official_ec" data-product-id="cKS2G" data-product-name="フォロー/一覧" ><div class="frame-27" ><div class="text-wrapper-84" ><span class="price-x2" >300</span>円・送料当社負担</div>
 <div class="frame-28" ><div class="text-wrapper-85" >今すぐ試す</div>
@@ -240,7 +248,7 @@ const catFooterClasses = ['text-wrapper', 'div', 'text-wrapper-2'] as const;
 <img class="img-gohoubi" src="/kaiseki/img/cat/products-freshpack.png"  alt="小分けフレッシュパック" />
 <div class="text-wrapper-87" >イメージ</div>
 <p class="element-g" ><span class="text-wrapper-88" >アルミ蒸着分包＋脱酸素剤で酸化を防ぎ、開けたての香りを最後まで。 </span>
-<span class="text-wrapper-89" >※子ねこ用と機能性銘柄は60g×10袋。</span></p>
+<br/><span class="text-wrapper-89" >※子ねこ用と機能性銘柄は60g×10袋。</span></p>
 <h3 class="element-g-2" >65g×10袋の<br/>小分けフレッシュパック</h3>
 <img class="point-brown" src="/kaiseki/img/cat/products-point-3.svg"  alt="" />
 <img class="footstamp-brown" src="/kaiseki/img/cat/products-footstamp-a.svg"  alt="" /></div>

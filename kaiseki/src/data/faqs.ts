@@ -71,7 +71,7 @@ export const dogFaqGroups = {
       detailsClass: 'element-13',
       summaryClass: 'frame-19',
       question: '愛犬の体重に合った1日の給与量の目安は？',
-      answer: '1歳からの目安は、小型犬（5kg）で1日95〜125g、1kg（250g×4袋）で約8〜9日分です。中型犬（10kg）・大型犬（20kg）は、商品パッケージの給与量表をご確認ください。',
+      answer: '1歳からの目安は、小型犬（体重5kg）で1日95〜125g、1kg（250g×4袋）で約8〜9日分です。中型犬（体重10kg）・大型犬（体重20kg）は、商品パッケージの給与量表をご確認ください。',
     },
     {
       detailsClass: 'element-14',

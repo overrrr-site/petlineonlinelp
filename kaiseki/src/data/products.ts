@@ -23,11 +23,15 @@ export const dogCtaCards = [
   { btnClass: 'button-dog-5', href: dogCtaLinks.adult, sku: 'gU0805', name: '1歳から', thumb: 'thumb-adult-card.png', thumbAlt: '1歳から 商品画像', badgeWrapClass: 'frame-24', badge: 'ADULT', labelHtml: '<div class="text-wrapper-57">1歳から</div>', aria: '1歳から の商品ページへ' },
 ] as const;
 
-// 猫 CTA の商品ボタン（5）。ラベル部は構造が不規則なため labelHtml を set:html で描画。
+// 猫 CTA の商品ボタン（6）。上から STANDARD → KITTEN → 合鴨（新）→ HEALTH×3 の順に並ぶ。
+// btnClass の番号は cat.css の絶対座標（top）に対応：button-cat=927px 〜 button-cat-std=377px。
+// ラベル部は構造が不規則なため labelHtml を set:html で描画。
 export const catCtaButtons = [
-  { btnClass: 'button-cat', href: catCtaLinks.kidney, sku: 'gU6324', name: '腎臓の健康維持', thumb: 'thumb-kidney-btn.png', badgeWrapClass: 'ADULT-wrapper', badgeClass: 'ADULT', badge: 'HEALTH', labelHtml: '<div class="text-wrapper-8">腎臓の健康維持</div>' },
-  { btnClass: 'button-cat-2', href: catCtaLinks.urinary, sku: 'gU6322', name: '下部尿路の健康維持', thumb: 'thumb-urinary-btn.png', badgeWrapClass: 'ADULT-wrapper', badgeClass: 'ADULT', badge: 'HEALTH', labelHtml: '<div class="text-wrapper-9">下部尿路の<br>健康維持</div>' },
-  { btnClass: 'button-cat-3', href: catCtaLinks.grainfree, sku: 'gU6321', name: 'グレインフリー', thumb: 'thumb-grainfree-btn.png', badgeWrapClass: 'ADULT-wrapper', badgeClass: 'ADULT', badge: 'HEALTH', labelHtml: '<div class="text-wrapper-8">グレインフリー</div>' },
-  { btnClass: 'button-cat-4', href: catCtaLinks.kitten, sku: 'gU6314', name: '子ねこ用 おさかな添えペア', thumb: 'thumb-kitten-btn.png', badgeWrapClass: 'frame-5', badgeClass: 'ADULT-2', badge: 'KITTEN', labelHtml: '<p class="p"><span class="span">子ねこ用<br></span><span class="text-wrapper-10">おさかな添えペア</span></p>' },
-  { btnClass: 'button-cat-5', href: catCtaLinks.standard, sku: 'gU6315', name: '小魚添えペア', thumb: 'thumb-standard-btn.png', badgeWrapClass: 'frame-5', badgeClass: 'ADULT', badge: 'STANDARD', labelHtml: '<div class="text-wrapper-8">小魚添えペア</div>' },
+  { btnClass: 'button-cat', href: catCtaLinks.kidney, sku: 'gU6324', name: '腎臓の健康維持', thumb: 'thumb-kidney-btn.png', badgeWrapClass: 'ADULT-wrapper', badgeClass: 'ADULT', badge: 'HEALTH', labelClass: 'cta-label', labelHtml: '<div class="text-wrapper-8">腎臓の健康維持</div>' },
+  { btnClass: 'button-cat-2', href: catCtaLinks.urinary, sku: 'gU6322', name: '下部尿路の健康維持', thumb: 'thumb-urinary-btn.png', badgeWrapClass: 'ADULT-wrapper', badgeClass: 'ADULT', badge: 'HEALTH', labelClass: 'cta-label', labelHtml: '<div class="text-wrapper-8">下部尿路の健康維持</div>' },
+  { btnClass: 'button-cat-3', href: catCtaLinks.grainfree, sku: 'gU6321', name: 'グレインフリー', thumb: 'thumb-grainfree-btn.png', badgeWrapClass: 'ADULT-wrapper', badgeClass: 'ADULT', badge: 'HEALTH', labelClass: 'cta-label', labelHtml: '<div class="text-wrapper-8">グレインフリー</div>' },
+  // 2026-09-01 新発売。URL・SKU はペットラインからの共有待ち（links.ts の TODO 参照）。
+  { btnClass: 'button-cat-4', href: catCtaLinks.aigamo, sku: 'TBD-AIGAMO', name: '小魚添えペア 合鴨とお魚味', thumb: 'thumb-aigamo-btn.png', badgeWrapClass: 'frame-5', badgeClass: 'ADULT', badge: 'STANDARD', labelClass: 'cta-label', labelHtml: '<div class="text-wrapper-9">小魚添えペア<br>合鴨とお魚味</div>' },
+  { btnClass: 'button-cat-5', href: catCtaLinks.kitten, sku: 'gU6314', name: '子ねこ用 おさかな添えペア お肉とお魚味', thumb: 'thumb-kitten-btn.png', badgeWrapClass: 'frame-5', badgeClass: 'ADULT-2', badge: 'KITTEN', labelClass: 'cta-label-2', labelHtml: '<div class="text-wrapper-9">子ねこ用<br>おさかな添えペア<br>お肉とお魚味</div>' },
+  { btnClass: 'button-cat-std', href: catCtaLinks.standard, sku: 'gU6315', name: '小魚添えペア お肉とお魚味', thumb: 'thumb-standard-btn.png', badgeWrapClass: 'frame-5', badgeClass: 'ADULT', badge: 'STANDARD', labelClass: 'cta-label', labelHtml: '<div class="text-wrapper-9">小魚添えペア<br>お肉とお魚味</div>' },
 ] as const;
