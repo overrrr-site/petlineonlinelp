@@ -73,7 +73,7 @@
     gap: 24px;
     position: relative;
     top: 64px;
-    left: calc(50% - 175px);
+    left: calc(50% - 200px);
     /* フッター(約120px)分を考慮し上に詰める（topはグローバルで固定のためtransformで調整） */
     transform: translateY(-13px);
   }
@@ -81,7 +81,7 @@
   .why__intro {
     display: flex;
     flex-direction: column;
-    width: 350px;
+    width: 400px;
     align-items: center;
     gap: 16px;
     position: relative;
@@ -106,10 +106,10 @@
     font-family: var(--font-family);
     font-weight: 700;
     color: var(--orange);
-    font-size: var(--font-size-s);
+    font-size: var(--font-size-label);
     text-align: center;
     letter-spacing: 1px;
-    line-height: 22px;
+    line-height: var(--lh-tight);
     font-style: normal;
   }
 
@@ -136,7 +136,7 @@
     font-size: var(--font-size-title-xs);
     text-align: center;
     letter-spacing: 0.5px;
-    line-height: 1.35;
+    line-height: var(--lh-heading);
   }
 
   .why__desc-wrapper {
@@ -158,7 +158,7 @@
     color: var(--text-dark);
     font-size: var(--font-size-s);
     letter-spacing: 0;
-    line-height: 1.7;
+    line-height: var(--lh-body);
     font-family: var(--font-family);
     text-align: center;
   }
@@ -166,7 +166,7 @@
   /* Comparison table */
   .why__table {
     position: relative;
-    width: 350px;
+    width: 400px;
     height: 331px;
     background-color: var(--surface-pale);
     border-radius: 5px;
@@ -174,14 +174,14 @@
 
   .why__table-row {
     position: relative;
-    width: 337px;
+    width: 388px;
     top: 6px;
     left: 7px;
     display: flex;
   }
 
   .why__col-labels {
-    width: 179px;
+    width: 208px;
     height: 318px;
     display: flex;
     flex-direction: column;
@@ -193,19 +193,19 @@
     align-items: center;
     justify-content: center;
     gap: 9.16px;
-    padding: 12.37px;
+    padding: 9px;
     border-radius: 4px;
   }
 
   .why__cell--head {
-    width: 179px;
+    width: 208px;
     height: 66px;
     margin-top: 0;
     background-color: var(--table-head-bg);
   }
 
   .why__cell--label-1 {
-    width: 179px;
+    width: 208px;
     height: 45px;
     margin-top: 5px;
     background-color: var(--white);
@@ -213,7 +213,7 @@
   }
 
   .why__cell--label-2 {
-    width: 179px;
+    width: 208px;
     height: 46px;
     margin-top: 5px;
     background-color: var(--white);
@@ -221,7 +221,7 @@
   }
 
   .why__cell--label-3 {
-    width: 179px;
+    width: 208px;
     height: 46px;
     margin-top: 4px;
     background-color: var(--white);
@@ -229,7 +229,7 @@
   }
 
   .why__cell--label-4 {
-    width: 179px;
+    width: 208px;
     height: 46px;
     margin-top: 5px;
     background-color: var(--white);
@@ -241,37 +241,37 @@
     width: fit-content;
     font-family: var(--font-family);
     font-weight: 700;
-    line-height: normal;
+    line-height: var(--lh-tight);
     letter-spacing: 0;
     white-space: nowrap;
   }
 
   .why__cell-text--head {
     color: var(--text-dark);
-    font-size: var(--font-size-m);
+    font-size: 15px;
     text-align: center;
   }
 
   .why__cell-text--label {
     color: var(--text-dark);
-    font-size: var(--font-size-s);
+    font-size: 14px;
   }
 
   .why__cell-text--label-small {
     margin-left: -6.87px;
     margin-right: -6.87px;
     color: var(--text-dark);
-    font-size: var(--font-size-xs);
+    font-size: 12px;
   }
 
   .why__col-sample {
-    width: 71.36px;
+    width: 88px;
     margin-left: 4px;
     display: flex;
   }
 
   .why__col-sample-inner {
-    width: 71.36px;
+    width: 88px;
     height: 318px;
     display: flex;
     flex-direction: column;
@@ -279,7 +279,7 @@
   }
 
   .why__cell--sample-head {
-    width: 71.36px;
+    width: 88px;
     height: 65.98px;
     background-color: var(--table-head-bg);
   }
@@ -289,13 +289,13 @@
     margin-left: -6.19px;
     margin-right: -6.19px;
     color: var(--text-dark);
-    font-size: var(--font-size-m);
+    font-size: 14px;
     text-align: center;
   }
 
   .why__cell--sample {
     margin-left: 0.8px;
-    width: 70.58px;
+    width: 87.2px;
     height: 45.82px;
     background-color: var(--white);
     border: 1px solid var(--gray-line);
@@ -304,11 +304,11 @@
   .why__cell-text--mark {
     margin-top: -0.42px;
     color: var(--text-dark);
-    font-size: var(--font-size-m);
+    font-size: 15px;
   }
 
   .why__col-trial {
-    width: 78.82px;
+    width: 84px;
     height: 318px;
     margin-left: 3.6px;
     display: flex;
@@ -317,7 +317,7 @@
   }
 
   .why__cell--trial-head {
-    width: 78.82px;
+    width: 84px;
     height: 65.98px;
     background-color: var(--table-trial-bg);
   }
@@ -326,19 +326,19 @@
     margin-left: -0.96px;
     margin-right: -0.96px;
     color: var(--white);
-    font-size: var(--font-size-s);
+    font-size: 14px;
     text-align: center;
   }
 
   .why__cell--trial {
-    width: 78.82px;
+    width: 84px;
     height: 45.82px;
     background-color: var(--white);
     border: 1px solid var(--gray-line);
   }
 
   .why__cell--trial-2 {
-    width: 78.82px;
+    width: 84px;
     height: 45.82px;
     background-color: var(--white);
     border: 1px solid var(--gray-line);
@@ -348,19 +348,19 @@
     margin-top: -1.42px;
     -webkit-text-stroke: 1px var(--orange);
     color: var(--orange);
-    font-size: var(--font-size-m);
+    font-size: 15px;
     border-color: var(--orange);
   }
 
   /* Price banner — Group 94.png 単一画像に差し替え */
   .why__banner-wrapper {
     position: relative;
-    width: 350px;
+    width: 400px;
   }
 
   .why__banner-img {
     display: block;
-    width: 350px;
+    width: 400px;
     height: auto;
   }
 </style>

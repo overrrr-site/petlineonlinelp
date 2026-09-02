@@ -37,8 +37,7 @@
               </div>
               <div class="type__option-text">
                 <p class="type__option-name"><span class="type__option-name-main">1歳から（成犬用）</span><span class="type__option-name-space">&nbsp;</span><span class="type__option-name-weight">2.5kg</span></p>
-                <p class="type__option-axis">成犬の毎日に</p>
-                <p class="type__option-desc">成犬の下部尿路の健康維持に配慮。日々の食事管理に。<br/>尿pH 6.0〜6.3　DHA・EPA 2400mg/kg</p>
+                <p class="type__option-desc">成犬の下部尿路の健康維持に配慮。日々の食事管理に。<span class="type__option-spec">尿pH 6.0〜6.3　DHA・EPA 2400mg/kg</span></p>
               </div>
             </div>
             {/* CTAは各カードの枠内に置く。どちらのボタンがどちらの商品か迷わせないため。
@@ -61,7 +60,6 @@
               </svg>
             </a>
           </article>
-          <div class="type__pick-badge"><div class="type__pick-badge-text">成犬に</div></div>
         </div>
 
         <div class="type__card-area--pea">
@@ -74,8 +72,7 @@
               </div>
               <div class="type__option-text">
                 <p class="type__option-name--pea"><span class="type__option-name-main">11歳から（シニア用）</span><span class="type__option-name-weight">&nbsp;2.5kg</span></p>
-                <p class="type__option-axis">シニア期の食事に</p>
-                <p class="type__option-desc">シニア犬の体調変化に合わせて栄養設計を再調整。シニア期の心臓の健康維持に、ナトリウム含有量を調整。<br/>尿pH 6.2〜6.5　DHA・EPA 2200mg/kg</p>
+                <p class="type__option-desc">シニア犬の体調変化に合わせて栄養設計を再調整。シニア期の心臓の健康維持に、ナトリウム含有量を調整。<span class="type__option-spec">尿pH 6.2〜6.5　DHA・EPA 2200mg/kg</span></p>
               </div>
             </div>
             <a
@@ -114,7 +111,7 @@
   .type__inner {
     display: flex;
     flex-direction: column;
-    width: 380px;
+    width: 404px;
     align-items: center;
     justify-content: center;
     /* カード内にCTAが入って全体が縦に伸びたため 22→14 に詰めた。
@@ -185,7 +182,7 @@
     font-size: var(--font-size-title-xl);
     text-align: center;
     letter-spacing: 1.5px;
-    line-height: normal;
+    line-height: var(--lh-display);
   }
 
   /* Card area: rice
@@ -193,7 +190,7 @@
      「成犬に」バッジ（card-area 基準の絶対配置）の位置は変えない。 */
   .type__card-area--rice {
     position: relative;
-    width: 380px;
+    width: 404px;
     padding-top: 12px;
   }
 
@@ -205,7 +202,7 @@
     gap: 8px;
     padding: 12px 11px;
     position: relative;
-    width: 380px;
+    width: 404px;
     box-sizing: border-box;
     background-color: var(--white);
     border-radius: 10px;
@@ -217,7 +214,7 @@
   /* Card area: pea */
   .type__card-area--pea {
     position: relative;
-    width: 380px;
+    width: 404px;
   }
 
   .type__option--pea {
@@ -228,7 +225,7 @@
     padding: 12px;
     gap: 8px;
     position: relative;
-    width: 380px;
+    width: 404px;
     box-sizing: border-box;
     background-color: var(--white);
     border-radius: 10px;
@@ -241,7 +238,7 @@
   .type__option-body {
     display: inline-flex;
     align-items: center;
-    gap: 16px;
+    gap: 10px;
     position: relative;
     flex: 0 0 auto;
   }
@@ -259,7 +256,7 @@
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    padding: 12px;
+    padding: 0;
     position: relative;
     flex: 0 0 auto;
   }
@@ -274,7 +271,7 @@
   .type__option-text {
     display: flex;
     flex-direction: column;
-    width: 240px;
+    width: 274px;
     align-items: flex-start;
     gap: 4px;
     position: relative;
@@ -283,7 +280,7 @@
   /* Product name (shared base; line-height differs per variant) */
   .type__option-name,
   .type__option-name--pea {
-    width: 240px;
+    width: 274px;
     font-weight: 400;
     position: relative;
     margin-top: -1px;
@@ -294,23 +291,24 @@
   }
 
   .type__option-name {
-    line-height: 24px;
+    line-height: 1;
   }
 
   .type__option-name--pea {
-    line-height: 28px;
+    line-height: 1.17;
   }
 
-  /* シニア側の商品名は、同じカード内のCTAボタン（セリーズ）と色を合わせる。
-     容量表記（2.5kg）は成犬側と共通の情報なので色は変えない。 */
-  .type__option-name--pea .type__option-name-main {
+  /* シニア側の商品名は、容量表記(2.5kg)も含めて、同じカード内の
+     CTAボタン（セリーズ）と色を合わせる。 */
+  .type__option-name--pea .type__option-name-main,
+  .type__option-name--pea .type__option-name-weight {
     color: var(--cerise);
   }
 
   .type__option-name-main {
     font-weight: 900;
     letter-spacing: 1px;
-    line-height: 24px;
+    line-height: var(--lh-heading);
     font-family: var(--font-family);
     font-size: var(--font-size-subheading);
   }
@@ -324,19 +322,9 @@
     font-weight: 500;
     font-size: var(--font-size-s);
     letter-spacing: 0.1px;
-    line-height: 21px;
+    line-height: var(--lh-note);
   }
 
-  .type__option-axis {
-    position: relative;
-    align-self: stretch;
-    font-family: var(--font-family);
-    font-weight: 700;
-    color: var(--green-vivid);
-    font-size: var(--font-size-m);
-    letter-spacing: 0.75px;
-    line-height: normal;
-  }
 
   .type__option-desc {
     position: relative;
@@ -346,137 +334,23 @@
     color: var(--text-dark);
     font-size: var(--font-size-s);
     letter-spacing: 0;
-    line-height: 1.7;
+    line-height: var(--lh-body);
   }
 
-  /* Age tags */
-  .type__tags {
-    display: flex;
-    height: 19px;
-    align-items: center;
-    gap: 4px;
-    position: relative;
-    align-self: stretch;
-    width: 100%;
-  }
-
-  .type__tag {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    padding: 3px 13px;
-    position: relative;
-    flex: 0 0 auto;
-    border-radius: 59.79px;
-    border: 1.2px solid;
-    border-color: var(--green-vivid);
-  }
-
-  /* Tag label text (shared typography across all tag widths) */
-  .type__tag-text,
-  .type__tag-text--wide,
-  .type__tag-text--xwide {
-    font-family: var(--font-family);
-    font-weight: 700;
-    color: var(--green-vivid);
-    font-size: var(--font-size-age-tag);
-    text-align: center;
-    letter-spacing: 0;
-    line-height: 12.4px;
-    white-space: nowrap;
-  }
-
-  .type__tag-text {
-    position: relative;
-    width: fit-content;
-    margin-top: -1.2px;
-  }
-
-  .type__tag-wrapper {
-    position: relative;
-    width: 56px;
-    height: 19px;
-  }
-
-  .type__tag--wide {
-    width: 56px;
-    height: 19px;
-    display: flex;
-    border-radius: 59.79px;
-    border: 1.2px solid;
-    border-color: var(--green-vivid);
-  }
-
-  .type__tag-text--wide {
-    margin-top: 3px;
-    width: 30px;
-    height: 13px;
-    margin-left: 13px;
-  }
-
-  .type__tag-group {
-    position: relative;
-    width: 70px;
-    height: 19px;
-  }
-
-  .type__tag--xwide {
-    width: 70px;
-    height: 19px;
-    display: flex;
-    border-radius: 59.79px;
-    border: 1.2px solid;
-    border-color: var(--green-vivid);
-  }
-
-  .type__tag-inner {
-    margin-top: 3px;
-    width: 41px;
-    margin-left: 15px;
-    display: flex;
-  }
-
-  .type__tag-text--xwide {
-    width: 39px;
-    height: 13px;
-  }
-
-  /* "迷ったらこちら" badge */
-  .type__pick-badge {
-    position: absolute;
-    top: 0;
-    left: 8px;
-    width: 156px;
-    height: 25px;
-    background-color: var(--green-vivid);
-    border-radius: 100px;
-  }
-
-  .type__pick-badge-text {
-    position: absolute;
-    width: 80.14%;
-    height: 85.71%;
-    top: 0;
-    left: 9.62%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--font-family);
-    font-weight: 500;
-    color: var(--white);
-    font-size: var(--font-size-l);
-    text-align: center;
-    letter-spacing: 0.8px;
-    line-height: 24px;
-    white-space: nowrap;
+  /* スペック行（尿pH / DHA・EPA）。本文と同じ17pxだと2行に落ちるため小さく分離する */
+  .type__option-spec {
+    display: block;
+    margin-top: 4px;
+    font-size: var(--font-size-cell);
+    line-height: var(--lh-note);
+    color: var(--text-note);
   }
 
   /* CTA block：FVと同じHTML/CSS化したOfferCTA。上のカード幅(380px)に揃える */
   /* 共通オファー（見出し直下）。両カードに等しくかかる価格表示 */
   .type__price {
     display: block;
-    width: 380px;
+    width: 404px;
     height: auto;
     margin: 0 auto;
   }

@@ -174,7 +174,7 @@ const CAUTION_SLIDES = [
     color: var(--text-dark);
     font-size: var(--font-size-xl);
     font-weight: 700;
-    line-height: 1.35;
+    line-height: var(--lh-heading);
     text-align: center;
   }
 
@@ -184,7 +184,7 @@ const CAUTION_SLIDES = [
     font-size: var(--font-size-s);
     font-weight: 500;
     letter-spacing: 0.45px;
-    line-height: 1.7;
+    line-height: var(--lh-body);
     text-align: center;
   }
 
@@ -194,12 +194,12 @@ const CAUTION_SLIDES = [
   .caution__header {
     position: absolute;
     top: 101px;
-    left: 20px;
+    left: 12px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 30px;
-    width: 401px;
+    width: 416px;
   }
 
   .caution__header-inner {
@@ -213,10 +213,11 @@ const CAUTION_SLIDES = [
   .caution__label {
     align-self: stretch;
     color: var(--orange);
-    font-size: var(--font-size-s);
+    font-size: var(--font-size-label);
     font-weight: 700;
     letter-spacing: 0.70px;
     text-align: center;
+    line-height: var(--lh-tight);
   }
 
   .caution__title {
@@ -225,7 +226,7 @@ const CAUTION_SLIDES = [
     font-size: var(--font-size-title-s);
     font-weight: 900;
     letter-spacing: 0;
-    line-height: 1.35;
+    line-height: var(--lh-heading);
     text-align: center;
   }
 
@@ -236,20 +237,20 @@ const CAUTION_SLIDES = [
     align-items: center;
     justify-content: flex-end;
     gap: 30px;
-    width: 340px;
+    width: 408px;
     height: auto;
     padding: 0 3px;
   }
 
   .caution__subtitle-text {
-    width: 340px;
+    width: 408px;
     color: var(--brown-title-text);
     font-size: var(--font-size-s);
     font-weight: 700;
     letter-spacing: 0.75px;
     /* 下線(offset 4px)が行間に食い込むため、他セクション本文(1.7)と
        同等の見た目になるよう行間を補正 */
-    line-height: 2.0;
+    line-height: 1.75;
     text-align: center;
     text-decoration: underline;
     text-decoration-color: var(--underline-muted);

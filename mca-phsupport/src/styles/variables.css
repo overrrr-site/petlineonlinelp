@@ -49,29 +49,38 @@
 
   /* Typography */
   --font-family: "Zen Maru Gothic", sans-serif;
-  --font-size-age-tag-compact: 7.2px;
-  --font-size-age-tag: 7.8px;
-  --font-size-xxxs: 10px;
-  --font-size-xxs: 10.9px;
-  --font-size-xs: 12.3px;
-  --font-size-cell: 13px;
-  --font-size-s: 14px;
-  --font-size-m: 15px;
-  --font-size-l: 16px;
-  --font-size-subheading: 18px;
-  --font-size-display-unit: 19.2px;
+
+  /* Font sizes — 440px デザインキャンバス上の値。実機の見た目は「値 × --scale」。
+     iPhone 13/14 の Safari では --scale ≈ 0.777 なので 17px → 13.2px 相当。 */
+  --font-size-xxxs: 11px;          /* Features の補足・ラベル */
+  --font-size-xxs: 11.5px;         /* FloatingCTA の注記・CTAの肉球バッジ */
+  --font-size-xs: 12.5px;          /* 注釈の標準 */
+  --font-size-cell: 14px;          /* .feat__sub（2カラムの列幅198pxで上限） */
+  --font-size-label: 14px;         /* 英字ラベル（ABOUT / REASON / REVIEW …）。本文とは別枠 */
+  --font-size-s: 17px;             /* 本文の標準 */
+  --font-size-m: 17px;
+  --font-size-l: 18px;
+  --font-size-price-label: 16.1px; /* CTA「お一人様1回限りの限定価格」。枠210pxで上限 */
+  --font-size-floating-btn: 17px;  /* FloatingCTA のボタン文言（--scale-w で割って実寸固定） */
+  --font-size-subheading: 19px;
   --font-size-cta: 21.8px;
-  --font-size-xl: 22px;
+  --font-size-xl: 22px;            /* .feat__h。幅273pxで上限24px（Features.astro のコメント参照） */
   --font-size-product-title: 24px;
   --font-size-product-brand: 25px;
   --font-size-heading-line: 26px;
   --font-size-title-xs: 27px;
   --font-size-title-s: 28px;
   --font-size-title-m: 30px;
-  --font-size-display-number: 32px;
   --font-size-title-l: 34px;
-  --font-size-price-unit: 33.3px;
   --font-size-title-xl: 36px;
+
+  /* Line heights — Zen Maru Gothic の line-height:normal は実測 1.45。
+     px 直値だと font-size と連動しないので、必ずこのトークン（無単位）を使う。 */
+  --lh-body: 1.55;
+  --lh-heading: 1.3;
+  --lh-display: 1.25;
+  --lh-tight: 1.2;
+  --lh-note: 1.5;
 
   /* Spacing: 8px baseline */
   --space-1: 8px;
@@ -85,7 +94,7 @@
   --space-12: 96px;
   --section-top: var(--space-8);
   --section-top-compact: var(--space-7);
-  --heading-gap: var(--space-2);
+  --heading-gap: 12px;
   --body-gap: var(--space-3);
   --card-gap: var(--space-3);
   --fixed-cta-safe-area: var(--space-12);

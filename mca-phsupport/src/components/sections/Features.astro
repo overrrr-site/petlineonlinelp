@@ -14,7 +14,7 @@
         <section class="feat" aria-labelledby="reason-01-title">
           <div class="feat__row">
             <div class="feat__illus feat__illus--dog">
-              <img class="feat__img" src="/mca-phsupport/img/feat-dog.webp" alt="犬のイラスト" loading="lazy" />
+              <img class="feat__img" src="/mca-phsupport/img/feat-ph-balance.svg" alt="尿pHを弱酸性に保つイメージ（酸とアルカリの天秤）" width="205" height="167" loading="lazy" />
               <span class="feat__badge">01</span>
             </div>
             <div class="feat__body">
@@ -36,7 +36,7 @@
             </div>
             <div class="feat__ph-col">
               <h4 class="feat__sub">(2)マグネシウム含有量を調整</h4>
-              <p class="feat__sub-text">マグネシウム含有量を厳密に調整。</p>
+              <p class="feat__sub-text">適正なマグネシウム含有量に調整。</p>
               <p class="feat__mg-label">マグネシウム 標準値</p>
               <table class="feat__tbl">
                 <tbody>
@@ -105,11 +105,11 @@
     top: 64px;
     left: 50%;
     transform: translateX(-50%);
-    width: 405px;
+    width: 416px;
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    gap: 16px;
+    gap: 11px;
   }
 
   /* Header */
@@ -117,14 +117,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 5px;
+    gap: 4px;
   }
 
   .features__label {
     color: var(--orange);
-    font-size: var(--font-size-s);
+    font-size: var(--font-size-label);
     font-weight: 700;
     letter-spacing: 0.7px;
+    line-height: var(--lh-tight);
   }
 
   .features__title-jp {
@@ -133,32 +134,48 @@
     font-weight: 900;
     letter-spacing: 1.8px;
     margin: 0;
+    line-height: var(--lh-display);
   }
 
   /* Feature block */
   .feat {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 9px;
   }
 
   .feat__row {
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 12px;
   }
 
   .feat__illus {
     position: relative;
-    width: 118px;
+    width: 108px;
     flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
+  /* 01の天秤SVGは透過（旧 feat-dog.webp は白背景を画像に内包していた）。
+     02/03 の白カードと見た目を揃えるため、枠側で白地を用意する。 */
+  .feat__illus--dog {
+    background-color: var(--white);
+    border-radius: 10px;
+    /* 天秤は横長なので、02/03（108px角）と白カードの高さを揃えつつ
+       上下左右に余白が残るよう padding と画像幅を調整している */
+    padding: 12px 0;
+    box-sizing: border-box;
+  }
+
+  .feat__illus--dog .feat__img {
+    width: 80px;
+  }
+
   .feat__img {
-    width: 108px;
+    width: 98px;
     height: auto;
     object-fit: contain;
     border-radius: 10px;
@@ -179,7 +196,7 @@
     border-radius: 50%;
     background-color: var(--brown-amber);
     color: var(--white);
-    font-size: 12px;
+    font-size: var(--font-size-xs);
     font-weight: 900;
     letter-spacing: 0.6px;
     display: flex;
@@ -192,7 +209,7 @@
     min-width: 0;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 6px;
   }
 
   /* 改行位置は <br> で固定。最長行は全角11文字のため、
@@ -201,7 +218,7 @@
     color: var(--brown-amber);
     font-size: var(--font-size-xl);
     font-weight: 700;
-    line-height: 1.4;
+    line-height: var(--lh-heading);
     margin: 0;
   }
 
@@ -214,17 +231,17 @@
     color: var(--text-dark);
     font-size: var(--font-size-s);
     font-weight: 500;
-    line-height: 1.7;
+    line-height: var(--lh-body);
     margin: 0;
   }
 
   /* 01: cream box with two columns */
   .feat__phbox {
     display: flex;
-    gap: 10px;
+    gap: 8px;
     background-color: var(--bubble-fill);
     border-radius: 8px;
-    padding: 12px;
+    padding: 6px;
   }
 
   .feat__ph-col {
@@ -240,7 +257,7 @@
     font-size: var(--font-size-cell);
     font-weight: 700;
     letter-spacing: 0.4px;
-    line-height: 1.5;
+    line-height: var(--lh-note);
     margin: 0;
     padding-bottom: 3px;
     border-bottom: 1px solid var(--brown-amber);
@@ -248,16 +265,16 @@
 
   .feat__sub-text {
     color: var(--text-dark);
-    font-size: 10px;
+    font-size: var(--font-size-xs);
     font-weight: 500;
-    line-height: 1.5;
+    line-height: var(--lh-note);
     letter-spacing: -0.4px;
     margin: 0;
   }
 
   .feat__mg-label {
     color: var(--brown-amber);
-    font-size: 10px;
+    font-size: var(--font-size-xs);
     font-weight: 500;
     /* ラベル＋表を列の下端へ寄せ、左列の表と下面を揃える。
        余った空きが本文との間の余白になる。 */
@@ -276,14 +293,17 @@
     margin-top: 4px;
   }
 
+  /* 表のセルは nowrap ＋ 列幅固定のため、最長セル「尿pH 6.0〜6.3」が上限を決める。
+     物理的な限界は17pxだが、小画面での丸め誤差を見込んで15pxで止めている。
+     トークンに乗せると他セクションの注釈まで動くのでここだけ生px。 */
   .feat__tbl th,
   .feat__tbl td {
     border: 1px solid var(--brown-amber);
-    font-size: 10px;
+    font-size: 15px;
     font-weight: 700;
     text-align: center;
     padding: 4px 2px;
-    line-height: 1.2;
+    line-height: var(--lh-tight);
     white-space: nowrap;
   }
 
@@ -316,7 +336,7 @@
     border: none;
     border-top: 1.5px dashed var(--brown-amber);
     width: 100%;
-    margin: 2px 0;
+    margin: 0;
     opacity: 0.85;
   }
 
@@ -324,7 +344,7 @@
     color: var(--text-note);
     font-size: var(--font-size-xs);
     font-weight: 400;
-    line-height: 1.5;
+    line-height: var(--lh-note);
     letter-spacing: 0.4px;
     margin: 0;
   }

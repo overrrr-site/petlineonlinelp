@@ -127,10 +127,11 @@ const REVIEWS = [
 
   .reviews__label {
     color: var(--orange);
-    font-size: var(--font-size-s);
+    font-size: var(--font-size-label);
     font-weight: 700;
     letter-spacing: 0.7px;
     text-align: center;
+    line-height: var(--lh-tight);
   }
 
   .reviews__title {
@@ -140,6 +141,7 @@ const REVIEWS = [
     letter-spacing: 1.7px;
     text-align: center;
     margin: 0;
+    line-height: var(--lh-display);
   }
 
   .reviews__subtitle {
@@ -147,7 +149,7 @@ const REVIEWS = [
     font-size: var(--font-size-s);
     font-weight: 500;
     letter-spacing: -0.14px;
-    line-height: 1.7;
+    line-height: var(--lh-body);
     text-align: center;
   }
 
@@ -176,10 +178,10 @@ const REVIEWS = [
   .reviews__card-body {
     position: absolute;
     top: 54px;
-    left: 25px;
+    left: 18px;
     display: flex;
     flex-direction: column;
-    width: 276px;
+    width: 290px;
   }
 
   .reviews__card-content {
@@ -194,7 +196,7 @@ const REVIEWS = [
     font-size: var(--font-size-product-title);
     font-weight: 700;
     letter-spacing: 1.2px;
-    line-height: 1.3;
+    line-height: var(--lh-heading);
   }
 
   .reviews__card-divider {
@@ -208,7 +210,7 @@ const REVIEWS = [
     color: var(--text-dark);
     font-size: var(--font-size-s);
     font-weight: 400;
-    line-height: 1.7;
+    line-height: var(--lh-body);
   }
 
   .reviews__card-highlight {
@@ -220,7 +222,7 @@ const REVIEWS = [
     color: var(--text-author);
     font-size: var(--font-size-s);
     font-weight: 500;
-    line-height: 27px;
+    line-height: var(--lh-note);
   }
 
   .reviews__dog-image {
@@ -238,6 +240,6 @@ const REVIEWS = [
     left: calc(50% - 129px);
     color: var(--text-dark);
     font-size: var(--font-size-xs);
-    line-height: 18px;
+    line-height: var(--lh-note);
   }
 </style>

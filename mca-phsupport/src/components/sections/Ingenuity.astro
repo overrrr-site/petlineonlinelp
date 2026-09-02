@@ -123,10 +123,11 @@ const INGENUITY_SLIDES = [
   .ingenuity__label {
     align-self: stretch;
     color: var(--orange);
-    font-size: var(--font-size-s);
+    font-size: var(--font-size-label);
     font-weight: 700;
     letter-spacing: 0.70px;
     text-align: center;
+    line-height: var(--lh-tight);
   }
 
   .ingenuity__title {
@@ -138,11 +139,13 @@ const INGENUITY_SLIDES = [
     font-weight: 900;
     letter-spacing: 1.80px;
     text-align: center;
+    line-height: var(--lh-display);
   }
 
   .ingenuity__subtitle {
     position: absolute;
-    top: 185px;
+    /* 見出しとの間隔を他セクション（14〜16px）に合わせる。旧 185px は 33px 空いていた */
+    top: 167px;
     left: 50%;
     transform: translateX(-50%);
     width: 340px;
@@ -152,7 +155,7 @@ const INGENUITY_SLIDES = [
     font-size: var(--font-size-s);
     /* 他セクションの説明文に合わせて字間なし（旧 0.7px） */
     letter-spacing: normal;
-    line-height: 1.7;
+    line-height: var(--lh-body);
     text-align: center;
   }
 
@@ -255,7 +258,7 @@ const INGENUITY_SLIDES = [
     font-size: var(--font-size-xl);
     font-weight: 700;
     letter-spacing: 1.10px;
-    line-height: 1.35;
+    line-height: var(--lh-heading);
     text-align: center;
   }
 
@@ -267,7 +270,7 @@ const INGENUITY_SLIDES = [
     /* 他セクションの説明文（feat__text / why__desc / type__option-desc / FAQ回答）は
        すべて字間なし。ここだけ 0.80px で間延びして見えていたため揃えた。 */
     letter-spacing: normal;
-    line-height: 1.7;
+    line-height: var(--lh-body);
     text-align: center;
   }
 
