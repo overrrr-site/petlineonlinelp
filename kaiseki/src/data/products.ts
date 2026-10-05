@@ -30,8 +30,8 @@ export const catCtaButtons = [
   { btnClass: 'button-cat', href: catCtaLinks.kidney, sku: 'gU6324', name: '腎臓の健康維持', thumb: 'thumb-kidney-btn.png', badgeWrapClass: 'ADULT-wrapper', badgeClass: 'ADULT', badge: 'HEALTH', labelClass: 'cta-label', labelHtml: '<div class="text-wrapper-8">腎臓の健康維持</div>' },
   { btnClass: 'button-cat-2', href: catCtaLinks.urinary, sku: 'gU6322', name: '下部尿路の健康維持', thumb: 'thumb-urinary-btn.png', badgeWrapClass: 'ADULT-wrapper', badgeClass: 'ADULT', badge: 'HEALTH', labelClass: 'cta-label', labelHtml: '<div class="text-wrapper-8">下部尿路の健康維持</div>' },
   { btnClass: 'button-cat-3', href: catCtaLinks.grainfree, sku: 'gU6321', name: 'グレインフリー', thumb: 'thumb-grainfree-btn.png', badgeWrapClass: 'ADULT-wrapper', badgeClass: 'ADULT', badge: 'HEALTH', labelClass: 'cta-label', labelHtml: '<div class="text-wrapper-8">グレインフリー</div>' },
-  // 2026-09-01 新発売。URL・SKU はペットラインからの共有待ち（links.ts の TODO 参照）。
-  { btnClass: 'button-cat-4', href: catCtaLinks.aigamo, sku: 'TBD-AIGAMO', name: '小魚添えペア 合鴨とお魚味', thumb: 'thumb-aigamo-btn.png', badgeWrapClass: 'frame-5', badgeClass: 'ADULT', badge: 'STANDARD', labelClass: 'cta-label', labelHtml: '<div class="text-wrapper-9">小魚添えペア<br>合鴨とお魚味</div>' },
+  // 2026-09-01 新発売。
+  { btnClass: 'button-cat-4', href: catCtaLinks.aigamo, sku: 'gU6325', name: '小魚添えペア 合鴨とお魚味', thumb: 'thumb-aigamo-btn.png', badgeWrapClass: 'frame-5', badgeClass: 'ADULT', badge: 'STANDARD', labelClass: 'cta-label', labelHtml: '<div class="text-wrapper-9">小魚添えペア<br>合鴨とお魚味</div>' },
   { btnClass: 'button-cat-5', href: catCtaLinks.kitten, sku: 'gU6314', name: '子ねこ用 おさかな添えペア お肉とお魚味', thumb: 'thumb-kitten-btn.png', badgeWrapClass: 'frame-5', badgeClass: 'ADULT-2', badge: 'KITTEN', labelClass: 'cta-label-2', labelHtml: '<div class="text-wrapper-9">子ねこ用<br>おさかな添えペア<br>お肉とお魚味</div>' },
   { btnClass: 'button-cat-std', href: catCtaLinks.standard, sku: 'gU6315', name: '小魚添えペア お肉とお魚味', thumb: 'thumb-standard-btn.png', badgeWrapClass: 'frame-5', badgeClass: 'ADULT', badge: 'STANDARD', labelClass: 'cta-label', labelHtml: '<div class="text-wrapper-9">小魚添えペア<br>お肉とお魚味</div>' },
 ] as const;
