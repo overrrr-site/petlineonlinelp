@@ -42,10 +42,10 @@ export const catReviews = [
 
 export const dogReviews = [
   // 広告バナー「香料無添加ですが、とてもいい匂いがしました。」（261003_KS-DOG_7歳口コミ_04）の引用元。
-  // ReviCo 7歳から 2026-04-25 ★4.0「いい香りです」の1文目のみ（2文目は関節ケアへの期待なので使わない）。投稿者名は出さない。
+  // ReviCo 7歳から 2026-04-25 ★4.0「いい香りです」（ももちゃん）の1文目のみ（2文目は関節ケアへの期待なので使わない）。
   {
-    articleClass: 'slide-3', wrapClass: 'frame-6', infoClass: 'frame-7', avatarClass: 'mask-group-3', avatar: 'review-avatar-default.png', avatarAlt: 'ご購入者さまの愛犬',
-    product: '7歳から', hasStars: false, name: 'ご購入者さま', title: 'いい香りです',
+    articleClass: 'slide-3', wrapClass: 'frame-6', infoClass: 'frame-7', avatarClass: 'mask-group-3', avatar: 'review-avatar-default.png', avatarAlt: 'ももちゃんさんの愛犬',
+    product: '7歳から', hasStars: false, name: 'ももちゃんさん', title: 'いい香りです',
     body: '香料無添加ですが、とてもいい匂いがしました。',
   },
   {
