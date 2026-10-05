@@ -85,10 +85,7 @@ const dogFooterClasses = ['text-wrapper-48', 'text-wrapper-49', 'text-wrapper-50
 ))}
 </div>
 <div class="indicator" aria-hidden="true">
-<div class="ellipse"></div>
-<div class="ellipse-2"></div>
-<div class="ellipse-2"></div>
-<div class="ellipse-2"></div>
+{dogReviews.map((_, i) => <div class={i === 0 ? 'ellipse' : 'ellipse-2'}></div>)}
 </div>
 <button type="button" class="carousel-prev" aria-label="前のスライド"><img src={`${IMG}carousel-arrow-left.png`} alt="" /></button>
 <div class="vector-wrapper" aria-hidden="true"><img class="vector-2" src="/kaiseki/img/dog/carousel-arrow.svg" alt="" /></div>

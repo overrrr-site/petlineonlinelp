@@ -847,13 +847,13 @@
   width: 315px;
   height: 8px;
   display: flex;
+  justify-content: center; /* レビュー件数に合わせてドット数が変わるので中央寄せ */
   gap: 10px;
 }
 
 .dog-canvas .ellipse {
   width: 8px;
   height: 8px;
-  margin-left: 127px;
   background-color: #a30102;
   border-radius: 4px;
   aspect-ratio: 1;

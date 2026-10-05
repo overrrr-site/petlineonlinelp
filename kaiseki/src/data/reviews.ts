@@ -14,6 +14,16 @@ export const reviewStats = {
 
 export const catReviews = [
   {
+    wrapClass: 'frame-12', infoClass: 'frame-17', avatarClass: 'mask-group-3', avatar: 'review-avatar-default.png',
+    product: 'グレインフリー', hasStars: false, name: 'あみさん', title: '問題なく、しっかり完食。',
+    body: '以前から気になっていたグレインフリーを、お得に試せました。袋を開けた瞬間から反応がよく、食いつきも良くて問題なく完食。60gずつの小分け包装で、開封後に風味が落ちにくいのも嬉しいです。',
+  },
+  {
+    wrapClass: 'frame-12', infoClass: 'frame-17', avatarClass: 'mask-group-5', avatar: 'review-avatar-default.png',
+    product: '腎臓の健康維持', hasStars: false, name: 'にこばんさん', title: '食いつきが良い！',
+    body: '封を開けたとたん、2匹とも袋に顔ツッコんできました(笑)<br>よほど美味しかったのか、催促もすごい！<br>この子たちが喜んで食べてくれるのはもちろん、体にも配慮されてるのが嬉しい。',
+  },
+  {
     wrapClass: 'frame-12', infoClass: 'frame-13', avatarClass: 'mask-group', avatar: 'review-avatar-1.png',
     product: '小魚添えペア', hasStars: true, name: 'にゃんたじさん', title: '好評でした。',
     body: 'いつものカリカリの上に、トッピングのようにかけてあげました。食感が変わるからか、とても嬉しそうに食べてくれました。2種類の味が入っているのも良かったです。',
@@ -24,23 +34,20 @@ export const catReviews = [
     body: '子ねこ用なので粒が小さいのはもちろん、平たい形状で食べやすそうなのもあってか、よく食べてくれて良かったです。',
   },
   {
-    wrapClass: 'frame-12', infoClass: 'frame-17', avatarClass: 'mask-group-3', avatar: 'review-avatar-default.png',
-    product: 'グレインフリー', hasStars: false, name: 'あみさん', title: '問題なく、しっかり完食。',
-    body: '以前から気になっていたグレインフリーを、お得に試せました。袋を開けた瞬間から反応がよく、食いつきも良くて問題なく完食。60gずつの小分け包装で、開封後に風味が落ちにくいのも嬉しいです。',
-  },
-  {
     wrapClass: 'frame-18', infoClass: 'frame-17', avatarClass: 'mask-group-4', avatar: 'review-avatar-default.png',
     product: '下部尿路の健康維持', hasStars: false, name: 'まねきねこさん', title: '食いつきがいいです。',
     body: '機能性のあるタイプは初めてで、食いつきを少し心配しましたが、問題なくよく食べてくれました。安心して続けられます。',
   },
-  {
-    wrapClass: 'frame-12', infoClass: 'frame-17', avatarClass: 'mask-group-5', avatar: 'review-avatar-default.png',
-    product: '腎臓の健康維持', hasStars: false, name: 'にこばんさん', title: '食いつきが良い！',
-    body: '封を開けたとたん、2匹とも袋に顔ツッコんできました(笑)<br>よほど美味しかったのか、催促もすごい！<br>この子たちが喜んで食べてくれるのはもちろん、体にも配慮されてるのが嬉しい。',
-  },
 ] as const;
 
 export const dogReviews = [
+  // 広告バナー「香料無添加ですが、とてもいい匂いがしました。」（261003_KS-DOG_7歳口コミ_04）の引用元。
+  // ReviCo 7歳から 2026-04-25 ★4.0「いい香りです」の1文目のみ（2文目は関節ケアへの期待なので使わない）。投稿者名は出さない。
+  {
+    articleClass: 'slide-3', wrapClass: 'frame-6', infoClass: 'frame-7', avatarClass: 'mask-group-3', avatar: 'review-avatar-default.png', avatarAlt: 'ご購入者さまの愛犬',
+    product: '7歳から', hasStars: false, name: 'ご購入者さま', title: 'いい香りです',
+    body: '香料無添加ですが、とてもいい匂いがしました。',
+  },
   {
     articleClass: 'slide-2', wrapClass: 'frame-6', infoClass: 'frame-7', avatarClass: 'mask-group', avatar: 'review-avatar-1.png', avatarAlt: 'ユーザーさんの愛犬',
     product: '1歳から', hasStars: true, name: 'ユーザーさん', title: 'よく食べてくれます。',
