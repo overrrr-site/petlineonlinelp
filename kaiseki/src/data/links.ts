@@ -15,6 +15,7 @@ export const footerLinks = [
 
 export const catCtaLinks = {
   kidney: 'https://www.petlineonline.com/shop/g/gU6324/',
+  aigamo: 'https://www.petlineonline.com/shop/g/gU6325/',
   urinary: 'https://www.petlineonline.com/shop/g/gU6322/',
   grainfree: 'https://www.petlineonline.com/shop/g/gU6321/',
   kitten: 'https://www.petlineonline.com/shop/g/gU6314/',
