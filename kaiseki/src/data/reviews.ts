@@ -1,11 +1,11 @@
 export const reviewStats = {
   cat: {
-    total: '4,383',
-    asOf: '2026年6月時点',
+    total: '5,074',
+    asOf: '2026年9月時点',
   },
   dog: {
-    total: '267',
-    asOf: '2026年6月時点',
+    total: '564',
+    asOf: '2026年9月時点',
   },
 } as const;
 
